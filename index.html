@@ -1,0 +1,153 @@
+<! DOCTYPE HTML>
+<html>
+	<head>
+		<title>Homepage</title>
+			<style>
+		
+			
+			h1{
+				color:rgba(255,255,255,0.8);
+				text-align:center;
+				font-family:Lucida Sans Unicode;
+				font-size:40;
+				
+				
+			}
+			body{
+				text-align:center;
+				color:white;
+				background-image: url("background1.gif");
+				background-attachment:fixed;
+			}
+			
+			img{
+				height:500px;
+				width:500px;
+			}
+			h2{
+				color:white;
+				text-align:center;
+				font-family:Lucida Sans Unicode;
+				font-size:20;
+			}
+			
+			
+			a {
+				text-decoration:none;
+				color:white;
+			}
+			
+			.hello{
+				background-color:rgba(85,91,126,0.8);
+				width: 500px;
+			    margin-left:35%;
+			    margin-right:35%;
+			    margin-top:15%;
+			}
+			
+			.footer{
+				position:fixed;
+				left:0;
+				bottom:0;
+				text-align:center;
+				width:100%;
+				font-family:Lucida Sans Unicode;
+				background-color:rgba(85,91,126,0.8);
+			}
+			
+			.header{
+				background-color:rgba(85,91,126,0.8);
+				text-align:left;
+				position:fixed;
+				width:100%;
+				font-family:Lucida Sans Unicode;
+				padding-top:8px;
+				padding-bottom:8px;
+				font-size:15px;
+				vertical-align:middle;
+				top:0;
+				left:0;
+			}
+			
+			.button{
+				padding:8px;
+				vertical-align:middle;
+				top:0;
+			}
+			
+			.button img{
+				height:20px;
+				width:20px;
+				vertical-align:middle;
+			}
+			
+			.button:hover {
+				background-color:rgb(171, 175, 186);
+				color:black;
+			}
+			
+			#output {
+				color:rgba(255,255,255,0.8);
+				text-align:center;
+				font-family:Lucida Sans Unicode;
+				font-size:50;
+				padding-top:3%;
+				padding-bottom:3%;
+				vertical-align:middle;
+	
+			}
+			
+			.hello:hover, .hello:active {
+				background-color:rgba(69,69,86,1);
+				vertical-align:middle;
+			}
+			
+			#output:hover{
+				color:white;
+			}
+			
+			
+			
+			
+		</style>
+		
+	</head>
+	<body>
+		<div class="header">
+		    <a href="home.html" class="button">&nbsp&nbspHOME&nbsp&nbsp</a>
+		    <a href="bio.html" class="button">&nbsp&nbspBIO&nbsp&nbsp</a>
+		    <a href="portfolio.html" class="button">&nbsp&nbsp PORTFOLIO&nbsp&nbsp</a>
+		    </a>
+		  </div>
+		
+		<div class="hello">
+		<a href="https://kenon-willis.github.io/homePage.html" class="link">
+		<p id = "output"></p> </a>
+		</div>
+		
+		<div class="footer">
+		<a href="mailto:jenniferh1122@gmail.com">
+		<p>jenniferh1122@gmail.com</p>
+		</a>
+		</div>
+		
+
+	<script>
+			var hello = new Array("H E L L O", "B O N J O U R", "H O L A", "C I A O", "A L O H A");
+			var i = 0;
+			setInterval(function(){				
+				document.getElementById("output").innerHTML = hello[i];
+				if (i<4)
+					i++;
+				else
+					i = 0;
+			}, 1700);
+			
+			
+			
+			
+		</script>
+		
+	</body>
+	
+</html>
