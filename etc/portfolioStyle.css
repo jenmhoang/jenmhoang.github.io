@@ -1,0 +1,127 @@
+html{
+	width:100%;
+}
+
+body{
+	text-align:center;
+	color:white;
+	background-image: url("background1.gif");
+	margin:auto;
+	padding:5%;
+	background-attachment:fixed;
+}
+
+
+a {
+	text-decoration:none;
+	color:white;
+}
+
+
+.flex-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+
+	position:fixed;
+	z-index: 1;
+	width:100%;
+
+	text-align:center;
+	font-family:Lucida Sans Unicode;
+	font-size:15px;
+	background-color:rgba(85,91,126,0.8);
+
+
+	top:0;
+	left:0;
+
+}
+
+.button{
+	padding:8px;
+	vertical-align:middle;
+	top:0;
+	margin:0;
+}
+/*
+.button img{
+	height:20px;
+	width:20px;
+}*/
+
+.button:hover {
+	background-color:rgb(171, 175, 186);
+	color:black;
+}
+
+
+.portfolioB{
+  background-color:rgba(85,91,126,0.8);
+	width: 30%;
+	margin:auto;
+	text-align:center;
+}
+
+.portfolio{
+  color:rgba(255,255,255,0.8);
+	text-align:center;
+	font-family:Lucida Sans Unicode;
+	font-size:30;
+	padding-top:2%;
+	padding-bottom:2%;
+	vertical-align:middle;
+}
+
+.row{
+	display:flex;
+	width:100%;
+	text-align:center;
+	vertical-align:center;
+	margin:auto;
+	/*
+	margin-left:2%;
+	margin-right:5%;*/
+}
+
+.prtfl {
+	border:2px solid #ccc;
+	transition:1s;
+	height:200;
+	width:200;
+	text-align:left;
+	margin:30px;
+}
+
+.pName {
+	margin:4%;
+	font-size:15px;
+	top:0;
+	text-align:center;
+	vertical-align:middle;
+	font-family:Lucida Sans Unicode;
+	transition:1s;
+	color:transparent;
+}
+
+.prtfl img{
+	height:200px;
+	width:200px;
+	transition:1s;
+}
+
+.prtfl:hover{
+	border:2px solid rgb(61, 72, 92);
+	height:260px;
+	width:220px;
+	
+}
+
+.prtfl:hover .pName{
+	color:white;
+}
+
+.prtfl:hover img{
+	height:220px;
+	width:220px;
+}

@@ -1,0 +1,129 @@
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	font-size: 10;
+}
+
+img {
+	/* height: auto;
+	max-width: 100%;
+	align-self: center; */
+	height: 100%;
+	width: auto;
+	display: block;
+}
+
+#header {
+	background-color: rgba(255, 255, 255, 0.5);
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	z-index: 500;
+}
+
+#header-items{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	position: absolute;
+	right: 15%;
+	height: 100%;
+	width: 50%;
+	text-align: center;
+}
+.header-text {
+	color: black;
+	font-size: 18px;
+	height: 100%;
+	padding: 12px 40px;
+}
+.header-text:hover {
+	color: grey;
+}
+
+.sec1 {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+#div1 {
+    width: 80%;
+	height: 80%;
+	display: flex;
+	flex-direction: row;
+	overflow: auto;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	text-align: left;
+	/* background-color: rgba(200, 255, 255, 0.5); */
+}
+
+.pic {
+	width: 40%;
+	position: relative;
+    background-color: rgba(200, 200, 255, 0.5);
+	/* float: left; */
+	/* overflow: visible;
+	position: relative; */
+	/* display: block; */
+}
+
+
+#mainpic {
+	position: relative;
+	top: 0;
+}
+
+#pic1 {
+	position: absolute;
+	z-index: 1000;
+	top: 0; left: 0;
+	display: none;
+}
+
+.buttons {
+	width: 60%;
+    height: 60%;
+	display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.button {
+    width: 40%;
+    height: 50px;
+    line-height: 50px;
+    margin: auto;
+    background-color: rgba(200, 200, 255, 0.5);
+    text-align: center;
+}
+
+.button:hover {
+    background-color: rgba(200, 200, 255, 0.2);
+    font-size: 18px;
+    transition: 1s;
+}
+
+#s1-div-heading {
+	width: 100%;
+	height: 10%;
+	overflow: auto;
+	padding-bottom: 45px;
+}
+
+.info {
+	width: 0%;
+	background-color: rgba(200, 200, 255, 0.2);
+}
+
+#d1, #d2, #d3 {
+	background-color: rgba(200, 200, 255, 0.2);
+	width: 0;
+    display: none;
+}
