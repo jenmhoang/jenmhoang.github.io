@@ -28,23 +28,40 @@
                 align-items: center;
                 justify-content: center;
             }
+            #button {
+                border-radius: 10px;
+                background-color: rgba(235, 242, 249, 1);
+                padding: 10px;
+            }
+            #button:hover{
+                text-decoration: none;
+                transform: scale(1.2);
+                transition: 1s;
+                background-color: rgba(260, 242, 249, 0.5);
+            }
         </style>
 	</head>
 	<body>
-		<div id="header">
+		<!-- <div id="header">
 			<div id="header-items">
-				<a href="index.html#home" style="text-decoration: none"> <div class="header-text">Home</div> </a>
-				<a href="index.html#about" style="text-decoration: none"><div class="header-text">About</div></a>
-				<a href="uC.html" style="text-decoration: none"><div class="header-text">Projects</div></a>
-				<a href="uC.html" style="text-decoration: none"><div class="header-text">Art</div></a>
+				<a href="index.html"> <div class="header-text">Home</div> </a>
+				<a href="index.html#about"><div class="header-text">About</div></a>
+				<a href="uC.html"><div class="header-text">Projects</div></a>
+				<a href="uC.html"><div class="header-text">Art</div></a>
 			</div>
-		</div>
+		</div> -->
 
 	<section class="sec1" id="home">
         <div id="div1">
             <p>This page is still under construction! Check back later for updates.</p>
+            <!-- <br> -->
+            <p>You can view these in the meantime: <br>
+                <a href="assets/Resume2020.pdf">Resume</a>
+                <br>
+                <a href="https://www.linkedin.com/in/jenmhoang/">LinkedIn</a>
+            </p>
             <br>
-            <a href="index.html">Return Home.</a>
+            <a id="button" href="index.html">Return Home</a>
         </div>
 	</section>
 	</body>
