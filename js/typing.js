@@ -5,7 +5,7 @@ let instance = new TypeIt('#typing', {
   waitUntilVisible: true,
   afterComplete: function(instance){
     instance.destroy();
-    new TypeIt('#ttm', {
+    instance = new TypeIt('#ttm', {
       speed: 90,
       lifelike: false,
       cursor: true,
@@ -14,7 +14,7 @@ let instance = new TypeIt('#typing', {
         instance.destroy();
         new TypeIt('#ttm2', {
           strings: ["Computer Science.", "art and animation.", 
-          "inclusive storytelling.", "environmentalism."],
+          "inclusive storytelling.", "environmentalism.", "collaborative learning."],
           speed: 90,
           lifelike: false,
           cursor: true,
@@ -30,24 +30,3 @@ let instance = new TypeIt('#typing', {
 })
 .type('Hi, I\'m Jen!')
 .pause(1000)
-
-// let instance1 = new TypeIt('#ttm', {
-//   speed: 90,
-//   lifelike: false,
-//   cursor: true,
-//   autoStart: false,
-//   afterComplete: function(instance){
-//     instance.destroy();
-//     new TypeIt('#ttm2', {
-//       strings: ["Computer Science.", "art and animation.", 
-//       "inclusive storytelling.", "environmentalism."],
-//       speed: 90,
-//       lifelike: false,
-//       cursor: true,
-//       breakLines: false,
-//       autoStart: true,
-//       loop: true
-//     });
-//   }
-// })
-// .type('Talk to me about ');
