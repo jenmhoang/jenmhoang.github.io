@@ -7,7 +7,7 @@ let instance = new TypeIt('#ttm', {
     instance.destroy();
     new TypeIt('#ttm2', {
       strings: ["Computer Science.", "art and animation.", 
-      "inclusive storytelling.", "environmentalism.", "collaborative learning."],
+      "inclusive storytelling.", "environmentalism."],
       speed: 90,
       lifelike: false,
       cursor: true,

@@ -22,28 +22,33 @@ a:hover {
 /* HEADER */
 
 #header {
-	/* background-color: #ebf2f9; */
 	background-color: #d4e4f7;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 	position: fixed;
 	width: 100%;
-	height: 50px;
+	height: 8%;
 	z-index: 500;
+}
+
+#homeLogo {
+	position: relative;
+	left: 5%;
 }
 
 #header-items{
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
-	position: absolute;
-	right: 15%;
-	height: 100%;
-	width: 50%;
+	position: relative;
+	right: 5%;
 	text-align: center;
 }
+
 #header-text {
 	color: black;
 	font-size: 18px;
-	height: 100%;
 	padding: 12px 40px;
 }
 #header-text:hover {

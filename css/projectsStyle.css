@@ -18,7 +18,12 @@ img {
 h1 {
 	font-size: 30px;
 	color: #e46787;
-	margin-bottom: 0;
+	margin: 0;
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
 }
 
 h3 {
@@ -39,6 +44,9 @@ a {
 	font-weight: bold;
 }
 
+
+/* HEADER */
+
 #header {
 	background-color: #d4e4f7;
 	display: flex;
@@ -50,7 +58,7 @@ a {
 	z-index: 500;
 }
 
-#home {
+#homeLogo {
 	position: relative;
 	left: 5%;
 }
@@ -60,9 +68,7 @@ a {
 	flex-direction: row;
 	justify-content: flex-end;
 	position: relative;
-	/* background-color: rgba(100, 100, 247, 0.5); */
 	right: 5%;
-	height: 100%;
 	text-align: center;
 }
 
@@ -76,50 +82,28 @@ a {
 	transition: 0.3s;
 }
 
+
+/* BODY */
+
 .sec1 {
 	width: 100%;
 	height: 92%;
 	top: 8%;
-	position: relative;
-}
-
-#div1 {
-    width: 100%;
-	height: 100%;
+	position: absolute;
 	display: flex;
 	flex-direction: row;
-	overflow: hidden;
-	margin: auto;
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
-	text-align: left;
+	/* overflow: hidden; */
 }
 
-.pic {
-	width: 40%;
-	height: 100%;
-	position: relative;
-	/* background-color: #f0f6fc; */
-	background-color: #d4e4f7;
-	/* display: flex;
+/* PROJECT NAVIGATION (SECTION 1) */
+
+.projNav {
+	width: 60%;
+    height: 100%;
+	display: flex;
     flex-direction: column;
 	align-items: center;
-	justify-content: center; */
-	overflow: hidden;
-}
-
-#mainpic {
-	height: 100%;
-	width: auto;
-	/* position: relative; */
-	/* top: 0; left: 0; */
-	object-fit: cover;
-}
-
-#pic1, #pic2, #pic3 {
-	top:0; left:0;
-	position: absolute;
-	display: none;
+	justify-content: center;
 }
 
 #titleImg {
@@ -128,25 +112,11 @@ a {
 	position: relative;
 }
 
-.div1-1 {
-	width: 60%;
-    height: 100%;
-	display: flex;
-    flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	/* background-color: rgba(200, 200, 255, 0.5); */
-}
-
 .buttons {
 	width: 100%;
     height: 40%;
 	display: flex;
     flex-direction: column;
-	overflow: auto;
-	align-items: center;
-	justify-content: center;
-	/* background-color: rgba(200, 200, 255, 0.5); */
 }
 
 .button {
@@ -157,32 +127,87 @@ a {
     color: #e46787;
 	text-align: center;
 	border-radius: 10px;
-	/* background-color: #ebf2f9; */
 	border: 2px solid #ebf2f9;
 }
 
 .button:hover {
-	/* background-color: #ebf2f9; */
-	/* color: #7ba6d8; */
 	background-color: rgba(212, 228, 247, 0.3);
     font-size: 20px;
     transition: 0.5s;
 }
 
-.info {
-	width: 0%;
-	/* background-color: rgba(200, 200, 255, 0.2); */
+
+/* PICTURE (SECTION 2) */
+
+.pic {
+	width: 40%;
+	height: 100%;
 	position: relative;
+	overflow: hidden;
+	z-index: 500;
+	background-color: #afb5b6;
 }
 
-#close {
+#mainpic {
+	height: 100%;
+	width: auto;
+	object-fit: cover;
+}
+
+#pic1, #pic2, #pic3 {
+	top:0; left:0;
+	position: absolute;
+	display: none;
+}
+
+/* INFORMATION DIVISIONS (SECTION 3) */
+
+#d1, #d2, #d3 {
+	width: 60%;
+	height: 100%;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	display: none;
+}
+
+/* Under Construction */
+#uC {
+	height: 100%;
+	padding: 10%;
+	text-align: center;
+}
+
+.return {
+	width: 25%;
+	margin: auto;
+	border-radius: 10px;
+	background-color: rgba(235, 242, 249, 1);
+	padding: 10px;
+}
+
+.return:hover{
+	text-decoration: none;
+	transform: scale(1.1);
+	transition: 0.3s;
+	background-color: rgba(260, 242, 249, 0.5);
+}
+
+/* Division Headers */
+.divHeading {
+	height: 15%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.close {
 	top: 5; right: 5;
 	position: absolute;
 	width: 5%; height: auto;
 	opacity: 0.4;
 }
 
-#close:hover {
+.close:hover {
 	opacity: 0.8;
 	transition: 0.5s;
 	filter: hue-rotate(127deg);
@@ -190,32 +215,25 @@ a {
 
 #subtitle {
 	font-size: 12px;
-	margin-bottom: 25px;
+	/* margin-bottom: 25px; */
+	text-align: center;
+	color: #afb5b6;
 }
 
-#d1, #d2, #d3 {
-	/* background-color: rgba(200, 100, 255, 0.2); */
-	width: 100%;
-	height: 100%;
-	margin: auto;
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
-	text-align: center;
-    display: none;
-}
+/* Pagination Tabs */
 
 #sections {
-	width: 100%;
-	height: 100%;
 	background-color: #f0f6fc;
-	/* position: relative; */
+	/* overflow: auto; */
+	position: relative;
+	height: 85%;
 }
 
 #pagination {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
-	width: 100%;
+	height: 8%;
+	/* justify-content: space-evenly; */
 }
   
 .tab {
@@ -223,8 +241,8 @@ a {
 	background-color: white;
 	padding: 10px 0;
 	width: 100%;
-	text-decoration: none;
 	font-size: 18px;
+	text-align: center;
 }
 
 .tab:hover {
@@ -237,14 +255,15 @@ a {
 	color: #e46787;
 }
 
+/* Tab Information */
 #d1-tabs {
-	height: 100%;
+	height: 90%;
 	width: 90%;
 	position: relative;
 	margin: auto;
 	overflow: auto;
-	top: 3%; left: 0; bottom: 0; right: 0;
-	text-align: center;
+	top: 3; left: 0; bottom: 0; right: 0;
+	/* text-align: center; */
 	/* background-color: rgba(200, 100, 255, 0.2); */
 }
 

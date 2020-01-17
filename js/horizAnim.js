@@ -1,8 +1,9 @@
 function open(section, pic){
-  $(".div1-1").animate({width: '0'});
+  $(".projNav").animate({width: '0'});
   $(".button").hide(1000);
   $(".info").animate({width: '60%'});
 
+  $("#mainpic").fadeOut();
   $("#pic1").fadeOut();
   $("#pic2").fadeOut();
   $("#pic3").fadeOut();
@@ -12,13 +13,15 @@ function open(section, pic){
 }
 
 function close(){
-  $(".div1-1").animate({width: '60%'});
+  $(".projNav").animate({width: '60%'});
   $(".button").fadeIn(1000);
   $(".info").animate({width: '0'});
   
   $("#d1").fadeOut();
   $("#d2").fadeOut();
   $("#d3").fadeOut();
+
+  $("#mainpic").fadeIn();
 }
 
 $(document).ready(function(){
@@ -35,7 +38,10 @@ $(document).ready(function(){
   $(".pic").click(function(){
     close();
   });
-  $("#close").click(function(){
+  $(".close").click(function(){
+    close();
+  });
+  $(".return").click(function(){
     close();
   });
 });
