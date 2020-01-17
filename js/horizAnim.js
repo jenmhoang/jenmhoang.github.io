@@ -1,42 +1,43 @@
+function open(section, pic){
+  $(".div1-1").animate({width: '0'});
+  $(".button").hide(1000);
+  $(".info").animate({width: '60%'});
+
+  $("#pic1").fadeOut();
+  $("#pic2").fadeOut();
+  $("#pic3").fadeOut();
+
+  $(pic).fadeIn();
+  $(section).fadeIn();
+}
+
+function close(){
+  $(".div1-1").animate({width: '60%'});
+  $(".button").fadeIn(1000);
+  $(".info").animate({width: '0'});
+  
+  $("#d1").fadeOut();
+  $("#d2").fadeOut();
+  $("#d3").fadeOut();
+}
+
 $(document).ready(function(){
   $("#b1").click(function(){
-    $(".buttons").animate({width: '0'});
-    $(".button").hide(1000);
-    $(".info").animate({width: '60%'});
-    $("#mainpic").fadeOut();
-    
-    $("#d1").fadeIn();
-    $("#pic1").fadeIn();
+    open("#d1", "#pic1");
   });
   $("#b2").click(function(){
-    $(".buttons").animate({width: '0'});
-    $(".button").hide(1000);
-    $(".info").animate({width: '60%'});
-    $("#mainpic").fadeOut();
-    
-    $("#d2").fadeIn();
-    $("#pic1").fadeIn();
+    open("#d2", "#pic2");
   });
   $("#b3").click(function(){
-    $(".buttons").animate({width: '0'});
-    $(".button").hide(1000);
-    $(".info").animate({width: '60%'});
-    $("#mainpic").fadeOut();
-    
-    $("#d3").fadeIn();
-    $("#pic1").fadeIn();
+    open("#d3", "#pic3");
   });
 
   $(".pic").click(function(){
-    $(".buttons").animate({width: '60%'});
-    $(".button").fadeIn(1000);
-    $(".info").animate({width: '0'});
-    $("#mainpic").fadeIn();
-    
-    $("#d1").fadeOut();
-    $("#d2").fadeOut();
-    $("#d3").fadeOut();
-    
-    $("#pic1").fadeOut();
+    close();
+  });
+  $("#close").click(function(){
+    close();
   });
 });
+
+  

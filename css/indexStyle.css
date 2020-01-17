@@ -15,7 +15,6 @@ a {
 }
 
 a:hover {
-	/* text-decoration-style: wavy; */
 	text-decoration: underline;
 	transition: 0.3s;
 }
@@ -23,8 +22,8 @@ a:hover {
 /* HEADER */
 
 #header {
-	/* background-color: rgba(255, 255, 255, 0.5); */
-	background-color: rgba(235, 242, 249, 1);
+	/* background-color: #ebf2f9; */
+	background-color: #d4e4f7;
 	position: fixed;
 	width: 100%;
 	height: 50px;
@@ -41,13 +40,13 @@ a:hover {
 	width: 50%;
 	text-align: center;
 }
-.header-text {
+#header-text {
 	color: black;
 	font-size: 18px;
 	height: 100%;
 	padding: 12px 40px;
 }
-.header-text:hover {
+#header-text:hover {
 	color: #e46787;
 	transition: 0.3s;
 }
@@ -82,7 +81,7 @@ video {
 	transform: scale(1.2);
 }
 
-.downarrow {
+#downarrow {
 	display: inline-block;
 	height: 50px;
 }
@@ -94,7 +93,6 @@ video {
 	width: 100%;
 	height: 100%;
 	position: relative;
-	/* background-color: rgba(235, 242, 249, 0.8) */
 }
 
 #aboutDiv {
@@ -118,7 +116,6 @@ video {
 	max-width: 80%;
 	border-radius: 50%;
 	height: auto;
-	/* box-shadow: -10px 10px 15px #e46787; */
 	margin: auto;
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
@@ -135,14 +132,11 @@ video {
 
 #typeHeading {
 	width: 100%;
-	/* height: 25%; */
-	/* min-height: 25%; */
 	height: auto;
 	position: relative;
 	/* color: 	#7ba6d8; */
 	color: #e46787;
 	/* color: #3d0f1c; */
-	/* font-weight: bold; */
 }
 
 #typing, #typing2 {
