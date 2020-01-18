@@ -7,7 +7,6 @@
             href = "css/projectsStyle.css" />
         <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="js/horizAnim.js"></script>
 	</head>
 	<body>
         <div id="header">
@@ -24,16 +23,17 @@
             <div class="projNav">
                 <img id="titleImg" src="assets/projects.jpg">
                 <div class="buttons">
-                    <div class="button" id="b1">1951 Coffee</div>
-                    <div class="button" id="b2">Explorable World</div>
-                    <div class="button" id="b3">Berkeley Map</div>
+                    <a id="p1" href="assets/1951cupLogo.jpg"><div class="button" id="b1">1951 Coffee</div></a>
+                    <a id="p2" href="assets/explorableWorld.png"><div class="button" id="b2">Explorable World</div></a>
+                    <a id="p3" href="assets/map.png"><div class="button" id="b3">Berkeley Map</div></a>
                 </div>
             </div>
             <div class="pic">
-                <img id="mainpic" src="assets/1951cupLogo.jpg">
-                <img id="pic1" src="assets/1951cupLogo.jpg">
-                <img id="pic2" src="assets/explorableWorld.png">
-                <img id="pic3" src="assets/map.png">
+                <img id="mainPic" src="assets/1951cupLogo.jpg">
+                <img id="underPicMain" src="assets/1951cupLogo.jpg">
+                <img id="togglePic" src="assets/1951cupLogo.jpg">
+                <img id="underPic" src="assets/1951cupLogo.jpg">
+                
             </div>
             <img class="close" src="assets/close.png">
             <div id="d1">
@@ -52,7 +52,6 @@
                         <hr>
                         <h2>A mobile application built for efficient <br>communication and resource provision.</h2>
                         <hr>
-                        <!-- <h3>Duration</h3> -->
                         <p>Duration: 3 months (MVP), ongoing project</p>
                         <h3>The Client</h3>
                         <p>
@@ -70,13 +69,13 @@
                     </div>
                     <div id="d1-t2">
                         <p>
-                            1951 Coffee Company hosts two-week barista training programs throughout the year. Upon completion of the program, a Recruitment 
+                            The organization hosts two-week barista training programs throughout the year. Upon completion of the program, a Recruitment 
                             Specialist works with graduates to guide them through job opportunities and interview prep so that they can smoothly 
                             enter the coffee industry.
                         </p>
                         <h3>The Problem</h3>
                         <p>
-                            <b>The group does not have an proper organization or communication platform to efficiently run their program.</b> Any time there is an upcoming 
+                            <b>1951 Coffee Company does not have an proper organization or communication platform to efficiently run their program.</b> Any time there is an upcoming 
                             event or important message that needs to be relayed to the students, the program admins must manually type in the phone number of 
                             each individual trainee, sending the same text message to each participant in their program. The same tedious process occurs when the 
                             Recruitment Specialist reaches out to graduates regarding job opportunities, with the text message history acting as the only record of 
@@ -91,16 +90,19 @@
                             admin usage.
                         </p>
                         <h3>Users</h3>
-                        <div class="info">
-                            <p>
+                        <div class="row">
+                            <div>
                                 Admins can add new users through through simple input of information onto Airtable. Usernames are automatically created with first name and last name inputs. 
                                 Users can then log into their accounts through the admin-initialized usernames and passwords upon first opening the application.
-                            </p>
-                            <img src="assets/1951login.png">
+                            </div>
+                            <a id="p1-3-1" href="assets/1951login.png"><img src="assets/1951login.png"></a>
+                            <a id="p1-3-2" href="assets/1951UserDashboard.png"><img src="assets/1951UserDashboard.png"></a>
                         </div>
                     </div>
                 </div>
+                <script src="js/toggleImages.js"></script>
                 <script src="js/tabToggle.js"></script>
+                <script src="js/horizAnim.js"></script>
             </div>
 
             <div id="d2">

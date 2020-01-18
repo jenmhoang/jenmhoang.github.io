@@ -7,6 +7,7 @@ body{
 
 p {
 	font-size: 16px;
+	/* margin: 0; */
 }
 
 img {
@@ -28,7 +29,6 @@ h2 {
 }
 
 h3 {
-	margin: 5px 0px;
 	font-size: 20px;
 }
 
@@ -98,6 +98,7 @@ a {
 	flex-direction: row;
 }
 
+
 /* PROJECT NAVIGATION (SECTION 1) */
 
 .projNav {
@@ -150,12 +151,32 @@ a {
 	display:flex;
 	justify-content:center;
 	z-index: 500;
-	background-color: #afb5b6;
+	/* background-color: #afb5b6; */
+}
+#mainPic {
+	position: absolute;
+}
+#togglePic {
+	/* height: 100%; */
+	width: 100%;
+	object-fit: contain;
+	background-color: white;
+	display: none;
+	/* z-index: -1; */
+}
+#underPicMain{
+	z-index: -1;
+	position: absolute;
+}
+#underPic {
+	width: 100%;
+	object-fit: contain;
+	position: absolute;
+	/* z-index: -1; */
+	display: none;
 }
 
-#mainpic {
-	z-index: -1;
-}
+
 
 #pic1, #pic2, #pic3 {
 	position: absolute;
@@ -165,6 +186,7 @@ a {
 #pic3 {
 	left: 0;
 }
+
 
 /* INFORMATION DIVISIONS (SECTION 3) */
 
@@ -223,6 +245,7 @@ a {
 	color: #afb5b6;
 }
 
+/* Pagination Tabs */
 #pagination {
 	display: flex;
 	flex-direction: row;
@@ -253,10 +276,35 @@ a {
 .tabs {
 	background-color: #f5f6fc;
 	flex: 1 1 auto;
-	padding: 0 5%;
+	padding: 1% 5%;
 	overflow: auto;
 }
 
 #d1-t2, #d1-t3 {
 	display: none;
+}
+
+.row {
+	width: 100%;
+	display: flex;
+	padding: 0;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.row img:hover {
+	opacity: 1;
+	transform: scale(1.1);
+	transition: 0.5s;
+}
+
+.row img {
+	margin: 0px 10px;
+	opacity: 0.6;
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 2px solid #e46787;
 }
