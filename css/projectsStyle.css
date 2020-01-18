@@ -162,6 +162,10 @@ a {
 	display: none;
 }
 
+#pic3 {
+	left: 0;
+}
+
 /* INFORMATION DIVISIONS (SECTION 3) */
 
 #d1, #d2, #d3 {
