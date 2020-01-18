@@ -171,13 +171,10 @@ a {
 #d1, #d2, #d3 {
 	width: 60%;
 	height: 100%;
-	/* display: flex; */
 	flex-direction: column;
-	/* margin: auto; */
 	position: absolute;
 	right: 0;
 	display: none;
-	/* overflow: hidden; */
 }
 
 /* Under Construction */
@@ -222,22 +219,9 @@ a {
 
 #subtitle {
 	font-size: 12px;
-	/* margin-bottom: 25px; */
 	text-align: center;
 	color: #afb5b6;
 }
-
-/* Pagination Tabs */
-
-/* #sections { */
-	/* background-color: #f5f6fc; */
-	/* position: relative; */
-	/* height: 85%; */
-	/* display: flex; */
-	/* flex-direction: column; */
-	/* display: inline; */
-	/* overflow: hidden; */
-/* } */
 
 #pagination {
 	display: flex;
@@ -268,38 +252,11 @@ a {
 /* Tab Information */
 .tabs {
 	background-color: #f5f6fc;
-	/* height: 75%; */
 	flex: 1 1 auto;
-	/* bottom: 0; */
-	/* height: auto; */
-	/* position: relative; */
-	/* position: absolute; */
 	padding: 0 5%;
-	/* overflow: hidden; */
 	overflow: auto;
 }
 
-#row {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-}
-
-#row div {
-	padding: 0 5%;
-	width: 50%;
-}
-
-#d1-t1{
-	/* display: none; */
-	/* overflow: auto; */
-	/* overflow: hidden; */
-	height: 100%;
-	/* top: 0; */
-	/* position: absolute; */
-}
-
-#d1-t2 {
+#d1-t2, #d1-t3 {
 	display: none;
 }
