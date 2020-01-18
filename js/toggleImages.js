@@ -15,8 +15,8 @@ function toggleImg(tag){
   }
 
   $(document).ready(function(){
-    var ids = ["#p1-3-1", "#p1-3-2", "#p1-3-3", "#p1-3-4", "#p1-3-5", 
-    "#p1-3-6", "#p1-3-7", "#p1-3-8", "#p1-3-9", "#p1-3-10", "#p1-3-11"];
+    var ids = ["#p1-1-1", "#p1-1-2", "#p1-3-1", "#p1-3-2", "#p1-3-3", "#p1-3-4", "#p1-3-5", 
+    "#p1-3-6", "#p1-3-7", "#p1-3-8", "#p1-3-9"];
     $.each(ids, function(i, v) {
         $(v).click(function() {
             toggleImg(this);
