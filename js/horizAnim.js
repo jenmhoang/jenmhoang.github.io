@@ -3,12 +3,14 @@ function open(section, pic){
   $(".button").hide(1000);
   $(".info").animate({width: '60%'});
 
-  $("#mainpic").fadeOut();
-  $("#pic1").fadeOut();
-  $("#pic2").fadeOut();
-  $("#pic3").fadeOut();
+  // $("#mainpic").fadeOut();
+  $("#pic1").fadeOut(1000);
+  $("#pic2").fadeOut(1000);
+  $("#pic3").fadeOut(1000);
 
-  $(pic).fadeIn();
+  $(pic).fadeIn(1000);
+  // $(pic).fadeIn();
+  $(section).css("display", "flex");
   $(section).fadeIn();
 }
 
@@ -21,7 +23,7 @@ function close(){
   $("#d2").fadeOut();
   $("#d3").fadeOut();
 
-  $("#mainpic").fadeIn();
+  // $("#mainpic").fadeIn();
 }
 
 $(document).ready(function(){
