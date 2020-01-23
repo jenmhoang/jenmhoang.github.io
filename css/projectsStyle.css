@@ -53,7 +53,7 @@ a {
 	position: fixed;
 	width: 100%;
 	height: 8%;
-	z-index: 500;
+	z-index: 10;
 }
 
 #homeLogo {
@@ -156,8 +156,7 @@ a {
 	overflow: hidden;
 	display:flex;
 	justify-content:center;
-	z-index: 500;
-	/* background-color: #afb5b6; */
+	z-index: 10;
 }
 #mainPic {
 	position: absolute;
@@ -168,7 +167,6 @@ a {
 	object-fit: contain;
 	background-color: white;
 	display: none;
-	/* z-index: -1; */
 }
 #underPicMain{
 	z-index: -1;
@@ -178,7 +176,6 @@ a {
 	width: 100%;
 	object-fit: contain;
 	position: absolute;
-	/* z-index: -1; */
 	display: none;
 }
 
@@ -237,6 +234,7 @@ a {
 	position: absolute;
 	height: 5%; width: auto;
 	opacity: 0.4;
+	z-index: 3;
 }
 
 .close:hover {
