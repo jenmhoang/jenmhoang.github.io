@@ -13,24 +13,20 @@ function openTab(section){
 }
 
 function closeTab(){
-    $("#d1-t1").slideUp(1000);
-    $("#d1-t2").slideUp(1000);
-    $("#d1-t3").slideUp(1000);
+    var ids = ["#dt1", "#dt2", "#dt3"];
+    $.each(ids, function(i, v) {
+        $(v).slideUp(1000);
+    });
 }
 
 $(document).ready(function(){
-    $("#t1").click(function(){
-        closeTab();
-        openTab("#d1-t1");
-    });
-    $("#t2").click(function(){
-        closeTab();
-        openTab("#d1-t2");
-    });
-    $("#t3").click(function(){
-        closeTab();
-        openTab("#d1-t3");
+    var tabs = ["#t1", "#t2", "#t3"];
+    var ids = ["#dt1", "#dt2", "#dt3"];
+    $.each(ids, function(i, v) {
+        $(tabs[i]).click(function() {
+            closeTab();
+            openTab(v);
+            return false;
+        });
     });
 });
-
-

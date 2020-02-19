@@ -42,7 +42,10 @@ a {
 	font-weight: bold;
 }
 
-
+iframe {
+	height: 100%;
+	width: 100%;
+}
 /* HEADER */
 
 #header {
@@ -102,7 +105,7 @@ a {
 /* PROJECT NAVIGATION (SECTION 1) */
 
 .projNav {
-	width: 60%;
+	width: 70%;
     height: 100%;
 	display: flex;
     flex-direction: column;
@@ -150,13 +153,14 @@ a {
 /* PICTURE (SECTION 2) */
 
 .pic {
-	width: 40%;
+	width: 30%;
 	height: 100%;
 	position: relative;
 	overflow: hidden;
 	display:flex;
 	justify-content:center;
 	z-index: 10;
+	right: 0;
 }
 #mainPic {
 	position: absolute;
@@ -194,7 +198,7 @@ a {
 /* INFORMATION DIVISIONS (SECTION 3) */
 
 #d1, #d2, #d3 {
-	width: 60%;
+	width: 70%;
 	height: 100%;
 	flex-direction: column;
 	position: absolute;
