@@ -10,9 +10,11 @@ for (var i = 0; i < tabs.length; i++) {
 
 function openTab(section){
     $(section).slideDown(1000);
+    window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
 function closeTab(){
+    
     var ids = ["#dt1", "#dt2", "#dt3"];
     $.each(ids, function(i, v) {
         $(v).slideUp(1000);
