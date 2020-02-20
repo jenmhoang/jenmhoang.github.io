@@ -14,15 +14,15 @@ function openTab(section){
 }
 
 function closeTab(){
-    var ids = ["#dt1", "#dt2", "#dt3"];
+    var ids = ["#dt1", "#dt2", "#dt3", "#dt4"];
     $.each(ids, function(i, v) {
-        $(v).slideUp(500);
+        $(v).slideUp(1000);
     });
 }
 
 $(document).ready(function(){
-    var tabs = ["#t1", "#t2", "#t3"];
-    var ids = ["#dt1", "#dt2", "#dt3"];
+    var tabs = ["#t1", "#t2", "#t3", "#t4"];
+    var ids = ["#dt1", "#dt2", "#dt3", "#dt4"];
     $.each(ids, function(i, v) {
         $(tabs[i]).click(function() {
             closeTab();
