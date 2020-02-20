@@ -14,10 +14,9 @@ function openTab(section){
 }
 
 function closeTab(){
-    
     var ids = ["#dt1", "#dt2", "#dt3"];
     $.each(ids, function(i, v) {
-        $(v).slideUp(1000);
+        $(v).slideUp(500);
     });
 }
 
