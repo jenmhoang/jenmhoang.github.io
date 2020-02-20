@@ -106,7 +106,7 @@
 
                     <h2>Pixel sampling for texture mapping</h2>
                     <h3>Pixel Sampling</h3>
-                    When a texture is mapped to a triangle mesh, each (x, y) pixel location of the triangle is mapped to the corresponding “texel” location within the (u, v) coordinates of our texture image. To find the corresponding values, we use Barycentric Coordinates.
+                    When a texture is mapped to a triangle mesh, each (x, y) pixel location of the triangle is mapped to the corresponding "texel" location within the (u, v) coordinates of our texture image. To find the corresponding values, we use Barycentric Coordinates.
                     <h3>Implementation</h3>
                     Barycentric coordinates are implemented the same way as in the previous task, except now, the values being evaluated are pixel locations rather than rgb color values.
                     Once the corresponding (u, v) values are calculated, we can choose to use either Nearest pixel sampling or Bilinear pixel sampling. Nearest pixel sampling simply samples the closest texel to the sampled point. Bilinear pixel sampling interpolates between the 4 nearest texels.
