@@ -160,8 +160,58 @@
                 <br><b>Level sampling</b> results in higher computation speed, increased memory usage, and greater anti-aliasing power.
                 <h3>Examples</h3>
 
-                <div>
-                <table>
+                <!-- Images used to open the lightbox -->
+                <div class="row">
+                    <div class="column">
+                    <img src="assets/rasterizer/t6-3.png" onclick="openModal();currentSlide(1)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                    <img src="assets/rasterizer/t6-3.png" onclick="openModal();currentSlide(2)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                    <img src="assets/rasterizer/t6-3.png" onclick="openModal();currentSlide(3)" class="hover-shadow">
+                    </div>
+                    <div class="column">
+                    <img src="assets/rasterizer/t6-3.png" onclick="openModal();currentSlide(4)" class="hover-shadow">
+                    </div>
+                </div>
+                
+                <!-- The Modal/Lightbox -->
+                <div id="myModal" class="modal">
+                    <span class="close cursor" onclick="closeModal()">&times;</span>
+                    <div class="modal-content">
+                
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 4</div>
+                        <img src="assets/rasterizer/t6-3.png" style="width:100%">
+                    </div>
+                
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 4</div>
+                        <img src="assets/rasterizer/t6-3.png" style="width:100%">
+                    </div>
+                
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 4</div>
+                        <img src="assets/rasterizer/t6-3.png" style="width:100%">
+                    </div>
+                
+                    <div class="mySlides">
+                        <div class="numbertext">4 / 4</div>
+                        <img src="assets/rasterizer/t6-3.png" style="width:100%">
+                    </div>
+                
+                    <!-- Next/previous controls -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                
+                    <!-- Caption text -->
+                    <div class="caption-container">
+                        <p id="caption"></p>
+                    </div>
+                </div>
+                <!-- <div> -->
+                <!-- <table>
                     <tr>
                     <td>
                         <img class="myImages" src="assets/rasterizer/t6-1.png"/>
@@ -183,8 +233,8 @@
                         <figcaption>Nearest Level with Bilinear sampling</figcaption>
                     </td>
                     </tr>
-                </table>
-                </div>
+                </table> -->
+                <!-- </div> -->
             </div>
         </div>
         

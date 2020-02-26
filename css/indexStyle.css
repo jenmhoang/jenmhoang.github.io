@@ -100,17 +100,18 @@ video {
 	transform: scale(1.2);
 }
 
-#downarrow {
+#arrow {
 	display: inline-block;
 	height: 50px;
 }
+
 
 
 /* SECTION 3: ABOUT */
 
 .sec3 {
 	width: 100%;
-	height: 100%;
+	height: 90%;
 	position: relative;
 }
 
