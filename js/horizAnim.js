@@ -13,34 +13,27 @@ function close(){
   $(".button").fadeIn(1000);
   $(".info").animate({width: '0'});
   
-  $("#d1").fadeOut();
-  $("#d2").fadeOut();
-  $("#d3").fadeOut();
-
+  var ids = ["#d1", "#d2", "#d3", "#d4"];
+  $.each(ids, function(i, v) {
+      $(v).fadeOut();
+  })
   $("#mainPic").fadeIn();
   $("#togglePic").hide();
-}
+};
 
 $(document).ready(function(){
-  $("#b1").click(function(){
-    open("#d1", "#d1-t1");
+  var btns = ["#b1", "#b2", "#b3", "#b4"];
+  var tab = ["#d1-t1", "#d2-t1", "#d3-t3", "#d4-t4"];
+  var sec = ["#d1", "#d2", "#d3", "#d4"];
+  var cl = [".pic", ".close", ".return"];
+  $.each(btns, function(i, v) {
+    $(v).click(function() {
+        open(sec[i], tab[i]);
+    })
+  })
+  $.each(cl, function(i, v) {
+    $(v).click(function() {
+        close();
+    });
   });
-  $("#b2").click(function(){
-    open("#d2", "#d2-t1");
-  });
-  $("#b3").click(function(){
-    open("#d3", "");
-  });
-
-  $(".pic").click(function(){
-    close();
-  });
-  $(".close").click(function(){
-    close();
-  });
-  $(".return").click(function(){
-    close();
-  });
-});
-
-  
+})
