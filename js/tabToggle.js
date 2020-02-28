@@ -10,7 +10,9 @@ for (var i = 0; i < tabs.length; i++) {
 
 function openTab(section){
     $(section).slideDown(1000);
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    $('div').animate({
+        scrollTop: 0
+      }, 800);
 }
 
 function closeTab(){

@@ -1,0 +1,46 @@
+<! DOCTYPE HTML>
+<html>
+    <head>
+		<title> Jen Hoang </title>
+		<link rel = "stylesheet"
+			type = "text/css"
+            href = "css/tabStyles.css" />
+        <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	<body>
+        <div class="container">
+            <div class="freeze">
+                <div class="divHeading">
+                    <h1>Yelp Maps</h1>
+                    <div id="subtitle">Python</div>
+                </div>
+                <div id="pagination">
+                    <div class="tab active" id="t1">Overview</div>
+                    <div class="tab" id="t2">How it's Done</div>
+                    <div class="tab" id="t3">Examples</div>
+                    <!-- <div class="tab" id="t4">TAB4</div> -->
+                </div>
+            </div>
+            <div id="myModal" class="modal">
+                <img class="modal-content" id="img01">
+            </div>
+            
+            <div class="tabs">
+                <div id="dt1">
+                    <hr>
+                    <h2>A visualization of predicted restaurant ratings using machine learning and the Yelp academic dataset.</h2>
+                    <hr>
+                    This web application provides curated user restaurant recommendations using a supervised learning algorithm that analyses past user data.
+                </div>
+                <div id="dt2">
+                <h3>The k-means algorithm</h3>
+                The k-means algorithm groups data points into clusters by determining their center positions (called centroids).
+                For this project, this algorithm is used to group restaurants into clusters.
+                </div>
+            </div>
+        </div>
+        <script src="js/tabToggle.js"></script>
+        <script src="js/imgModal.js"></script>
+    </body>
+</html>
