@@ -24,7 +24,13 @@
       <div id="myModal" class="modal"><img class="modal-content" id="img01" /></div>
 
       <div class="tabs">
-        <div id="dt4"></div>
+        <div id="dt1">
+          In this project, I explored geometric modeling. First, I built Bezier curves using the de Casteljau algorithm, before
+          extending the algorithm to construct Bezier surfaces. I also manipulated triangle meshes represented by the half-edge
+          data structure by averaging mesh normals for smoother shading and implementing edge flip and edge split functions;
+          these operations proved helpful in my later implementation of loop subdivision to upsample meshes for enhanced
+          high-poly visualization.
+        </div>
         <div id="dt2">
           <h2>Bezier Curves</h2>
           Bezier curves and surfaces are frequently used to model smooth and infinitely scalable curves and surfaces, and can be
@@ -82,7 +88,7 @@
           </div>
         </div>
         <!-- end dt3 -->
-        <div id="dt1">
+        <div id="dt4">
           <br />
           In this section, I implemented multiple local remeshing operations, including edge flipping, edge splitting, and mesh
           upsampling. <br /><br />
@@ -214,9 +220,9 @@
             <img class="mImages" src="assets/meshedit/t6-13.png" /> <img class="mImages" src="assets/meshedit/t6-14.png" />
             <img class="mImages" src="assets/meshedit/t6-15.png" />
           </div>
+          <br />
+          Once all sides of cube are pre-processed to be symmetrical, loop subdivision upsamples the mesh symmetrically.
         </div>
-        <br />
-        Once all sides of cube are pre-processed to be symmetrical, loop subdivision upsamples the mesh symmetrically.
         <!--end dt4-->
       </div>
       <!--end tabs-->
