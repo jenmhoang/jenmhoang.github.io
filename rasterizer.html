@@ -15,10 +15,10 @@
           <div id="subtitle">C++</div>
         </div>
         <div id="pagination">
-          <div class="tab active" id="t1">Overview</div>
-          <div class="tab" id="t2">Rasterization</div>
-          <div class="tab" id="t3">Interpolation</div>
-          <div class="tab" id="t4">Texture Mapping</div>
+          <div class="tab active" id="t1"><div style="margin: auto">Overview</div></div>
+          <div class="tab" id="t2"><div style="margin: auto">Rasterization</div></div>
+          <div class="tab" id="t3"><div style="margin: auto">Interpolation</div></div>
+          <div class="tab" id="t4"><div style="margin: auto">Texture Mapping</div></div>
         </div>
       </div>
       <div class="tabs">
@@ -72,23 +72,19 @@
           the framebuffer. For every pixel within the bounds of the triangle’s min and max points, compute the average color
           values of each one of its subpixels.
           <h3>Comparisons</h3>
-          <div>
-            <table>
-              <tr class="row">
-                <td>
-                  <img class="mImages" src="assets/rasterizer/t2_0.png" />
-                  <figcaption>Sample rate of 1 per pixel</figcaption>
-                </td>
-                <td>
-                  <img class="mImages" src="assets/rasterizer/t2_1.png" />
-                  <figcaption>Sample rate of 4 per pixel</figcaption>
-                </td>
-                <td>
-                  <img class="mImages" src="assets/rasterizer/t2_3.png" />
-                  <figcaption>Sample rate of 16 per pixel</figcaption>
-                </td>
-              </tr>
-            </table>
+          <div class="row">
+            <div class="column">
+              <img class="mImages" src="assets/rasterizer/t2_0.png" />
+              <figcaption>Sample rate of 1 per pixel</figcaption>
+            </div>
+            <div class="column">
+              <img class="mImages" src="assets/rasterizer/t2_1.png" />
+              <figcaption>Sample rate of 4 per pixel</figcaption>
+            </div>
+            <div class="column">
+              <img class="mImages" src="assets/rasterizer/t2_3.png" />
+              <figcaption>Sample rate of 16 per pixel</figcaption>
+            </div>
           </div>
           <br />
         </div>
@@ -101,16 +97,13 @@
           <h3>Implementation</h3>
           In the following image, V<sub>A</sub>, V<sub>B</sub> and V<sub>C</sub> hold a red, green, and blue color values,
           respectively. <img class="mImages" src="assets/rasterizer/t4-1.png" /> <br />
-          <div class="row">
-            <div>
-              The color at V is found by first calculating the alpha, beta, and lambda “weights,” where each scalar weights
-              correspond to one vertex of the triangle. We can then calculate the red, green, and blue values, which is
-              equivalent to the sum of each of the color values of each vertex multiplied by its corresponding weight <br />
-              (i.e. V.red = V<sub>A</sub>.red * alpha + V<sub>B</sub>.red * beta + V<sub>C</sub>.red * lambda).
-            </div>
-            <img class="mImages" src="assets/rasterizer/t4-2.png" />
+          <div>
+            The color at V is found by first calculating the alpha, beta, and lambda “weights,” where each scalar weights
+            correspond to one vertex of the triangle. We can then calculate the red, green, and blue values, which is equivalent
+            to the sum of each of the color values of each vertex multiplied by its corresponding weight <br />
+            (i.e. V.red = V<sub>A</sub>.red * alpha + V<sub>B</sub>.red * beta + V<sub>C</sub>.red * lambda).
           </div>
-          <br />
+          <img style="width:50%" class="mImages" src="assets/rasterizer/t4-2.png" /> <br />
         </div>
         <div id="dt4">
           <h2>Pixel sampling for texture mapping</h2>
@@ -124,28 +117,60 @@
           to use either Nearest pixel sampling or Bilinear pixel sampling. Nearest pixel sampling simply samples the closest
           texel to the sampled point. Bilinear pixel sampling interpolates between the 4 nearest texels.
           <h3>Examples</h3>
-          <div>
-            <table>
-              <tr class="row">
-                <td>
-                  <img class="mImages" src="assets/rasterizer/t5-1.png" />
-                  <figcaption>Nearest sampling at sample rate 1</figcaption>
-                </td>
-                <td>
-                  <img class="mImages" src="assets/rasterizer/t5-2.png" />
-                  <figcaption>Nearest sampling at sample rate 16</figcaption>
-                </td>
-                <td>
-                  <img class="mImages" src="assets/rasterizer/t5-3.png" />
-                  <figcaption>Bilinear sampling at sample rate 1</figcaption>
-                </td>
-                <td>
-                  <img class="mImages" src="assets/rasterizer/t5-4.png" />
-                  <figcaption>Bilinear sampling at sample rate 16</figcaption>
-                </td>
-              </tr>
-            </table>
+          <div class="row">
+            <div class="column">
+              <img class="mImages" src="assets/rasterizer/t5-1.png" />
+              <figcaption>Nearest sampling at sample rate 1</figcaption>
+            </div>
+            <div class="column">
+              <img class="mImages" src="assets/rasterizer/t5-2.png" />
+              <figcaption>Nearest sampling at sample rate 16</figcaption>
+            </div>
+            <div class="column">
+              <img class="mImages" src="assets/rasterizer/t5-3.png" />
+              <figcaption>Bilinear sampling at sample rate 1</figcaption>
+            </div>
+            <div class="column">
+              <img class="mImages" src="assets/rasterizer/t5-4.png" />
+              <figcaption>Bilinear sampling at sample rate 16</figcaption>
+            </div>
           </div>
+          <!-- <div class="row">
+            <div class="column">
+              <img src="assets/rasterizer/t5-1.png" onclick="openModal();currentSlide(1)" class="hoverOp" />
+              <figcaption>Nearest sampling at sample rate 1</figcaption>
+            </div>
+            <div class="column">
+              <img src="assets/rasterizer/t5-2.png" onclick="openModal();currentSlide(2)" class="hoverOp" />
+              <figcaption>Nearest sampling at sample rate 16</figcaption>
+            </div>
+            <div class="column">
+              <img src="assets/rasterizer/t5-3.png" onclick="openModal();currentSlide(3)" class="hoverOp" />
+              <figcaption>Bilinear sampling at sample rate 1</figcaption>
+            </div>
+            <div class="column">
+              <img src="assets/rasterizer/t5-4.png" onclick="openModal();currentSlide(4)" class="hoverOp" />
+              <figcaption>Bilinear sampling at sample rate 16</figcaption>
+            </div>
+          </div>
+
+          <div id="mlbModal" class="lbmodal">
+            <div class="lbSlides">
+              <img class="lbmodal-content lbimg" src="assets/rasterizer/t5-1.png" alt="Nearest sampling at sample rate 1" />
+            </div>
+            <div class="lbSlides">
+              <img class="lbmodal-content lbimg" src="assets/rasterizer/t5-2.png" alt="Nearest sampling at sample rate 16" />
+            </div>
+            <div class="lbSlides">
+              <img class="lbmodal-content lbimg" src="assets/rasterizer/t5-3.png" alt="Bilinear sampling at sample rate 1 />
+            </div>
+            <div class="lbSlides">
+              <img class="lbmodal-content lbimg" src="assets/rasterizer/t5-4.png" alt="Bilinear sampling at sample rate 16" />
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="caption-container"><p id="caption"></p></div>
+            <div class="close-wrapper"><div class="lbclose cursor" onclick="closeModal()">Close</div></div>
+          </div> -->
           <br />
           At a sample rate of 1, bilinear sampling produces a better image; because this method involves averaging 4 of the
           nearest texels, it’s able to capture more data about the original texture image, even if the texture has a higher
@@ -187,89 +212,40 @@
 
           <div class="row">
             <div class="column">
-              <img
-                src="assets/rasterizer/t6-1.png"
-                onclick="openModal();currentSlide(1)"
-                class="hover-shadow"
-                alt="Natuunrise"
-              />
+              <img src="assets/rasterizer/t6-1.png" onclick="openModal();currentSlide(1)" class="hoverOp" />
               <figcaption>Level Zero with Nearest sampling</figcaption>
             </div>
             <div class="column">
-              <img src="assets/rasterizer/t6-2.png" onclick="openModal();currentSlide(2)" class="hover-shadow" />
+              <img src="assets/rasterizer/t6-2.png" onclick="openModal();currentSlide(2)" class="hoverOp" />
               <figcaption>Level Zero with Bilinear sampling</figcaption>
             </div>
             <div class="column">
-              <img src="assets/rasterizer/t6-3.png" onclick="openModal();currentSlide(3)" class="hover-shadow" />
+              <img src="assets/rasterizer/t6-3.png" onclick="openModal();currentSlide(3)" class="hoverOp" />
               <figcaption>Nearest Level with Nearest sampling</figcaption>
             </div>
             <div class="column">
-              <img src="assets/rasterizer/t6-4.png" onclick="openModal();currentSlide(4)" class="hover-shadow" />
+              <img src="assets/rasterizer/t6-4.png" onclick="openModal();currentSlide(4)" class="hoverOp" />
               <figcaption>Nearest Level with Bilinear sampling</figcaption>
             </div>
           </div>
 
           <div id="mlbModal" class="lbmodal">
             <div class="lbSlides">
-              <img
-                class="lbmodal-content lbimg"
-                src="assets/rasterizer/t6-1.png"
-                style="width:100%"
-                alt="Level Zero with Nearest sampling"
-              />
+              <img class="lbmodal-content lbimg" src="assets/rasterizer/t6-1.png" alt="Level Zero with Nearest sampling" />
             </div>
             <div class="lbSlides">
-              <img
-                class="lbmodal-content lbimg"
-                src="assets/rasterizer/t6-2.png"
-                style="width:100%"
-                alt="Level Zero with Bilinear sampling"
-              />
+              <img class="lbmodal-content lbimg" src="assets/rasterizer/t6-2.png" alt="Level Zero with Bilinear sampling" />
             </div>
             <div class="lbSlides">
-              <img
-                class="lbmodal-content lbimg"
-                src="assets/rasterizer/t6-3.png"
-                style="width:100%"
-                alt="Nearest Level with Nearest sampling"
-              />
+              <img class="lbmodal-content lbimg" src="assets/rasterizer/t6-3.png" alt="Nearest Level with Nearest sampling" />
             </div>
             <div class="lbSlides">
-              <img
-                class="lbmodal-content lbimg"
-                src="assets/rasterizer/t6-4.png"
-                style="width:100%"
-                alt="Nearest Level with Bilinear sampling"
-              />
+              <img class="lbmodal-content lbimg" src="assets/rasterizer/t6-4.png" alt="Nearest Level with Bilinear sampling" />
             </div>
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <a class="next" onclick="plusSlides(1)">&#10095;</a>
             <div class="caption-container"><p id="caption"></p></div>
             <div class="close-wrapper"><div class="lbclose cursor" onclick="closeModal()">Close</div></div>
-            <!-- <a id="button" href="index.html">Return Home</a> -->
-            <!-- <span class="lbclose cursor" onclick="closeModal()">&times;</span> -->
           </div>
-          <!-- <div> -->
-          <!-- <table>
-                    <tr>
-                    <td>
-                        <img class="mImages" src="assets/rasterizer/t6-1.png"/>
-                        <figcaption>Level Zero with Nearest sampling</figcaption>
-                    </td>
-                    <td>
-                        <img class="mImages" src="assets/rasterizer/t6-2.png"/>
-                        <figcaption></figcaption>Level Zero with Bilinear sampling</figcaption>
-                    </td>
-                    <td>
-                        <img class="mImages" src="assets/rasterizer/t6-3.png"/>
-                        <figcaption>Nearest Level with Nearest sampling</figcaption>
-                    </td>
-                    <td>
-                        <img class="mImages" src="assets/rasterizer/t6-4.png"/>
-                        <figcaption>Nearest Level with Bilinear sampling</figcaption>
-                    </td>
-                    </tr>
-                </table> -->
-          <!-- </div> -->
         </div>
       </div>
     </div>
