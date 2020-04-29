@@ -1,170 +1,108 @@
-body{
-	margin: 0;
-	padding: 0;
-    font-family: 'DM Sans';font-size: 22px;
-}
-
-p {
-	font-size: 16;
-}
-
-img {
-	height: 100%;
-	width: auto;
-	/* display: block; */
-}
-
-a {
-	color: #e46787;
-	text-decoration: none;
-	font-weight: bold;
-}
-
-a:hover {
-	text-decoration: underline;
-	transition: 0.3s;
-}
-
-/* HEADER */
-
-#header {
-	/* background-color: #d4e4f7; */
-	background-color: rgba(255, 255, 255, 0.6);
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	position: fixed;
-	width: 100%;
-	height: 8%;
-	z-index: 500;
-}
-
-#homeLogo {
-	position: relative;
-	left: 10%;
-	filter: brightness(0%);
-}
-
-#homeLogo:hover {
-	filter: brightness(80%);
-	transition: 0.3s;
-}
-
-#header-items{
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	position: relative;
-	height: 100%;
-	right: 10%;
-	text-align: center;
-}
-
-#header-text {
-	color: black;
-	font-size: 18px;
-	padding: 12px 40px;
-}
-#header-text:hover {
-	color: #e46787;
-	transition: 0.3s;
-}
+@import "base.css";
 
 /* SECTION 1: HOME */
 
 .sec1 {
-	width: 100%;
-	height: 90%;
-	position: relative;
+  width: 100%;
+  height: 90%;
+  position: relative;
 }
 
 video {
-	margin: auto;
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
-
 
 /* SECTION 2: SCROLL ARROW */
 
 .sec2 {
-	width: 100%;
-	height: 10%;
-	text-align: center;
-	opacity: 40%;
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  opacity: 40%;
 }
 
 .sec2:hover {
-	opacity:100%;
-	transition: 2s;
-	transform: scale(1.2);
+  opacity: 100%;
+  transition: 2s;
+  transform: scale(1.2);
 }
 
 #arrow {
-	display: inline-block;
-	height: 50px;
+  display: inline-block;
+  height: 50px;
 }
-
-
 
 /* SECTION 3: ABOUT */
 
 .sec3 {
-	width: 100%;
-	height: 90%;
-	position: relative;
+  width: 100%;
+  height: 90%;
+  position: relative;
 }
 
 #aboutDiv {
-	display: flex;
-	flex-direction: row;
-	width: 80%;
-	height: 60%;
-	overflow: visible;
-	margin: auto;
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
-	text-align: left;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 60%;
+  overflow: visible;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: left;
 }
 
 #aboutPic {
-	width: 40%;
-	position: relative;
+  width: 40%;
+  position: relative;
 }
 
 #me {
-	max-width: 80%;
-	border-radius: 50%;
-	height: auto;
-	margin: auto;
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
+  max-width: 80%;
+  border-radius: 50%;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 #aboutText {
-	width: 70%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #typeHeading {
-	width: 100%;
-	height: auto;
-	position: relative;
-	/* color: 	#7ba6d8; */
-	color: #e46787;
-	/* color: #3d0f1c; */
+  width: 100%;
+  height: auto;
+  position: relative;
+  /* color: 	#7ba6d8; */
+  color: #e46787;
+  /* color: #3d0f1c; */
 }
 
-#typing, #typing2 {
-	font-size: 45px;
-	letter-spacing: 2px;
+#typing,
+#typing2 {
+  font-size: 45px;
+  letter-spacing: 2px;
 }
 
-#ttm, #ttm2 {
-	font-size: 30px;
-	letter-spacing: 2px;
+#ttm,
+#ttm2 {
+  font-size: 30px;
+  letter-spacing: 2px;
 }
