@@ -95,6 +95,7 @@ table {
 .tab:hover {
   transition: 0.3s;
   color: #e46787;
+  cursor: pointer;
 }
 
 .active {
