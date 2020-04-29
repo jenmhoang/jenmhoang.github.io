@@ -116,8 +116,8 @@
   width: 70%;
   height: 100%;
   position: absolute;
-  right: 0;
-  z-index: -10;
+  right: -70%;
+  /* z-index: -1; */
 }
 
 #d1,
