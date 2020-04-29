@@ -1,6 +1,6 @@
 $(document).ready(function(){
   function open(section, tab){
-    $(".section").fadeOut(800);
+    $(".projNav").animate({left: '-70%'}, 1000);
     $(".pic").animate({right: '70%'}, 1000);
   
     $(tab).fadeIn(0);
@@ -9,12 +9,13 @@ $(document).ready(function(){
   }
   
   function close(){
-    $(".section").fadeIn(1000);
-    $(".pic").animate({right: '0'}, 1000);
+
+    $(".projNav").animate({left: '0%'}, 1000);
+    $(".pic").animate({right: '0%'}, 1000);
     
     var ids = ["#d1", "#d2", "#d3", "#d4"];
     $.each(ids, function(i, v) {
-        $(v).fadeOut();
+        $(v).fadeOut(2000);
     })
     $("#mainPic").fadeIn();
     $("#togglePic").hide();
