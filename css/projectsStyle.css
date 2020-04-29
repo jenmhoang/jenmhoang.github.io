@@ -140,6 +140,6 @@
   filter: hue-rotate(127deg);
 }
 
-.preload {
+#preload {
   display: none;
 }
