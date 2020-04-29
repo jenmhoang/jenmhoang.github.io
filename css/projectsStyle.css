@@ -112,18 +112,19 @@
 
 /* INFORMATION DIVISIONS (SECTION 3) */
 
+.info {
+  width: 70%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  z-index: -10;
+}
+
 #d1,
 #d2,
 #d3,
 #d4 {
-  width: 70%;
-  height: 100%;
-  flex-direction: column;
-  position: absolute;
-  right: 0;
   display: none;
-  background-color: #f5f6fc;
-  z-index: -10;
 }
 
 .close {

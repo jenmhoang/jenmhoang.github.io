@@ -1,22 +1,21 @@
 $(document).ready(function(){
   function open(section, tab){
-    $(".projNav").animate({left: '-70%'}, 1000);
     $(".pic").animate({right: '70%'}, 1000);
+    $(".info").css("right", '0%');
+    $(".section").fadeOut();
   
-    $(tab).fadeIn(0);
     $(section).fadeIn(2000);
-    $(section).css("display", "flex");
   }
   
   function close(){
-
-    $(".projNav").animate({left: '0%'}, 1000);
-    $(".pic").animate({right: '0%'}, 1000);
+    $(".pic").animate({right: '0%'}, 500);
+    $(".info").animate({right: '-70%'}, 500);
+    $(".section").fadeIn(500);
     
     var ids = ["#d1", "#d2", "#d3", "#d4"];
     $.each(ids, function(i, v) {
-        $(v).fadeOut(2000);
-    })
+      $(v).fadeOut();
+  })
     $("#mainPic").fadeIn();
     $("#togglePic").hide();
   };
