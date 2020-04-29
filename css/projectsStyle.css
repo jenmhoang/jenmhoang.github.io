@@ -4,6 +4,14 @@
 }
 
 /* BODY */
+.section {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 .sec1 {
   width: 100%;
@@ -17,18 +25,13 @@
 /* PROJECT NAVIGATION (SECTION 1) */
 
 .projNav {
+  position: relative;
   width: 70%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 #titleImg {
   max-width: 50%;
   height: auto;
-  position: relative;
 }
 
 .buttons {
@@ -66,7 +69,7 @@
 .pic {
   width: 30%;
   height: 100%;
-  position: relative;
+  position: absolute;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -128,6 +131,7 @@
   width: auto;
   opacity: 0.4;
   z-index: 3;
+  cursor: pointer;
 }
 
 .close:hover {
