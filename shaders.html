@@ -1,0 +1,159 @@
+<! DOCTYPE HTML>
+<html>
+  <head>
+    <title>Jen Hoang</title>
+    <link rel="stylesheet" type="text/css" href="css/tabStyles2.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM Sans"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="freeze">
+        <div class="divHeading">
+          <h1>Cloth Simulation</h1>
+          <div id="subtitle">C++</div>
+        </div>
+        <div id="pagination">
+          <div class="tab active" id="t1">
+            <div style="margin: auto;">Overview</div>
+          </div>
+          <div class="tab" id="t2">
+            <div style="margin: auto;">Blinn-Phong</div>
+          </div>
+          <div class="tab" id="t3">
+            <div style="margin: auto;">Mapping</div>
+          </div>
+          <div class="tab" id="t4">
+            <div style="margin: auto;">Mirror</div>
+          </div>
+        </div>
+      </div>
+      <!--end freeze-->
+      <div id="myModal" class="modal">
+        <img class="modal-content" id="img01" />
+      </div>
+
+      <div class="tabs">
+        <div id="dt1">
+          <br />
+          <p>
+            This project is an extension of my Cloth Simulation project, in
+            which I apply different shading models to my cloth and sphere
+            meshes.
+          </p>
+          <p>
+            A shader program takes in inputs/attributes such as positions,
+            normals, and uv coordinates, and uses that information to output a
+            single 4 dimensional vector with information regarding desired
+            vertex transforms, modified positions, or color. Vertex shaders
+            apply these transforms and geometric modifications, and their output
+            is subsequently used by the fragment shaders to compute color.
+          </p>
+        </div>
+        <div id="dt2">
+          <h2>Blinn-Phong</h2>
+          A Blinn-Phong shading model accounts for ambient, diffuse, and
+          specular lighting.
+          <div class="row">
+            <div class="column two">
+              <img src="assets/clothsim/5-1_ambient.png" />
+              <figcaption>Ambient only</figcaption>
+            </div>
+            <div class="column two">
+              <img src="assets/clothsim/5-2_diffuse.png" />
+              <figcaption>Diffuse only</figcaption>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column two">
+              <img src="assets/clothsim/5-3_specular.png" />
+              <figcaption>Specular only</figcaption>
+            </div>
+            <div class="column two">
+              <img src="assets/clothsim/5-4_phong.png" />
+              <figcaption>Full Blinn-Phong model</figcaption>
+            </div>
+          </div>
+        </div>
+        <!-- end dt2 -->
+        <div id="dt3">
+          <h2>Texture Mapping</h2>
+          <div class="row">
+            <div class="column two two">
+              <img src="assets/clothsim/sunset.png" />
+              <figcaption>Texture Map</figcaption>
+            </div>
+            <div class="column two two">
+              <img src="assets/clothsim/5-5_textureMapping.png" />
+              <figcaption>Mapped onto cloth</figcaption>
+            </div>
+          </div>
+          <hr />
+          <h2>Bump and Displacement mapping</h2>
+          <b>Bump mapping</b> simulates bumps on the surface of the cloth/sphere
+          without actually modifying the geometry of the meshes, by using
+          modified surface normals to compute lighting.
+          <b>Displacement mapping</b>, on the other hand, actually manipulates
+          the geometry according to a texture input.
+
+          <div class="row">
+            <div class="column two">
+              <img src="assets/clothsim/5-6_bump16.png" />
+            </div>
+            <div class="column two">
+              <img src="assets/clothsim/5-7_bumpC16.png" />
+            </div>
+          </div>
+          <center>Bump mapping, courseness 16</center>
+          <div class="row">
+            <div class="column two">
+              <img src="assets/clothsim/5-8_disp16.png" />
+            </div>
+            <div class="column two">
+              <img src="assets/clothsim/5-9_dispC16.png" />
+            </div>
+          </div>
+          <center>Displacement mapping, courseness 16</center>
+          <div class="row">
+            <div class="column two">
+              <img src="assets/clothsim/5-10_bump128.png" />
+            </div>
+            <div class="column two">
+              <img src="assets/clothsim/5-11_bumpC128.png" />
+            </div>
+          </div>
+          <center>Bump mapping, courseness 128</center>
+          <div class="row">
+            <div class="column two">
+              <img src="assets/clothsim/5-12_disp128.png" />
+            </div>
+            <div class="column two">
+              <img src="assets/clothsim/5-13_dispC128.png" />
+            </div>
+          </div>
+          <center>Displacement mapping, courseness 128</center>
+        </div>
+        <!-- end dt3 -->
+        <div id="dt4">
+          <h3>Mirror</h3>
+          <div class="row">
+            <div class="column two">
+              <img src="assets/clothsim/5-14_mirror.png" />
+            </div>
+            <div class="column two">
+              <img src="assets/clothsim/5-15_mirror.png" />
+            </div>
+          </div>
+        </div>
+        <!--end dt4-->
+      </div>
+      <!--end tabs-->
+    </div>
+    <!--end container-->
+    <script src="js/tabToggle.js"></script>
+    <script src="js/imgModal.js"></script>
+  </body>
+</html>
