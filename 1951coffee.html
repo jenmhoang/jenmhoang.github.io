@@ -1,132 +1,189 @@
 <! DOCTYPE HTML>
 <html>
-    <head>
-		<title> Jen Hoang </title>
-		<link rel = "stylesheet"
-			type = "text/css"
-            href = "css/tabStyles2.css" />
-        <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	</head>
-	<body>
-        <div class="container">
-            <div class="freeze">
-                <div class="divHeading">
-                    <h1>1951 Coffee Company</h1>
-                    <div id="subtitle">React Native, TypeScript, CSS</div>
-                </div>
-                <div id="pagination">
-                    <div class="tab active" id="t1"><div style="margin: auto">Project Details</div></div>
-                    <div class="tab" id="t2"><div style="margin: auto">The Problem</div></div>
-                    <div class="tab" id="t3"><div style="margin: auto">Our Solution</div></div>
-                    <!-- <div class="tab" id="t4">Reflection</div> -->
-                </div>
-            </div>
-            <div id="myModal" class="modal">
-                <img class="modal-content" id="img01">
-            </div>
-            
-            <div class="tabs">
-                <div id="dt1">
-                    <hr>
-                    <h2>A mobile application built for efficient <br>communication and resource provision.</h2>
-                    <hr>
-                    <p>Duration: 3 months (MVP), ongoing project</p>
-                    <h3>The Client</h3>
-                    <div class="row">
-                        <div>
-                            <a href="https://1951coffee.com/" target="_blank">1951 Coffee Company</a>, is a nonprofit organization that trains 
-                            and employs recently resettled refugees/asylees in the Bay Area. Oftentimes, upon initial immigration, refugees are not given the proper support 
-                            to attain living-wage jobs, as they face the challenges of language barriers and lack of resources. Through their Barista Training Program, 
-                            1951 Coffee Company prepares over 100 refugees per year for entrance into the coffee industry, where they are able to maintain successful jobs.
-                        </div>
-                        <div><a>click me!⬇</a>
-                            <img class="mImages" id="myImg" src="assets/1951/1951team.jpg">    
-                        </div>
-                        
-                    </div>
-                    <h3>The Team</h3>
-                    <div class="row">
-                        <div>
-                            <a href="http://calblueprint.org/" target="_blank">Blueprint</a> is a tech consulting organization that develops software pro-bono for 
-                            nonprofit organizations. We aim to create in pursuit of a better world, through provision of accessible technology to in-need communities. 
-                            Our project team consists of four developers (including myself), one designer, and one project leader.
-                        </div>
-                        <img class="mImages" id="myImg" src="assets/1951/myTeam.jpg">
-                    </div>
-                </div>
-                <div id="dt2">
-                    <p>
-                        The organization hosts Barista Training Programs throughout the year. Upon completion of the program, a Recruitment 
-                        Specialist works with graduates to guide them through job opportunities and interview prep so that they can smoothly 
-                        enter the coffee industry.
-                    </p>
-                    <h3>The Problem</h3>
-                    <p>
-                        <b>1951 Coffee Company does not have an proper organization or communication platform to efficiently run their program.</b> Any time there is an upcoming 
-                        event or important message that needs to be relayed to the students, the program admins must manually type in the phone number of 
-                        each individual trainee, sending the same text message to each participant in their program. The same tedious process occurs when the 
-                        Recruitment Specialist reaches out to graduates regarding job opportunities, with the text message history acting as the only record of 
-                        participants' job interests.
-                    </p>
-                </div>
-                <div id="dt3">
-                    <p>
-                        Our team created a platform that provides access to community messaging, job opportunities, upcoming class events, and barista guides. 
-                        This mobile application is offered on Android and iOS. As of now, the admin dashboard is built entirely on Airtable, where admins can 
-                        manage users, send messages, and update information through various forms and tables. As the project progresses, we aim to build a separate webpage for 
-                        admin usage.
-                    </p>
-                    <hr>
-                    <h3>Users</h3>
-                    <div class="row">
-                        <div>
-                            Admins can add new users through simple input of information onto Airtable. Usernames are automatically created with first name and last name inputs. 
-                            Users can then log into their accounts through the admin-initialized usernames and passwords upon first opening the application.
-                        </div>
-                        <img class="mImages" id="myImg" src="assets/1951/1951login.png">
-                        <img class="mImages" id="myImg" src="assets/1951/1951UserDashboard.png">
-                    </div>
-                    <h3>Messaging</h3>
-                    Admin can send mass announcements and messages to multiple cohorts at a time. Users can respond to admins through embedded SMS messaging. Additional features include 
-                    the ability to swipe to mark messages as read or unread and pull to refresh live message updates.
-                    <div class="row">
-                        <img class="mImages" id="myImg" src="assets/1951/messages.jpg">
-                        <img class="mImages" id="myImg" src="assets/1951/sendMessage.gif">
-                        <img class="mImages" id="myImg" src="assets/1951/markRead.gif">
-                        <img class="mImages" id="myImg" src="assets/1951/refresh.gif">
-                    </div>
+  <head>
+    <title>Jen Hoang</title>
+    <link rel="stylesheet" type="text/css" href="css/tabStyles2.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM Sans"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="freeze">
+        <div class="divHeading">
+          <h1>1951 Coffee Company</h1>
+          <div id="subtitle">React Native, TypeScript, CSS</div>
+        </div>
+        <div id="pagination">
+          <div class="tab active" id="t1">
+            <div style="margin: auto;">Project Details</div>
+          </div>
+          <div class="tab" id="t2">
+            <div style="margin: auto;">The Problem</div>
+          </div>
+          <div class="tab" id="t3">
+            <div style="margin: auto;">Our Solution</div>
+          </div>
+        </div>
+      </div>
+      <div id="myModal" class="modal">
+        <img class="modal-content" id="img01" />
+      </div>
 
-                    <h3>Jobs</h3>
-                    <div class="row">
-                        <div>
-                            After graduating from a Barista Training Program, users will have access to a Jobs screen, where they can view job opportunities and indicate interest 
-                            on the app. Their interest will be recorded on the admin dashboard, where the Recruitment Specialist will be notified and can help the graduate move forward 
-                            with the job opportunity.
-                        </div>
-                        <img class="mImages" id="myImg" src="assets/1951/jobs.gif">
-                    </div>
-                    <h3>Classes</h3>
-                    <div class="row">
-                        <div>
-                            A large portion of participants within the program come from community referrals. The Classes screens allows users to view current and upcoming classes and 
-                            their corresponding events, from where they can view their own schedule as well as recommend future program events to friends.
-                        </div>
-                        <img class="mImages" id="myImg" src="assets/1951/classes.png">
-                    </div>
-                    <h3>Brew Guide</h3>
-                    <div class="row">
-                        <div>
-                            The application also includes a Brew Guide that includes class material that students could reference during or after their program.
-                        </div>
-                        <img class="mImages" id="myImg" src="assets/1951/brewGuide.jpg">
-                    </div>
-                </div>
+      <div class="tabs">
+        <div id="dt1">
+          <hr />
+          <h2>
+            A mobile application built for efficient <br />communication and
+            resource provision.
+          </h2>
+          <hr />
+          <p>Duration: 6 months</p>
+          <h3>The Client</h3>
+          <div class="row">
+            <div>
+              <a href="https://1951coffee.com/" target="_blank"
+                >1951 Coffee Company</a
+              >, is a nonprofit organization that trains and employs recently
+              resettled refugees/asylees in the Bay Area. Oftentimes, upon
+              initial immigration, refugees are not given the proper support to
+              attain living-wage jobs, as they face the challenges of language
+              barriers and lack of resources. Through their Barista Training
+              Program, 1951 Coffee Company prepares over 100 refugees per year
+              for entrance into the coffee industry, where they are able to
+              maintain successful jobs.
             </div>
-            <script src="js/tabToggle.js"></script>
-        <!-- <script src="js/toggleImages.js"></script> -->
-        <script src="js/imgModal.js"></script>
-        <script src="js/horizAnim.js"></script>
-        <!-- <script src="js/lightbox.js"></script> -->
-	</body>
+            <div>
+              <!-- <a>click me!⬇</a> -->
+              <img class="mImages" id="myImg" src="assets/1951/1951team.jpg" />
+            </div>
+          </div>
+          <h3>The Team</h3>
+          <div class="row">
+            <div>
+              <a href="http://calblueprint.org/" target="_blank">Blueprint</a>
+              is a tech consulting organization that develops software pro-bono
+              for nonprofit organizations. We aim to create in pursuit of a
+              better world, through provision of accessible technology to
+              in-need communities. Our project team consists of four developers
+              (including myself), one designer, and one project leader.
+            </div>
+            <img class="mImages" id="myImg" src="assets/1951/myTeam.jpg" />
+          </div>
+        </div>
+        <div id="dt2">
+          <p>
+            The organization hosts Barista Training Programs throughout the
+            year. Upon completion of the program, a Recruitment Specialist works
+            with graduates to guide them through job opportunities and interview
+            prep so that they can smoothly enter the coffee industry.
+          </p>
+          <h3>The Problem</h3>
+          <p>
+            <b
+              >1951 Coffee Company does not have an proper organization or
+              communication platform to efficiently run their program.</b
+            >
+            Any time there is an upcoming event or important message that needs
+            to be relayed to the students, the program admins must manually type
+            in the phone number of each individual trainee, sending the same
+            text message to each participant in their program. The same tedious
+            process occurs when the Recruitment Specialist reaches out to
+            graduates regarding job opportunities, with the text message history
+            acting as the only record of participants' job interests.
+          </p>
+        </div>
+        <div id="dt3">
+          <p>
+            Our team created a platform that provides access to community
+            messaging, job opportunities, upcoming class events, and educational
+            resources. This mobile application is offered on Android and iOS
+            through the App Store. The admin dashboard is built entirely on
+            Airtable, where admins can manage users, send messages, and update
+            information through various forms and tables.
+          </p>
+          <hr />
+          <h3>Users</h3>
+          <p>
+            Admins can add new users through simple input of information onto an
+            Airtable database. Usernames are automatically created with first
+            name and last name inputs. Users can then log into their accounts
+            through the admin-initialized usernames and passwords upon first
+            opening the application.
+          </p>
+          <div class="row">
+            <img
+              style="height: 400px; width: auto; padding-right: 10px;"
+              src="assets/1951/login.png"
+            />
+            <img
+              style="height: 400px; width: auto;"
+              src="assets/1951/1951UserDashboard.png"
+            />
+          </div>
+          <h3>Messaging</h3>
+          <p>
+            Admins can send mass announcements, event details, and messages to
+            multiple cohorts at a time. Users can respond to admins through
+            embedded SMS messaging.
+          </p>
+
+          <h3>Jobs</h3>
+          <p>
+            After graduating from a Barista Training Program, users will have
+            access to a Jobs screen, where they can view job opportunities and
+            indicate interest on the app. Their interest will be recorded on the
+            admin dashboard, where the Recruitment Specialist will be notified
+            and can help the graduate move forward with the job opportunity.
+          </p>
+
+          <h3>Classes</h3>
+          <p>
+            A large portion of participants within the program come from
+            community referrals. The Classes screens allows users to view
+            current and upcoming classes and their corresponding events, from
+            where they can view their own schedule as well as recommend future
+            program events to friends.
+          </p>
+          <h3>Resource Guide</h3>
+          <p>
+            The application also includes a Resources screen that includes class
+            material that students could reference during or after their
+            program. Resources include a barista brew guide, interview prep,
+            coffee-making practice worksheets, and links to video tutorials. All
+            resources are drawn from the Airtable database and can be easily
+            updated and changed by admins.
+          </p>
+          <br /><br />
+          <div class="row">
+            <video
+              style="height: 400px; width: auto;"
+              controls
+              src="assets/1951/messages.mov"
+            ></video>
+            <video
+              style="height: 400px; width: auto;"
+              controls
+              src="assets/1951/jobs.mov"
+            ></video>
+            <video
+              style="height: 400px; width: auto;"
+              controls
+              src="assets/1951/classes.mov"
+            ></video>
+            <video
+              style="height: 400px; width: auto;"
+              controls
+              src="assets/1951/resources.mov"
+            ></video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/tabToggle.js"></script>
+    <script src="js/imgModal.js"></script>
+    <script src="js/horizAnim.js"></script>
+  </body>
 </html>
