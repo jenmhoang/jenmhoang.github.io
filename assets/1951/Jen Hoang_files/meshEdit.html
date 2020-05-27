@@ -1,0 +1,302 @@
+
+<!-- saved from url=(0079)file:///Users/jenhoang/Documents/jmh/jenmhoang.github.io/projects/meshEdit.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Jen Hoang</title>
+    <link rel="stylesheet" type="text/css" href="./tabStyles.css">
+    <link href="./css" rel="stylesheet">
+    <script src="./jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="divHeading">
+        <h1>Mesh Edit</h1>
+        <div id="subtitle">C++</div>
+      </div>
+      <div id="pagination">
+        <div class="tab active" id="t1">
+          <div style="margin: auto;">Overview</div>
+        </div>
+        <div class="tab" id="t2">
+          <div style="margin: auto;">Bezier Curves and Surfaces</div>
+        </div>
+        <div class="tab" id="t3">
+          <div style="margin: auto;">Vertex Normals</div>
+        </div>
+        <div class="tab" id="t4">
+          <div style="margin: auto;">Remeshing Operations</div>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <div id="dt1">
+          <hr>
+          <h2>Geometric Modeling</h2>
+          <hr>
+          <p>
+            In this project, I explored geometric modeling. First, I built
+            Bezier curves using the de Casteljau algorithm, before extending the
+            algorithm to construct Bezier surfaces. I also manipulated triangle
+            meshes represented by the half-edge data structure by averaging mesh
+            normals for smoother shading and implementing edge flip and edge
+            split functions; these operations proved helpful in my later
+            implementation of loop subdivision to upsample meshes for enhanced
+            high-poly visualization.
+          </p>
+        </div>
+        <div id="dt2">
+          <h2>Bezier Curves</h2>
+          Bezier curves and surfaces are frequently used to model smooth and
+          infinitely scalable curves and surfaces, and can be evaluated through
+          the <b>de Casteljau</b> algorithm.
+          <h3>The Algorithm</h3>
+          Given n control points and a scalar parameter t ranging between 0 and
+          1, we can use linear interpolation to compute the n - 1 intermediate
+          control points in the next subdivision level. An intermediate point
+          p<sub>i</sub>' can be found through the following equation:
+          <h5>p<sub>i</sub>' = (1 - t)p<sub>i</sub> + tp<sub>i + 1</sub></h5>
+          I applied this step n - 1 times to obtain the resulting n - 1
+          intermediate control points in the next subdivision level.
+          <br><br>
+          I continued applying this step successively to obtain the intermediate
+          control points for each of the subdivision levels until one single
+          point remained. This single point lies on the Bezier curve at the
+          given parameter t.
+          <br><br>
+          <div style="text-align: center;">
+            <video width="60%" controls="">
+              <source src="../assets/meshedit/t1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <br><br>
+          <hr>
+          <h2>Bezier Surfaces</h2>
+          The de Casteljau algorithm can also be used to evaluate Bezier
+          surfaces. A Bezier surface is a parametric surface based on two
+          parameters u and v, both ranging between 0 and 1. <br><br>
+          Given a n x m grid of control points, where each row of m control
+          points defines a Bezier curve parameterized by u, I successively
+          applied the de Casteljau algorithm to find the corresponding final
+          point lying on each curve. Each of these obtained points for all n
+          rows act as control points that define Bezier curves parameterized by
+          v; I again successively applied the de Casteljau algorithm using these
+          newly obtained control points to find a final point P that lies on the
+          Bezier surface at the given parameter (u, v). <br><br>
+          <div class="row" style="justify-content: space-between;">
+            <div style="width: 45%;" class="column">
+              <img src="./t2.png">
+            </div>
+            <div style="width: 45%;" class="column">
+              <video width="100%" height="auto" controls="">
+                <source src="../assets/meshedit/t2.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+        <div id="dt3">
+          <h2>Area-Weighted Vertex Normals</h2>
+          Here, I implemented area-weighted normal vectors at vertices. These
+          vertex normals can be used for Phong shading, providing better shading
+          for smooth surfaces. <br>
+          <h3>Computing an area-weighted normal at a given vertex</h3>
+          Using the half-edge data structure, I iterated through all triangle
+          faces incident to the vertex, aggregating the cross product of two
+          triangle edges for each face into a 3D Vector n. Then, to find the
+          approximate unit normal at this vertex, I normalized the aggregate
+          vector n of area-weighted normals. <br><br>
+          By using area-weighted normal vectors, we can achieve smoother
+          gradient shading, improving the default flat shading of our low poly
+          mesh. <br><br>
+          <div class="row">
+            <div style="width: 45%;" class="column">
+              <img class="mImages" src="./t3-1.png">
+              <figcaption>Default Flat Shading</figcaption>
+            </div>
+            <div style="width: 45%;" class="column">
+              <img class="mImages" src="./t3-2.png">
+              <figcaption>Applying Vertex Normals</figcaption>
+            </div>
+          </div>
+        </div>
+        <div id="dt4">
+          <br>
+          In this section, I implemented multiple local remeshing operations,
+          including edge flipping, edge splitting, and mesh upsampling.
+          <br><br>
+          <hr>
+          <h2>Edge Flip</h2>
+          <p>
+            Given a pair of triangles (a, b, c) and (c, b, d), a flip operation
+            on their shared edge (b, c) converts the original pair of triangles
+            into a new pair (a, d, c) and (a, b, d)
+          </p>
+          <img style="width: 80%;" src="./t4-1.png">
+          <h3>Implementation</h3>
+          <p>
+            In order to perform this operation, I first collected all involved
+            edges, half-edges, vertices, and faces labeled in the "before"
+            sketch below, before performing all necessary pointer reassignments
+            for each element to match the assignments labeled in the "after"
+            sketch.
+          </p>
+          <img style="width: 80%;" src="./t4-2.png">
+          <p>
+            I also added a check for whether either neighboring face of the edge
+            is on a boundary loop; in this case, the edge should not be flipped.
+          </p>
+          <h3>Debugging</h3>
+          A lot of the issues that I encountered during this implementation were
+          a result of incorrect element collection/reassignment. After I ran
+          into incorrect flips (half-edges pointing to the wrong vertices, etc),
+          I created a table to organize each of the halfedge pointer
+          assignments. After fixing my assignments, using this table as a
+          reference, the edge flip operation ran smoothly.
+          <img style="width: 30%;" class="mImages" src="./t4-3.png">
+          <h3>Results</h3>
+          <p>Here is the edge flipping operation in action:</p>
+          <div style="text-align: center;">
+            <video width="60%" controls="">
+              <source src="../assets/meshedit/t4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <br><br>
+          <hr>
+          <h2>Edge Split</h2>
+          Given a pair of triangles (a, b, c) and (c, b, d), a split operation
+          on their shared edge (b, c) inserts a new vertex m at its midpoint and
+          connects the new vertex to each opposing vertex a and d, yielding four
+          triangles.
+          <img style="width: 80%;" src="./t5-1.png">
+          <h3>Implementation</h3>
+          This implementation echoes that of the edge flip operation, only an
+          edge split requires the addition of new mesh elements, including a new
+          vertex positioned at the midpoint of the split edge, two new faces,
+          three new edges, and six new halfedges. The necessary pointer
+          reassignments are organized below.
+          <img style="width: 80%;" src="./t5-2.png"> In order
+          to avoid the issues I encountered earlier in my edge flip
+          implementation due to incorrect pointer assignments, I organized
+          pointer assignments beforehand, allowing the split operation to run
+          smoothly at the first test run.
+          <h3>Results</h3>
+          <div class="row">
+            <div class="column" style="justify-content: flex-start;">
+              <video width="100%" controls="">
+                <source src="../assets/meshedit/t5-1.mp4" type="video/mp4">
+              </video>
+              <figcaption>Edge splits on a teapot mesh</figcaption>
+            </div>
+            <div class="column" style="justify-content: flex-start;">
+              <video width="100%" controls="">
+                <source src="../assets/meshedit/t5-2.mp4" type="video/mp4">
+              </video>
+              <figcaption>
+                Combination of edge splits and edge flips on a teapot mesh
+              </figcaption>
+            </div>
+          </div>
+          <br><br>
+          <hr>
+          <h2>Loop Subdivision for Mesh Upsampling</h2>
+          In order to convert a course polygon mesh into a higher-resolution one
+          for better display, more accurate simulation, etc, we can use an
+          upsampling algorithm that nicely interpolates/approximates the
+          original mesh vertices.
+          <b>Loop subdivision</b> upsamples a mesh by subdividing each of its
+          triangles into four smaller triangles and updating all vertices of the
+          subdivided mesh based on the weighted average of neighboring vertex
+          positions.
+          <img style="width: 80%;" src="./t6-1.png">
+          <h3>Implementation</h3>
+
+          <h4>Pre-computing vertex positions</h4>
+          I started by pre-computing the positions of new vertices as a weighted
+          average of old neighboring vertices. The updated position of an old
+          vertex is
+          <h5>(1 - n * u) * origPos + u * neighborSum</h5>
+          where n is the vertex degree, u is a constant equal to 3/16 if n = 3
+          and 3/(8n) otherwise, origPos is the original position of the old
+          vertex, and neighborSum is the sum of all original positions of the
+          neighboring vertices.<br>
+          <br>The position of a new vertex splitting the shared edge (A, B)
+          between a pair of triangles (A, C, B) and (A, B, D) is
+          <h5>(3/8) * (A + B) + 1/8 * (C + D)</h5>
+          As I iterated through the vertices and edges, I flagged each element
+          as old, which will be useful in the following series of split/fip
+          operations.
+
+          <h4>Splitting and Flipping</h4>
+          Triangle subdivision can be done through a series of split and flip
+          operations illustrated below.
+          <img style="width: 100%;" src="./t6-2.png"> I split
+          every original edge of the triangle, taking special care to avoid
+          splitting newly added edges, which would result in infinite edge
+          splitting. In the illustration, the target edges to be split are
+          colored in blue. Any added elements that come about due to an edge
+          split are flagged as new. <br><br>Then, I flipped any new edge
+          connecting an old vertex and a new vertex. In the illustration, the
+          target edge to be flipped is colored in purple. <br>
+          <br>
+          Finally, after peforming these operations, I updated vertex positions
+          to their precomputed values.
+
+          <h3>Results</h3>
+          Here is loop subdivision in action on a hand mesh: <br><br>
+          <div class="row" style="justify-content: center;">
+            <img class="mImages" src="./t6-3.png">
+            <img class="mImages" src="./t6-4.png">
+            <img class="mImages" src="./t6-5.png">
+          </div>
+          <br>
+          <div class="row" style="justify-content: center;">
+            <img class="mImages" src="./t6-6.png">
+            <img class="mImages" src="./t6-7.png">
+            <img class="mImages" src="./t6-8.png">
+          </div>
+          <br>
+          After performing loop subdivision, the sharp edges and corners of the
+          affected mesh become smoothed out. This effect can be combatted by
+          adding more edge loops closer to edges and corners. <br><br>
+          <div class="row">
+            <div class="column">
+              <img class="mImages" src="./t6-9.png">
+              <figcaption>Default cube mesh</figcaption>
+            </div>
+            <div class="column">
+              <img class="mImages" src="./t6-10.png">
+              <figcaption>Upsampled default cube mesh</figcaption>
+            </div>
+            <div class="column">
+              <img class="mImages" src="./t6-11.png">
+              <figcaption>Cube mesh with one face pre-processed</figcaption>
+            </div>
+            <div class="column">
+              <img class="mImages" src="./t6-12.png">
+              <figcaption>Upsampled pre-processed cube mesh</figcaption>
+            </div>
+          </div>
+          <br>
+          The side of the cube that was pre-processed with additional edge loops
+          has better preserved corners and edges.
+          <br><br>
+          Additionally, as seen above, the default cube becomes slightly
+          asymmetric after repeated subdivisions due to the asymmetric manner of
+          the edges splitting each cube face; thus the reassigned weighted
+          vertex positions are unevenly weighted. In order to combat this, we
+          can pre-process the cube with edge splits to make each face symmetric.
+          <br><br>
+          <div class="row">
+            <img class="mImages" src="./t6-13.png">
+            <img class="mImages" src="./t6-14.png">
+            <img class="mImages" src="./t6-15.png">
+          </div>
+          <br>
+          Once all sides of cube are pre-processed to be symmetrical, loop
+          subdivision upsamples the mesh symmetrically.
+        </div>
+      </div>
+    </div>
+    <script src="./tabToggle.js"></script>
+    <script src="./imgModal.js"></script>
+  
+
+</body></html>
