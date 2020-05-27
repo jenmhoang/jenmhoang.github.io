@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Jen Hoang</title>
-    <link rel="stylesheet" type="text/css" href="css/tabStyles2.css" />
+    <link rel="stylesheet" type="text/css" href="../css/tabStyles.css" />
     <link
       href="https://fonts.googleapis.com/css?family=DM Sans"
       rel="stylesheet"
@@ -74,7 +74,7 @@
               </div>
               <img
                 style="height: 250px; width: auto;"
-                src="assets/rasterizer/t1.png"
+                src="../assets/rasterizer/t1.png"
               />
             </div>
           </div>
@@ -114,15 +114,15 @@
           <h3>Comparisons</h3>
           <div class="row">
             <div class="column">
-              <img src="assets/rasterizer/t2_0.png" />
+              <img src="../assets/rasterizer/t2_0.png" />
               <figcaption>Sample rate of 1 per pixel</figcaption>
             </div>
             <div class="column">
-              <img src="assets/rasterizer/t2_1.png" />
+              <img src="../assets/rasterizer/t2_1.png" />
               <figcaption>Sample rate of 4 per pixel</figcaption>
             </div>
             <div class="column">
-              <img src="assets/rasterizer/t2_3.png" />
+              <img src="../assets/rasterizer/t2_3.png" />
               <figcaption>Sample rate of 16 per pixel</figcaption>
             </div>
           </div>
@@ -139,7 +139,7 @@
           <h3>Implementation</h3>
           In the following image, V<sub>A</sub>, V<sub>B</sub> and V<sub>C</sub>
           hold a red, green, and blue color values, respectively.
-          <img src="assets/rasterizer/t4-1.png" /> <br />
+          <img src="../assets/rasterizer/t4-1.png" /> <br />
           <div>
             I found the colors at all points V by first calculating the alpha,
             beta, and lambda “weights,” where each scalar weights correspond to
@@ -149,7 +149,7 @@
             (i.e. V.red = V<sub>A</sub>.red * alpha + V<sub>B</sub>.red * beta +
             V<sub>C</sub>.red * lambda).
           </div>
-          <img style="width: 50%;" src="assets/rasterizer/t4-2.png" />
+          <img style="width: 50%;" src="../assets/rasterizer/t4-2.png" />
           <br />
         </div>
         <div id="dt4">
@@ -170,19 +170,19 @@
           <h3>Examples</h3>
           <div class="row">
             <div class="column">
-              <img src="assets/rasterizer/t5-1.png" />
+              <img src="../assets/rasterizer/t5-1.png" />
               <figcaption>Nearest sampling at sample rate 1</figcaption>
             </div>
             <div class="column">
-              <img src="assets/rasterizer/t5-2.png" />
+              <img src="../assets/rasterizer/t5-2.png" />
               <figcaption>Nearest sampling at sample rate 16</figcaption>
             </div>
             <div class="column">
-              <img src="assets/rasterizer/t5-3.png" />
+              <img src="../assets/rasterizer/t5-3.png" />
               <figcaption>Bilinear sampling at sample rate 1</figcaption>
             </div>
             <div class="column">
-              <img src="assets/rasterizer/t5-4.png" />
+              <img src="../assets/rasterizer/t5-4.png" />
               <figcaption>Bilinear sampling at sample rate 16</figcaption>
             </div>
           </div>
@@ -227,7 +227,7 @@
           Then, I applied these values to the following equations:
           <img
             style="height: 100px; width: auto; padding: 10px 0;"
-            src="assets/rasterizer/t6-0.png"
+            src="../assets/rasterizer/t6-0.png"
           />
           From here, I can sample the texture map at the appropropriate depth
           level.
@@ -243,7 +243,7 @@
           <div class="row">
             <div class="column">
               <img
-                src="assets/rasterizer/t6-1.png"
+                src="../assets/rasterizer/t6-1.png"
                 onclick="openModal();currentSlide(1)"
                 class="hoverOp"
               />
@@ -251,7 +251,7 @@
             </div>
             <div class="column">
               <img
-                src="assets/rasterizer/t6-2.png"
+                src="../assets/rasterizer/t6-2.png"
                 onclick="openModal();currentSlide(2)"
                 class="hoverOp"
               />
@@ -259,7 +259,7 @@
             </div>
             <div class="column">
               <img
-                src="assets/rasterizer/t6-3.png"
+                src="../assets/rasterizer/t6-3.png"
                 onclick="openModal();currentSlide(3)"
                 class="hoverOp"
               />
@@ -267,7 +267,7 @@
             </div>
             <div class="column">
               <img
-                src="assets/rasterizer/t6-4.png"
+                src="../assets/rasterizer/t6-4.png"
                 onclick="openModal();currentSlide(4)"
                 class="hoverOp"
               />
@@ -279,28 +279,28 @@
             <div class="lbSlides">
               <img
                 class="lbmodal-content lbimg"
-                src="assets/rasterizer/t6-1.png"
+                src="../assets/rasterizer/t6-1.png"
                 alt="Level Zero with Nearest sampling"
               />
             </div>
             <div class="lbSlides">
               <img
                 class="lbmodal-content lbimg"
-                src="assets/rasterizer/t6-2.png"
+                src="../assets/rasterizer/t6-2.png"
                 alt="Level Zero with Bilinear sampling"
               />
             </div>
             <div class="lbSlides">
               <img
                 class="lbmodal-content lbimg"
-                src="assets/rasterizer/t6-3.png"
+                src="../assets/rasterizer/t6-3.png"
                 alt="Nearest Level with Nearest sampling"
               />
             </div>
             <div class="lbSlides">
               <img
                 class="lbmodal-content lbimg"
-                src="assets/rasterizer/t6-4.png"
+                src="../assets/rasterizer/t6-4.png"
                 alt="Nearest Level with Bilinear sampling"
               />
             </div>
@@ -314,7 +314,7 @@
         </div>
       </div>
     </div>
-    <script src="js/tabToggle.js"></script>
-    <script src="js/lightbox.js"></script>
+    <script src="../js/tabToggle.js"></script>
+    <script src="../js/lightbox.js"></script>
   </body>
 </html>

@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Jen Hoang</title>
-    <link rel="stylesheet" type="text/css" href="css/tabStyles2.css" />
+    <link rel="stylesheet" type="text/css" href="../css/tabStyles.css" />
     <link
       href="https://fonts.googleapis.com/css?family=DM Sans"
       rel="stylesheet"
@@ -67,7 +67,7 @@
           <br /><br />
           <div style="text-align: center;">
             <video width="60%" controls>
-              <source src="assets/meshedit/t1.mp4" type="video/mp4" />
+              <source src="../assets/meshedit/t1.mp4" type="video/mp4" />
             </video>
           </div>
           <br /><br />
@@ -86,11 +86,11 @@
           Bezier surface at the given parameter (u, v). <br /><br />
           <div class="row" style="justify-content: space-between;">
             <div style="width: 45%;" class="column">
-              <img src="assets/meshedit/t2.png" />
+              <img src="../assets/meshedit/t2.png" />
             </div>
             <div style="width: 45%;" class="column">
               <video width="100%" height="auto" controls>
-                <source src="assets/meshedit/t2.mp4" type="video/mp4" />
+                <source src="../assets/meshedit/t2.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -111,11 +111,11 @@
           mesh. <br /><br />
           <div class="row">
             <div style="width: 45%;" class="column">
-              <img class="mImages" src="assets/meshedit/t3-1.png" />
+              <img class="mImages" src="../assets/meshedit/t3-1.png" />
               <figcaption>Default Flat Shading</figcaption>
             </div>
             <div style="width: 45%;" class="column">
-              <img class="mImages" src="assets/meshedit/t3-2.png" />
+              <img class="mImages" src="../assets/meshedit/t3-2.png" />
               <figcaption>Applying Vertex Normals</figcaption>
             </div>
           </div>
@@ -132,7 +132,7 @@
             on their shared edge (b, c) converts the original pair of triangles
             into a new pair (a, d, c) and (a, b, d)
           </p>
-          <img style="width: 80%;" src="assets/meshedit/t4-1.png" />
+          <img style="width: 80%;" src="../assets/meshedit/t4-1.png" />
           <h3>Implementation</h3>
           <p>
             In order to perform this operation, I first collected all involved
@@ -141,7 +141,7 @@
             for each element to match the assignments labeled in the "after"
             sketch.
           </p>
-          <img style="width: 80%;" src="assets/meshedit/t4-2.png" />
+          <img style="width: 80%;" src="../assets/meshedit/t4-2.png" />
           <p>
             I also added a check for whether either neighboring face of the edge
             is on a boundary loop; in this case, the edge should not be flipped.
@@ -156,13 +156,13 @@
           <img
             style="width: 30%;"
             class="mImages"
-            src="assets/meshedit/t4-3.png"
+            src="../assets/meshedit/t4-3.png"
           />
           <h3>Results</h3>
           <p>Here is the edge flipping operation in action:</p>
           <div style="text-align: center;">
             <video width="60%" controls>
-              <source src="assets/meshedit/t4.mp4" type="video/mp4" />
+              <source src="../assets/meshedit/t4.mp4" type="video/mp4" />
             </video>
           </div>
           <br /><br />
@@ -172,29 +172,29 @@
           on their shared edge (b, c) inserts a new vertex m at its midpoint and
           connects the new vertex to each opposing vertex a and d, yielding four
           triangles.
-          <img style="width: 80%;" src="assets/meshedit/t5-1.png" />
+          <img style="width: 80%;" src="../assets/meshedit/t5-1.png" />
           <h3>Implementation</h3>
           This implementation echoes that of the edge flip operation, only an
           edge split requires the addition of new mesh elements, including a new
           vertex positioned at the midpoint of the split edge, two new faces,
           three new edges, and six new halfedges. The necessary pointer
           reassignments are organized below.
-          <img style="width: 80%;" src="assets/meshedit/t5-2.png" /> In order to
-          avoid the issues I encountered earlier in my edge flip implementation
-          due to incorrect pointer assignments, I organized pointer assignments
-          beforehand, allowing the split operation to run smoothly at the first
-          test run.
+          <img style="width: 80%;" src="../assets/meshedit/t5-2.png" /> In order
+          to avoid the issues I encountered earlier in my edge flip
+          implementation due to incorrect pointer assignments, I organized
+          pointer assignments beforehand, allowing the split operation to run
+          smoothly at the first test run.
           <h3>Results</h3>
           <div class="row">
             <div class="column" style="justify-content: flex-start;">
               <video width="100%" controls>
-                <source src="assets/meshedit/t5-1.mp4" type="video/mp4" />
+                <source src="../assets/meshedit/t5-1.mp4" type="video/mp4" />
               </video>
               <figcaption>Edge splits on a teapot mesh</figcaption>
             </div>
             <div class="column" style="justify-content: flex-start;">
               <video width="100%" controls>
-                <source src="assets/meshedit/t5-2.mp4" type="video/mp4" />
+                <source src="../assets/meshedit/t5-2.mp4" type="video/mp4" />
               </video>
               <figcaption>
                 Combination of edge splits and edge flips on a teapot mesh
@@ -212,7 +212,7 @@
           triangles into four smaller triangles and updating all vertices of the
           subdivided mesh based on the weighted average of neighboring vertex
           positions.
-          <img style="width: 80%;" src="assets/meshedit/t6-1.png" />
+          <img style="width: 80%;" src="../assets/meshedit/t6-1.png" />
           <h3>Implementation</h3>
 
           <h4>Pre-computing vertex positions</h4>
@@ -234,7 +234,7 @@
           <h4>Splitting and Flipping</h4>
           Triangle subdivision can be done through a series of split and flip
           operations illustrated below.
-          <img style="width: 100%;" src="assets/meshedit/t6-2.png" /> I split
+          <img style="width: 100%;" src="../assets/meshedit/t6-2.png" /> I split
           every original edge of the triangle, taking special care to avoid
           splitting newly added edges, which would result in infinite edge
           splitting. In the illustration, the target edges to be split are
@@ -249,15 +249,15 @@
           <h3>Results</h3>
           Here is loop subdivision in action on a hand mesh: <br /><br />
           <div class="row" style="justify-content: center;">
-            <img class="mImages" src="assets/meshedit/t6-3.png" />
-            <img class="mImages" src="assets/meshedit/t6-4.png" />
-            <img class="mImages" src="assets/meshedit/t6-5.png" />
+            <img class="mImages" src="../assets/meshedit/t6-3.png" />
+            <img class="mImages" src="../assets/meshedit/t6-4.png" />
+            <img class="mImages" src="../assets/meshedit/t6-5.png" />
           </div>
           <br />
           <div class="row" style="justify-content: center;">
-            <img class="mImages" src="assets/meshedit/t6-6.png" />
-            <img class="mImages" src="assets/meshedit/t6-7.png" />
-            <img class="mImages" src="assets/meshedit/t6-8.png" />
+            <img class="mImages" src="../assets/meshedit/t6-6.png" />
+            <img class="mImages" src="../assets/meshedit/t6-7.png" />
+            <img class="mImages" src="../assets/meshedit/t6-8.png" />
           </div>
           <br />
           After performing loop subdivision, the sharp edges and corners of the
@@ -265,19 +265,19 @@
           adding more edge loops closer to edges and corners. <br /><br />
           <div class="row">
             <div class="column">
-              <img class="mImages" src="assets/meshedit/t6-9.png" />
+              <img class="mImages" src="../assets/meshedit/t6-9.png" />
               <figcaption>Default cube mesh</figcaption>
             </div>
             <div class="column">
-              <img class="mImages" src="assets/meshedit/t6-10.png" />
+              <img class="mImages" src="../assets/meshedit/t6-10.png" />
               <figcaption>Upsampled default cube mesh</figcaption>
             </div>
             <div class="column">
-              <img class="mImages" src="assets/meshedit/t6-11.png" />
+              <img class="mImages" src="../assets/meshedit/t6-11.png" />
               <figcaption>Cube mesh with one face pre-processed</figcaption>
             </div>
             <div class="column">
-              <img class="mImages" src="assets/meshedit/t6-12.png" />
+              <img class="mImages" src="../assets/meshedit/t6-12.png" />
               <figcaption>Upsampled pre-processed cube mesh</figcaption>
             </div>
           </div>
@@ -292,9 +292,9 @@
           can pre-process the cube with edge splits to make each face symmetric.
           <br /><br />
           <div class="row">
-            <img class="mImages" src="assets/meshedit/t6-13.png" />
-            <img class="mImages" src="assets/meshedit/t6-14.png" />
-            <img class="mImages" src="assets/meshedit/t6-15.png" />
+            <img class="mImages" src="../assets/meshedit/t6-13.png" />
+            <img class="mImages" src="../assets/meshedit/t6-14.png" />
+            <img class="mImages" src="../assets/meshedit/t6-15.png" />
           </div>
           <br />
           Once all sides of cube are pre-processed to be symmetrical, loop
@@ -302,7 +302,7 @@
         </div>
       </div>
     </div>
-    <script src="js/tabToggle.js"></script>
-    <script src="js/imgModal.js"></script>
+    <script src="../js/tabToggle.js"></script>
+    <script src="../js/imgModal.js"></script>
   </body>
 </html>

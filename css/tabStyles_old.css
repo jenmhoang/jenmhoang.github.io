@@ -1,17 +1,26 @@
 body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  position: absolute;
   font-family: "DM Sans";
   font-size: 16px;
-  margin: 0;
+  background-color: #f5f6fc;
+}
+
+p {
+  font-size: 16px;
 }
 
 img {
   display: block;
   width: 200px;
-  margin: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 40px;
   color: #e46787;
   margin: 0;
   text-align: center;
@@ -25,25 +34,8 @@ h3 {
   font-size: 20px;
 }
 
-h4 {
-  color: #2462a8;
-  font-weight: bold;
-  margin: 10px 0 0 0;
-}
-
-h5 {
-  text-align: center;
-  display: block;
-  font-size: 16px;
-  margin: 5px 0;
-  font-weight: 400;
-  padding: 10px;
-  background-color: rgba(220, 230, 239, 0.5);
-}
-
 b {
-  /* color: #5795db; */
-  color: #2462a8;
+  color: #5795db;
 }
 
 a {
@@ -52,23 +44,17 @@ a {
   font-weight: bold;
 }
 
+li {
+  padding-left: 1.28571429em;
+  text-indent: -1.28571429em;
+}
 table {
   width: 100%;
 }
 
-ul {
-  list-style-position: outside;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-/* Division Header */
+/* Division Headers */
 .divHeading {
-  padding: 5px;
+  padding: 2%;
 }
 
 #subtitle {
@@ -79,8 +65,14 @@ ul {
 
 /* Pagination Tabs */
 #pagination {
+  position: absolute;
   display: flex;
   flex-direction: row;
+  height: auto;
+  /* flex: 0 1 auto; */
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .tab {
@@ -88,13 +80,13 @@ ul {
   background-color: white;
   padding: 10px 0;
   width: 100%;
+  font-size: 18px;
   text-align: center;
 }
 
 .tab:hover {
   transition: 0.3s;
   color: #e46787;
-  cursor: pointer;
 }
 
 .active {
@@ -102,12 +94,28 @@ ul {
   color: #e46787;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.freeze {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 150px;
+  background-color: white;
+  z-index: 1;
+}
+
 /* Tab Information */
 .tabs {
   background-color: #f5f6fc;
+  flex: 1;
   overflow-y: scroll;
-  height: 90%;
-  padding: 10px 30px;
+  margin-top: 150px;
+  padding: 1% 5%;
 }
 
 #dt2,
@@ -117,41 +125,26 @@ ul {
 }
 
 .row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  overflow-x: scroll;
-}
-
-.row img {
   width: 100%;
+  display: flex;
+  padding: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .column {
   display: flex;
   flex-direction: column;
-  margin: 15 10 5;
-  text-align: center;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.two {
-  width: 50%;
-}
-
-.three {
-  width: 33%;
-}
-
-.mImages {
+.myImages {
   cursor: pointer;
-  display: block;
-  min-width: 100px;
-  min-height: 100px;
-  object-fit: contain;
 }
 
-.mImages:hover {
+.myImages:hover {
   opacity: 0.7;
   transition: 0.3s;
 }
@@ -173,13 +166,15 @@ ul {
 
 .modal {
   display: none;
-  position: absolute;
+  position: fixed;
   z-index: 2;
   left: 0;
+  right: 0;
+  bottom: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal-content {
@@ -192,6 +187,9 @@ ul {
   margin: auto;
   height: 80%;
   width: 80%;
+}
+
+.modal-content {
   animation-name: zoom;
   animation-duration: 0.6s;
 }
@@ -211,47 +209,56 @@ ul {
   }
 }
 
+#myBtn {
+  display: none;
+  position: fixed;
+  /* bottom: 20px;
+	right: 30px; */
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
 .lbmodal {
   display: none;
   position: fixed;
+  object-fit: scale-down;
+  /* object-position: center; */
   z-index: 2;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.lbmodal-content {
-  position: absolute;
-  object-fit: contain;
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
-  margin: auto;
-  height: 80%;
-  width: 80%;
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.close-wrapper {
-  position: absolute;
-  width: 100%;
-  bottom: 20px;
-  text-align: center;
+.lbmodal-content {
+  margin: auto;
+  background-color: rgba(239, 0, 0, 0.2);
+  animation-name: zoom;
+  animation-duration: 0.6s;
 }
 
 .lbclose {
   color: white;
-  display: inline-block;
-  margin: 0 auto;
-  font-size: 20px;
-  text-align: center;
-  width: 100px;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
   font-weight: bold;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 10px;
 }
 
 .lbclose:hover,
@@ -259,13 +266,14 @@ ul {
   color: #999;
   text-decoration: none;
   cursor: pointer;
-  opacity: 0.6;
 }
 
+/* Hide the slides by default */
 .lbSlides {
   display: none;
 }
 
+/* Next & previous buttons */
 .prev,
 .next {
   cursor: pointer;
@@ -284,27 +292,32 @@ ul {
 }
 
 .prev {
-  left: 0;
+  left: -50;
 }
 
+/* Position the "next button" to the right */
 .next {
-  right: 0;
+  right: -50;
   border-radius: 3px 0 0 3px;
 }
 
+/* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
 }
 
 .caption-container {
   text-align: center;
   padding: 2px 16px;
   color: white;
-}
-
-.hoverOp:hover {
-  opacity: 0.7;
-  transition: 0.3s;
-  cursor: pointer;
 }
