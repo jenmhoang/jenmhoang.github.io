@@ -3,22 +3,30 @@
   <head>
     <title>Jen Hoang</title>
     <link rel="stylesheet" type="text/css" href="css/tabStyles2.css" />
-    <link href="https://fonts.googleapis.com/css?family=DM Sans" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM Sans"
+      rel="stylesheet"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
-    <div id="myModal" class="modal"><img class="modal-content" id="img01" /></div>
     <div class="container">
-      <div class="freeze">
-        <div class="divHeading">
-          <h1>Rasterizer</h1>
-          <div id="subtitle">C++</div>
+      <div class="divHeading">
+        <h1>Rasterizer</h1>
+        <div id="subtitle">C++</div>
+      </div>
+      <div id="pagination">
+        <div class="tab active" id="t1">
+          <div style="margin: auto;">Overview</div>
         </div>
-        <div id="pagination">
-          <div class="tab active" id="t1"><div style="margin: auto">Overview</div></div>
-          <div class="tab" id="t2"><div style="margin: auto">Rasterization</div></div>
-          <div class="tab" id="t3"><div style="margin: auto">Interpolation</div></div>
-          <div class="tab" id="t4"><div style="margin: auto">Texture Mapping</div></div>
+        <div class="tab" id="t2">
+          <div style="margin: auto;">Rasterization</div>
+        </div>
+        <div class="tab" id="t3">
+          <div style="margin: auto;">Interpolation</div>
+        </div>
+        <div class="tab" id="t4">
+          <div style="margin: auto;">Texture Mapping</div>
         </div>
       </div>
       <div class="tabs">
@@ -27,62 +35,94 @@
           <h2>Diving into the Rasterization Pipeline</h2>
           <hr />
           <p>
-            In this project, I implemented the logic for some of the core aspects of the rasterization pipeline. I start with
-            simple triangle rasterization, before working my way up into the implementation of anti-aliasing methods (through
-            various sampling methods) and texture mapping.
+            In this project, I implemented the logic for some of the core
+            aspects of the rasterization pipeline. I start with simple triangle
+            rasterization, before working my way up into the implementation of
+            anti-aliasing methods (through various sampling methods) and texture
+            mapping.
           </p>
         </div>
         <div id="dt2">
           <h2>Rasterizing single-color triangles</h2>
-          <div class="row">
-            Starting from the minimum x and y input triangle points to the maximum x and y input triangle points, sample each
-            point at the center of each pixel within these bounds, checking whether or not this point is in the triangle or not.
-            If it is, fill in the pixel with the input color.
-            <!-- <br><br>
-                <div class="row">
-                <div>
-                    Checking if the point is in the triangle or not:
-                    
-                    <li>Compute the line equation between some input triangle point P<sub>i</sub> and some other input triangle point 
-                        P<sub>i+1</sub>, given by <br>L<sub>i</sub>(x, y) = -(x - x<sub>i</sub>)(y<sub>i+1</sub> - y<sub>i</sub>) + (y - y<sub>i</sub>)(x<sub>i+1</sub> - x<sub>i</sub>), 
-                        where x and y are the x and y coordinates of the sampled point. This equation is the dot product of V and N, where V is the line tangent vector between P<sub>i</sub> and the sampled point, and N is P<sub>i</sub>’s normal vector.</li>
-                    <li>Compute the line equations between each input triangle point in both clockwise and counterclockwise order. </li>
-                    <li>If L<sub>i</sub>(x, y) >= 0 for all i in either clockwise or counterclockwise order, the sampled point is considered inside or on the edge of the triangle and is thus filled in with the input color.</li>
-                    <li>This algorithm checks each sample only within the bounding box of the triangle and is thus equal to (and no worse) than one that checks each sample within the bounding box of the triangle.</li>
-                </div>     -->
-            <img class="mImages" src="assets/rasterizer/t1.png" />
+          <div>
+            Starting from the minimum x and y input triangle points to the
+            maximum x and y input triangle points, I sampled each point at the
+            center of each pixel within these bounds, checking whether or not
+            the point was in the triangle or not. If it was, I filled in the
+            pixel with the input color.
+            <br /><br />
+            <div class="row">
+              <div style="margin-right: 50px;">
+                I computed the line equation between some input triangle point
+                P<sub>i</sub> and some other input triangle point
+                P<sub>i+1</sub>, given by the following equation:
+                <h5>
+                  L<sub>i</sub>(x, y) = -(x - x<sub>i</sub>)(y<sub>i+1</sub> -
+                  y<sub>i</sub>) + (y - y<sub>i</sub>)(x<sub>i+1</sub> -
+                  x<sub>i</sub>)
+                </h5>
+                where x and y are the x and y coordinates of the sampled point.
+                This equation is the dot product of V and N, where V is the line
+                tangent vector between P<sub>i</sub> and the sampled point, and
+                N is P<sub>i</sub>’s normal vector.
+                <p>
+                  If L<sub>i</sub>(x, y) >= 0 for all i in either clockwise or
+                  counterclockwise order, the sampled point is considered inside
+                  or on the edge of the triangle and is thus filled in with the
+                  input color.
+                </p>
+              </div>
+              <img
+                style="height: 250px; width: auto;"
+                src="assets/rasterizer/t1.png"
+              />
+            </div>
           </div>
 
           <br />
           <h2>Antialiasing triangles</h2>
           <h3>Supersampling</h3>
-          Supersampling is an anti-aliasing method done by sampling multiple locations within a pixel and averaging their
-          values. Averaged color values contribute to smoother transitions along edges, reducing the appearance of
-          jaggedness/pixelization (also known as “jaggies”).
+          <p>
+            Supersampling is an anti-aliasing method done by sampling multiple
+            locations within a pixel and averaging their values. Averaged color
+            values contribute to smoother transitions along edges, reducing the
+            appearance of jaggedness/pixelization (also known as “jaggies”).
+          </p>
           <h3>Populating the Supersample Buffer</h3>
-          In my implementation of this method, I start by rasterizing a high resolution image to a supersample buffer,
-          represented as a color vector that stores the rgb values of multiple subpixels within a pixel; the number of subpixels
-          sampled per pixel is determined by the sample_rate. The values stored in each subpixel is either an input color if the
-          sampled subpixel is in the triangle, and the color white if it is not in the triangle. <br /><br />
-          Initialize all values in the supersample buffer to the color white. For every pixel within the bounds of the desired
-          triangle’s min and max points, sample each subpixel, checking if it is in the triangle or not. If the subpixel is in
-          the triangle, change the value at its corresponding supersample buffer coordinate to be the input color.
+          <p>
+            In my implementation of this method, I start by rasterizing a high
+            resolution image to a supersample buffer, represented as a color
+            vector that stores the rgb values of multiple subpixels within a
+            pixel; the number of subpixels sampled per pixel is determined by
+            the sample rate. The values stored in each subpixel is either an
+            input color if the sampled subpixel is in the triangle, and the
+            color white if it is not in the triangle.
+          </p>
+          <p>
+            I initialized all values in the supersample buffer to the color
+            white. Then, for every pixel within the bounds of the desired
+            triangle’s min and max points, I sampled each subpixel, checking
+            whether it was in the triangle or not. If the subpixel was in the
+            triangle, I changed the value at its corresponding supersample
+            buffer coordinate to be the input color.
+          </p>
           <h3>Downsampling</h3>
-          Once the supersample buffer has been filled, the image needs to be downsampled to populate correct average values of
-          the framebuffer. For every pixel within the bounds of the triangle’s min and max points, compute the average color
-          values of each one of its subpixels.
+          Once the supersample buffer was filled, the image needed to be
+          downsampled to populate correct average values of the framebuffer. For
+          every pixel within the bounds of the triangle’s min and max points, I
+          computed the average color values of each one of its subpixels.
           <h3>Comparisons</h3>
           <div class="row">
             <div class="column">
-              <img class="mImages" src="assets/rasterizer/t2_0.png" />
+              <img src="assets/rasterizer/t2_0.png" />
               <figcaption>Sample rate of 1 per pixel</figcaption>
             </div>
             <div class="column">
-              <img class="mImages" src="assets/rasterizer/t2_1.png" />
+              <img src="assets/rasterizer/t2_1.png" />
               <figcaption>Sample rate of 4 per pixel</figcaption>
             </div>
             <div class="column">
-              <img class="mImages" src="assets/rasterizer/t2_3.png" />
+              <img src="assets/rasterizer/t2_3.png" />
               <figcaption>Sample rate of 16 per pixel</figcaption>
             </div>
           </div>
@@ -91,167 +131,190 @@
         <div id="dt3">
           <h2>Barycentric coordinates</h2>
           <h3>Barycentric Coordinates</h3>
-          Barycentric Coordinates are a triangle coordinate system used to obtain smoothly varying values across a surface.
-          These values are calculated through linear interpolation of values at the vertices of the triangle (which may denote
-          position, color, texture coordinates, etc).
+          Barycentric Coordinates are a triangle coordinate system used to
+          obtain smoothly varying values across a surface. These values are
+          calculated through linear interpolation of values at the vertices of
+          the triangle (which may denote position, color, texture coordinates,
+          etc).
           <h3>Implementation</h3>
-          In the following image, V<sub>A</sub>, V<sub>B</sub> and V<sub>C</sub> hold a red, green, and blue color values,
-          respectively. <img class="mImages" src="assets/rasterizer/t4-1.png" /> <br />
+          In the following image, V<sub>A</sub>, V<sub>B</sub> and V<sub>C</sub>
+          hold a red, green, and blue color values, respectively.
+          <img src="assets/rasterizer/t4-1.png" /> <br />
           <div>
-            The color at V is found by first calculating the alpha, beta, and lambda “weights,” where each scalar weights
-            correspond to one vertex of the triangle. We can then calculate the red, green, and blue values, which is equivalent
-            to the sum of each of the color values of each vertex multiplied by its corresponding weight <br />
-            (i.e. V.red = V<sub>A</sub>.red * alpha + V<sub>B</sub>.red * beta + V<sub>C</sub>.red * lambda).
+            I found the colors at all points V by first calculating the alpha,
+            beta, and lambda “weights,” where each scalar weights correspond to
+            one vertex of the triangle. I then calculated the red, green, and
+            blue values, which is equivalent to the sum of each of the color
+            values of each vertex multiplied by its corresponding weight <br />
+            (i.e. V.red = V<sub>A</sub>.red * alpha + V<sub>B</sub>.red * beta +
+            V<sub>C</sub>.red * lambda).
           </div>
-          <img style="width:50%" class="mImages" src="assets/rasterizer/t4-2.png" /> <br />
+          <img style="width: 50%;" src="assets/rasterizer/t4-2.png" />
+          <br />
         </div>
         <div id="dt4">
           <h2>Pixel sampling for texture mapping</h2>
           <h3>Pixel Sampling</h3>
-          When a texture is mapped to a triangle mesh, each (x, y) pixel location of the triangle is mapped to the corresponding
-          "texel" location within the (u, v) coordinates of our texture image. To find the corresponding values, we use
-          Barycentric Coordinates.
+          When a texture is mapped to a triangle mesh, each (x, y) pixel
+          location of the triangle is mapped to the corresponding "texel"
+          location within the (u, v) coordinates of our texture image. To find
+          the corresponding values, we use Barycentric Coordinates.
           <h3>Implementation</h3>
-          Barycentric coordinates are implemented the same way as in the previous task, except now, the values being evaluated
-          are pixel locations rather than rgb color values. Once the corresponding (u, v) values are calculated, we can choose
-          to use either Nearest pixel sampling or Bilinear pixel sampling. Nearest pixel sampling simply samples the closest
-          texel to the sampled point. Bilinear pixel sampling interpolates between the 4 nearest texels.
+          Barycentric coordinates are implemented the same way as previously
+          done, except now, the values being evaluated are pixel locations
+          rather than rgb color values. Once the corresponding (u, v) values are
+          calculated, we can choose to use either Nearest pixel sampling or
+          Bilinear pixel sampling. Nearest pixel sampling simply samples the
+          closest texel to the sampled point. Bilinear pixel sampling
+          interpolates between the 4 nearest texels.
           <h3>Examples</h3>
           <div class="row">
             <div class="column">
-              <img class="mImages" src="assets/rasterizer/t5-1.png" />
+              <img src="assets/rasterizer/t5-1.png" />
               <figcaption>Nearest sampling at sample rate 1</figcaption>
             </div>
             <div class="column">
-              <img class="mImages" src="assets/rasterizer/t5-2.png" />
+              <img src="assets/rasterizer/t5-2.png" />
               <figcaption>Nearest sampling at sample rate 16</figcaption>
             </div>
             <div class="column">
-              <img class="mImages" src="assets/rasterizer/t5-3.png" />
+              <img src="assets/rasterizer/t5-3.png" />
               <figcaption>Bilinear sampling at sample rate 1</figcaption>
             </div>
             <div class="column">
-              <img class="mImages" src="assets/rasterizer/t5-4.png" />
+              <img src="assets/rasterizer/t5-4.png" />
               <figcaption>Bilinear sampling at sample rate 16</figcaption>
             </div>
           </div>
-          <!-- <div class="row">
-            <div class="column">
-              <img src="assets/rasterizer/t5-1.png" onclick="openModal();currentSlide(1)" class="hoverOp" />
-              <figcaption>Nearest sampling at sample rate 1</figcaption>
-            </div>
-            <div class="column">
-              <img src="assets/rasterizer/t5-2.png" onclick="openModal();currentSlide(2)" class="hoverOp" />
-              <figcaption>Nearest sampling at sample rate 16</figcaption>
-            </div>
-            <div class="column">
-              <img src="assets/rasterizer/t5-3.png" onclick="openModal();currentSlide(3)" class="hoverOp" />
-              <figcaption>Bilinear sampling at sample rate 1</figcaption>
-            </div>
-            <div class="column">
-              <img src="assets/rasterizer/t5-4.png" onclick="openModal();currentSlide(4)" class="hoverOp" />
-              <figcaption>Bilinear sampling at sample rate 16</figcaption>
-            </div>
-          </div>
-
-          <div id="mlbModal" class="lbmodal">
-            <div class="lbSlides">
-              <img class="lbmodal-content lbimg" src="assets/rasterizer/t5-1.png" alt="Nearest sampling at sample rate 1" />
-            </div>
-            <div class="lbSlides">
-              <img class="lbmodal-content lbimg" src="assets/rasterizer/t5-2.png" alt="Nearest sampling at sample rate 16" />
-            </div>
-            <div class="lbSlides">
-              <img class="lbmodal-content lbimg" src="assets/rasterizer/t5-3.png" alt="Bilinear sampling at sample rate 1 />
-            </div>
-            <div class="lbSlides">
-              <img class="lbmodal-content lbimg" src="assets/rasterizer/t5-4.png" alt="Bilinear sampling at sample rate 16" />
-            </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            <div class="caption-container"><p id="caption"></p></div>
-            <div class="close-wrapper"><div class="lbclose cursor" onclick="closeModal()">Close</div></div>
-          </div> -->
           <br />
-          At a sample rate of 1, bilinear sampling produces a better image; because this method involves averaging 4 of the
-          nearest texels, it’s able to capture more data about the original texture image, even if the texture has a higher
-          frequency than the sample rate. Nearest sampling, on the other hand, may miss fine details that bilinear sampling
-          would be able to preserve. At a sample rate of 16, there is less of a difference between the two sampling methods;
-          because the frequency of the texture image is now closer to the sampling rate, less fine details may be missed using
-          either method.
+          At a sample rate of 1, bilinear sampling produces a better image;
+          because this method involves averaging 4 of the nearest texels, it’s
+          able to capture more data about the original texture image, even if
+          the texture has a higher frequency than the sample rate. Nearest
+          sampling, on the other hand, may miss fine details that bilinear
+          sampling would be able to preserve. At a sample rate of 16, there is
+          less of a difference between the two sampling methods; because the
+          frequency of the texture image is now closer to the sampling rate,
+          less fine details may be missed using either method.
 
           <h2>Level sampling with mipmaps for texture mapping</h2>
           <h3>Level Sampling</h3>
-          In the case where areas of our triangle mesh are at different depths in 3D space, we can apply level sampling to
-          adjust the resolution depending on depth levels, where areas far away are downsampled and rendered at low resolutions
-          and areas that are up close are rendered at higher resolutions. Application of level sampling can save computation
-          time and filter minification.
+          In the case where areas of our triangle mesh are at different depths
+          in 3D space, we can apply level sampling to adjust the resolution
+          depending on depth levels, where areas far away are downsampled and
+          rendered at low resolutions and areas that are up close are rendered
+          at higher resolutions. Application of level sampling can save
+          computation time and filter minification.
           <h3>Types of Level Sampling</h3>
-          Zero: sample all points at a depth level of 0 <br />Nearest: compute the nearest integer level <br />Linear: compute a
-          weighted sum of levels
+          Zero: sample all points at a depth level of 0 <br />Nearest: compute
+          the nearest integer level <br />Linear: compute a weighted sum of
+          levels
           <h3>Implementation</h3>
-          Calculate the distance between the sampled point and its adjacent points; larger distances indicate that the sampled
-          area is farther away, and is at a higher depth level.
-          <li>
-            Calculate the Barycentric Coordinates of (x, y), (x + 1, y), and (x, y + 1), using these coordinates to calculate
-            the (u, v) texel coordinates for each point
-          </li>
-          <li>Calculate (du/dx), (dv/dx), (du/dy), and (dv/dy)</li>
-          <li>Apply these values to the following equations:</li>
-          <!-- D = log<sub>2</sub>(L) <br>
-                <sup>du</sup>&frasl;<sub>dx</sub>
-                L = max(&#8730;(<sup>du</sup>&frasl;<sub>dx</sub>)<sup>2</sup>+(<sup>dv</sup>&frasl;<sub>dx</sub>)<sup>2</sup>, (<sup>du</sup>&frasl;<sub>dy</sub>)<sup>2</sup>+(<sup>dv</sup>&frasl;<sub>dy</sub>)<sup>2</sup>) -->
-          <img src="assets/rasterizer/t6-0.png" /> Sample the texture map at the appropropriate depth level.
+          I calculated the distance between the sampled point and its adjacent
+          points; larger distances indicate that the sampled area is farther
+          away, and is at a higher depth level. <br />
+          I start by computing:
+          <ul>
+            <li>
+              the Barycentric Coordinates of (x, y), (x + 1, y), and (x, y + 1)
+            </li>
+            <li>
+              the (u, v) texel coordinates for each point, using the Barycentric
+              Coordinates
+            </li>
+            <li>(du/dx), (dv/dx), (du/dy), and (dv/dy)</li>
+          </ul>
+          Then, I applied these values to the following equations:
+          <img
+            style="height: 100px; width: auto; padding: 10px 0;"
+            src="assets/rasterizer/t6-0.png"
+          />
+          From here, I can sample the texture map at the appropropriate depth
+          level.
           <h3>Comparisons</h3>
-          <b>Supersampling</b> has slower computation speed, increased memory usage, and greater anti-aliasing power. <br /><b
-            >Bilinear sampling</b
-          >
-          compared to nearest sampling has slower computation speed, increased memory usage, and greater anti-aliasing power
-          <br /><b>Level sampling</b> results in higher computation speed, increased memory usage, and greater anti-aliasing
-          power.
+          <b>Supersampling</b> has slower computation speed, increased memory
+          usage, and greater anti-aliasing power. <br /><b>Bilinear sampling</b>
+          compared to nearest sampling has slower computation speed, increased
+          memory usage, and greater anti-aliasing power
+          <br /><b>Level sampling</b> results in higher computation speed,
+          increased memory usage, and greater anti-aliasing power.
           <h3>Examples</h3>
 
           <div class="row">
             <div class="column">
-              <img src="assets/rasterizer/t6-1.png" onclick="openModal();currentSlide(1)" class="hoverOp" />
+              <img
+                src="assets/rasterizer/t6-1.png"
+                onclick="openModal();currentSlide(1)"
+                class="hoverOp"
+              />
               <figcaption>Level Zero with Nearest sampling</figcaption>
             </div>
             <div class="column">
-              <img src="assets/rasterizer/t6-2.png" onclick="openModal();currentSlide(2)" class="hoverOp" />
+              <img
+                src="assets/rasterizer/t6-2.png"
+                onclick="openModal();currentSlide(2)"
+                class="hoverOp"
+              />
               <figcaption>Level Zero with Bilinear sampling</figcaption>
             </div>
             <div class="column">
-              <img src="assets/rasterizer/t6-3.png" onclick="openModal();currentSlide(3)" class="hoverOp" />
+              <img
+                src="assets/rasterizer/t6-3.png"
+                onclick="openModal();currentSlide(3)"
+                class="hoverOp"
+              />
               <figcaption>Nearest Level with Nearest sampling</figcaption>
             </div>
             <div class="column">
-              <img src="assets/rasterizer/t6-4.png" onclick="openModal();currentSlide(4)" class="hoverOp" />
+              <img
+                src="assets/rasterizer/t6-4.png"
+                onclick="openModal();currentSlide(4)"
+                class="hoverOp"
+              />
               <figcaption>Nearest Level with Bilinear sampling</figcaption>
             </div>
           </div>
 
           <div id="mlbModal" class="lbmodal">
             <div class="lbSlides">
-              <img class="lbmodal-content lbimg" src="assets/rasterizer/t6-1.png" alt="Level Zero with Nearest sampling" />
+              <img
+                class="lbmodal-content lbimg"
+                src="assets/rasterizer/t6-1.png"
+                alt="Level Zero with Nearest sampling"
+              />
             </div>
             <div class="lbSlides">
-              <img class="lbmodal-content lbimg" src="assets/rasterizer/t6-2.png" alt="Level Zero with Bilinear sampling" />
+              <img
+                class="lbmodal-content lbimg"
+                src="assets/rasterizer/t6-2.png"
+                alt="Level Zero with Bilinear sampling"
+              />
             </div>
             <div class="lbSlides">
-              <img class="lbmodal-content lbimg" src="assets/rasterizer/t6-3.png" alt="Nearest Level with Nearest sampling" />
+              <img
+                class="lbmodal-content lbimg"
+                src="assets/rasterizer/t6-3.png"
+                alt="Nearest Level with Nearest sampling"
+              />
             </div>
             <div class="lbSlides">
-              <img class="lbmodal-content lbimg" src="assets/rasterizer/t6-4.png" alt="Nearest Level with Bilinear sampling" />
+              <img
+                class="lbmodal-content lbimg"
+                src="assets/rasterizer/t6-4.png"
+                alt="Nearest Level with Bilinear sampling"
+              />
             </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
             <div class="caption-container"><p id="caption"></p></div>
-            <div class="close-wrapper"><div class="lbclose cursor" onclick="closeModal()">Close</div></div>
+            <div class="close-wrapper">
+              <div class="lbclose cursor" onclick="closeModal()">Close</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
     <script src="js/tabToggle.js"></script>
-    <script src="js/imgModal.js"></script>
     <script src="js/lightbox.js"></script>
   </body>
 </html>

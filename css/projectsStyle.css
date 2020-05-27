@@ -4,30 +4,28 @@
 }
 
 /* BODY */
-.section {
-  position: absolute;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-}
 
-.sec1 {
+.body {
   width: 100%;
   height: 92%;
-  top: 8%;
+  top: 50px;
   position: absolute;
   display: flex;
   flex-direction: row;
 }
 
-/* PROJECT NAVIGATION (SECTION 1) */
+/* PROJECT NAVIGATION */
 
 .projNav {
   position: relative;
+  height: 100%;
   width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  /* right: 0; */
 }
 
 #titleImg {
@@ -35,18 +33,13 @@
   height: auto;
 }
 
-.buttons {
-  width: 100%;
-  height: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  background-color: white;
+th,
+td {
+  padding: 15px;
 }
 
-.buttons a {
-  width: 30%;
+.buttons div {
+  width: 300px;
 }
 
 .button {
@@ -62,8 +55,8 @@
 
 .button:hover {
   background-color: rgba(212, 228, 247, 0.3);
-  font-size: 20px;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 /* PICTURE (SECTION 2) */
@@ -71,59 +64,30 @@
 .pic {
   width: 30%;
   height: 100%;
-  position: relative;
-  overflow: hidden;
+  position: absolute;
+  right: 0;
   display: flex;
   justify-content: center;
-  z-index: 10;
-  right: 0;
+  overflow: hidden;
+  z-index: 2;
 }
+
 #mainPic {
   position: absolute;
 }
-#togglePic {
-  /* height: 100%; */
-  width: 100%;
-  object-fit: contain;
-  background-color: white;
-  display: none;
-}
-#underPicMain {
+
+#underPic {
   z-index: -1;
   position: absolute;
-}
-#underPic {
-  width: 100%;
-  object-fit: contain;
-  position: absolute;
-  display: none;
-}
-
-#pic1,
-#pic2,
-#pic3 {
-  position: absolute;
-  display: none;
-}
-
-#pic3 {
-  left: 0;
 }
 
 /* INFORMATION DIVISIONS (SECTION 3) */
 
 .info {
+  position: absolute;
   width: 70%;
   height: 100%;
-  position: absolute;
-  right: -70%;
-  /* z-index: -1; */
-}
-
-#d1,
-#d2,
-#d3,
-#d4 {
+  right: 0;
   display: none;
 }
 
@@ -131,10 +95,10 @@
   top: 5;
   right: 5;
   position: absolute;
-  height: 5%;
+  height: 30px;
   width: auto;
   opacity: 0.4;
-  z-index: 3;
+  z-index: 1;
   cursor: pointer;
 }
 

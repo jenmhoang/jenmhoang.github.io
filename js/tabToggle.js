@@ -16,7 +16,7 @@ function openTab(section) {
 function closeTab() {
   var ids = ["#dt1", "#dt2", "#dt3", "#dt4"];
   $.each(ids, function (i, v) {
-    $(v).hide();
+    $(v).hide(0);
   });
 }
 

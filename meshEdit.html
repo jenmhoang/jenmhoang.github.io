@@ -11,42 +11,40 @@
   </head>
   <body>
     <div class="container">
-      <div class="freeze">
-        <div class="divHeading">
-          <h1>Mesh Edit</h1>
-          <div id="subtitle">C++</div>
-        </div>
-        <div id="pagination">
-          <div class="tab active" id="t1">
-            <div style="margin: auto;">Overview</div>
-          </div>
-          <div class="tab" id="t2">
-            <div style="margin: auto;">Bezier Curves and Surfaces</div>
-          </div>
-          <div class="tab" id="t3">
-            <div style="margin: auto;">Vertex Normals</div>
-          </div>
-          <div class="tab" id="t4">
-            <div style="margin: auto;">Remeshing Operations</div>
-          </div>
-        </div>
+      <div class="divHeading">
+        <h1>Mesh Edit</h1>
+        <div id="subtitle">C++</div>
       </div>
-      <!--end freeze-->
-      <div id="myModal" class="modal">
-        <img class="modal-content" id="img01" />
+      <div id="pagination">
+        <div class="tab active" id="t1">
+          <div style="margin: auto;">Overview</div>
+        </div>
+        <div class="tab" id="t2">
+          <div style="margin: auto;">Bezier Curves and Surfaces</div>
+        </div>
+        <div class="tab" id="t3">
+          <div style="margin: auto;">Vertex Normals</div>
+        </div>
+        <div class="tab" id="t4">
+          <div style="margin: auto;">Remeshing Operations</div>
+        </div>
       </div>
 
       <div class="tabs">
         <div id="dt1">
-          <br />
-          In this project, I explored geometric modeling. First, I built Bezier
-          curves using the de Casteljau algorithm, before extending the
-          algorithm to construct Bezier surfaces. I also manipulated triangle
-          meshes represented by the half-edge data structure by averaging mesh
-          normals for smoother shading and implementing edge flip and edge split
-          functions; these operations proved helpful in my later implementation
-          of loop subdivision to upsample meshes for enhanced high-poly
-          visualization.
+          <hr />
+          <h2>Geometric Modeling</h2>
+          <hr />
+          <p>
+            In this project, I explored geometric modeling. First, I built
+            Bezier curves using the de Casteljau algorithm, before extending the
+            algorithm to construct Bezier surfaces. I also manipulated triangle
+            meshes represented by the half-edge data structure by averaging mesh
+            normals for smoother shading and implementing edge flip and edge
+            split functions; these operations proved helpful in my later
+            implementation of loop subdivision to upsample meshes for enhanced
+            high-poly visualization.
+          </p>
         </div>
         <div id="dt2">
           <h2>Bezier Curves</h2>
@@ -97,7 +95,6 @@
             </div>
           </div>
         </div>
-        <!-- end dt2 -->
         <div id="dt3">
           <h2>Area-Weighted Vertex Normals</h2>
           Here, I implemented area-weighted normal vectors at vertices. These
@@ -123,7 +120,6 @@
             </div>
           </div>
         </div>
-        <!-- end dt3 -->
         <div id="dt4">
           <br />
           In this section, I implemented multiple local remeshing operations,
@@ -304,11 +300,8 @@
           Once all sides of cube are pre-processed to be symmetrical, loop
           subdivision upsamples the mesh symmetrically.
         </div>
-        <!--end dt4-->
       </div>
-      <!--end tabs-->
     </div>
-    <!--end container-->
     <script src="js/tabToggle.js"></script>
     <script src="js/imgModal.js"></script>
   </body>
