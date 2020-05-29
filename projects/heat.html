@@ -28,9 +28,6 @@
           <div style="margin: auto;">Technical Approach</div>
         </div>
         <div class="tab" id="t3">
-          <div style="margin: auto;">Problems Encountered</div>
-        </div>
-        <div class="tab" id="t4">
           <div style="margin: auto;">Results</div>
         </div>
       </div>
@@ -88,6 +85,7 @@
             <li><a href="#rtgo">Ray Tracing Glowing Objects</a></li>
             <li><a href="#vtm">Volumetric Temperature Maps</a></li>
             <li><a href="#sc">Spectrum Caching</a></li>
+            <li><a href="#ref">References</a></li>
           </ul>
           <hr id="dbe" />
           <h2>Diffuse Blackbody Emission</h2>
@@ -137,6 +135,18 @@
             CIE 1931 XYZ color space, then apply a transformation matrix and
             gamma function to convert to sRGB.
           </p>
+          <h3>Out-of-gamut colors for low temperatures (&lt;2000K)</h3>
+          <p>
+            We were not initially able to reproduce the reddish emission color
+            of objects heated to temperatures less than about 2000K, instead
+            producing a range of strange pink hues. Converting from CIE XYZ to
+            sRGB, we found that the resulting Spectrum sometimes contained a red
+            value greater than 1, and a blue value less than 0. By clamping
+            these values to the range 0 through 1, as required by the Spectrum
+            class, this problem was fixed.
+          </p>
+
+          <img style="width: 60%;" src="../assets/heat/bunnyLowTempError.png" />
           <hr id="pol" />
           <h2>Polarization of Light</h2>
           <p>
@@ -280,43 +290,56 @@
             and alpha = 0.1. No external lighting, max bounces = 6, 480x360 px,
             8 render threads. Each time measurement is the avg. of three trials.
           </figcaption>
+          <hr id="ref" />
+          <h2>References</h2>
+          <ul>
+            <li>
+              <a
+                href="https://cgg.mff.cuni.cz/~wilkie/Website/Home_files/egsr_2011_glow.pdf"
+                >A Physically Plausible Model for Light Emission from Glowing
+                Solid Objects (A. Wilkie and A. Weidlich)</a
+              >
+            </li>
+            <li>
+              <a href="https://mrl.nyu.edu/~perlin/paper445.pdf"
+                >Improving Noise (K. Perlin)</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://solarianprogrammer.com/2012/07/18/perlin-noise-cpp-11/"
+                >Perlin noise in C++11 (P. Silisteanu)</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.image-engineering.de/library/technotes/958-how-to-convert-between-srgb-and-ciexyz"
+                >How to convert between sRGB and CIEXYZ</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119021780.app9"
+                >CIE Colour Matching Functions</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://seblagarde.wordpress.com/2013/04/29/memo-on-fresnel-equations/"
+                >Fresnel equations</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://refractiveindex.info/?shelf=main&book=Au&page=Johnson"
+                >Refractive Index Database</a
+              >
+            </li>
+          </ul>
+
           <br />
         </div>
         <div id="dt3">
-          <h2>Out-of-gamut colors for low temperatures (&lt;2000K)</h2>
-          <p>
-            We were not initially able to reproduce the reddish emission color
-            of objects heated to temperatures less than about 2000K, instead
-            producing a range of strange pink hues. Converting from CIE XYZ to
-            sRGB, we found that the resulting Spectrum sometimes contained a red
-            value greater than 1, and a blue value less than 0. By clamping
-            these values to the range 0 through 1, as required by the Spectrum
-            class, this problem was fixed.
-          </p>
-
-          <img style="width: 60%;" src="../assets/heat/bunnyLowTempError.png" />
-          <hr />
-          <h2>Ray Tracer Modifications</h2>
-          <p>
-            Our first attempt at ray tracing glowing objects didn’t work without
-            external lighting, as the path tracer was importance sampling only
-            light objects (excluding our emissive meshes) for one-bounce
-            illumination. Also, zero-bounce illumination was only capable of
-            returning a constant radiance from a BSDF, with no dependence on ray
-            direction or intersection position.
-          </p>
-          <p>
-            In our second attempt, we changed the zero-bounce radiance code and
-            our GlowingBSDF
-            <i>get_emission</i> function to return a direction and position
-            dependent emission. This blackbody emission was multiplied by an
-            average absorbance factor, as described in the paper. We also
-            altered our code to use cosine hemisphere sampling so the glowing
-            objects could produce global illumination.
-          </p>
-          <br />
-        </div>
-        <div id="dt4">
           <h2>Varying Temperatures</h2>
           <div class="row">
             <img style="width: 50%;" src="../assets/heat/temp1.png" />
@@ -400,53 +423,6 @@
               <figcaption>Noise fineness: 20</figcaption>
             </div>
           </div>
-
-          <hr />
-          <h2>References</h2>
-          <ul>
-            <li>
-              <a
-                href="https://cgg.mff.cuni.cz/~wilkie/Website/Home_files/egsr_2011_glow.pdf"
-                >A Physically Plausible Model for Light Emission from Glowing
-                Solid Objects (A. Wilkie and A. Weidlich)</a
-              >
-            </li>
-            <li>
-              <a href="https://mrl.nyu.edu/~perlin/paper445.pdf"
-                >Improving Noise (K. Perlin)</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://solarianprogrammer.com/2012/07/18/perlin-noise-cpp-11/"
-                >Perlin noise in C++11 (P. Silisteanu)</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.image-engineering.de/library/technotes/958-how-to-convert-between-srgb-and-ciexyz"
-                >How to convert between sRGB and CIEXYZ</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119021780.app9"
-                >CIE Colour Matching Functions</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://seblagarde.wordpress.com/2013/04/29/memo-on-fresnel-equations/"
-                >Fresnel equations</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://refractiveindex.info/?shelf=main&book=Au&page=Johnson"
-                >Refractive Index Database</a
-              >
-            </li>
-          </ul>
         </div>
       </div>
     </div>

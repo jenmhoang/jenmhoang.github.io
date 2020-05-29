@@ -100,7 +100,7 @@
   color: white;
   display: inline-block;
   margin: 0 auto;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
   width: 100px;
   font-weight: bold;
@@ -156,6 +156,7 @@
   text-align: center;
   padding: 2px 16px;
   color: white;
+  font-size: 16px;
 }
 
 .hoverOp:hover {

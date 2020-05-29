@@ -5,6 +5,9 @@ $(document).ready(function () {
     $(".projNav").fadeOut();
     $(".info").css("right", "0");
     $(".info").fadeIn(2000);
+    $(".header").fadeOut();
+    $(".close").fadeIn(2000);
+    $(".close").css("display", "flex");
   }
 
   function close() {
@@ -13,6 +16,9 @@ $(document).ready(function () {
 
     $(".projNav").fadeIn(500);
     $(".info").hide({ duration: 0, queue: true });
+
+    $(".close").hide();
+    $(".header").fadeIn(2000);
   }
 
   var btns = ["#b1", "#b2", "#b3", "#b4"];

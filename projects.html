@@ -10,22 +10,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
-    <div id="header">
-      <div id="homeLogo">
-        <a href="index.html#home" style="text-decoration: none;">
-          <img id="homeLogo" src="assets/index/jhLogo.png" />
-        </a>
-      </div>
-      <div id="header-items">
-        <a href="index.html#about" style="text-decoration: none;"
-          ><div id="header-text">About</div></a
-        >
-        <a href="projects.html" style="text-decoration: none;"
-          ><div id="header-text">Projects</div></a
-        >
-        <a href="art.html" style="text-decoration: none;"
-          ><div id="header-text">Art</div></a
-        >
+    <div class="header">
+      <div style="display: flex; align-items: center;">
+        <div class="homeLogo">
+          <a href="index.html#home" style="text-decoration: none;">
+            <img src="assets/index/jhLogo.png" />
+          </a>
+        </div>
+        <div class="header-items">
+          <a href="index.html#about" style="text-decoration: none;"
+            ><p id="header-text">About</p></a
+          >
+          <a href="projects.html" style="text-decoration: none;"
+            ><p id="header-text">Projects</p></a
+          >
+          <a href="art.html" style="text-decoration: none;"
+            ><p id="header-text">Art</p></a
+          >
+        </div>
       </div>
     </div>
 
@@ -65,7 +67,7 @@
         <img id="underPic" src="assets/1951/1951cupLogo.jpg" />
       </div>
 
-      <img class="close" src="assets/projects/close.png" />
+      <!-- <img class="close" src="assets/projects/close.png" /> -->
 
       <div class="info">
         <iframe id="frame" src=""></iframe>
