@@ -9,7 +9,7 @@ function toggleMain(tag) {
 }
 
 $(document).ready(function () {
-  var mainPics = ["#p1", "#p2", "#p3"];
+  var mainPics = ["#p1", "#p2", "#p3", "#p4"];
   $.each(mainPics, function (i, v) {
     $(v).click(function () {
       toggleMain(this);

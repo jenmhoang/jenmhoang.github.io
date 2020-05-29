@@ -10,7 +10,9 @@ for (var i = 0; i < tabs.length; i++) {
 
 function openTab(section) {
   $(section).fadeIn();
+  $("#tabs").css("scroll-behavior", "auto");
   $("div").scrollTop(0);
+  $("#tabs").css("scroll-behavior", "smooth");
 }
 
 function closeTab() {

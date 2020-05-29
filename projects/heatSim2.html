@@ -1,0 +1,848 @@
+<! DOCTYPE HTML>
+<html>
+  <head>
+    <title>Jen Hoang</title>
+    <link rel="stylesheet" type="text/css" href="../css/tabStyles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM Sans"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <button onclick="topFunction()" id="scrollTop" title="Go to top">
+      &#8593;
+    </button>
+    <div class="container">
+      <div class="divHeading">
+        <h1>
+          Material-Based
+          <div id="glow">Glow</div>
+          Simulation of Heated Metal Objects
+        </h1>
+        <div id="subtitle">Ethan Buttimer, Jen Hoang, Susan Lin</div>
+      </div>
+      <div id="pagination">
+        <div class="tab" id="t1">
+          <div style="margin: auto;">Proposal</div>
+        </div>
+        <div class="tab" id="t2">
+          <div style="margin: auto;">Milestone</div>
+        </div>
+        <div class="tab" id="t3">
+          <div style="margin: auto;">Presentations</div>
+        </div>
+        <div class="tab active" id="t4">
+          <div style="margin: auto;">Final Report</div>
+        </div>
+      </div>
+      <div id="tabs">
+        <div id="dt1">
+          <p>
+            The goal of our project is to simulate gradient light emission from
+            heated metal objects. We will model how heat and the resulting glow
+            varies over a surface, with consideration of material attributes.
+          </p>
+          <hr />
+          <h2>Problem Description</h2>
+          <p>
+            From the experiences that we've had applying glow attributes to
+            models in 3D programs such as Autodesk Maya (used with Pixar
+            RenderMan), we've found that the results fail to take into
+            consideration material properties and variations in heat across a
+            surface. Thus, they cannot be used to accurately represent objects
+            that emit energy and glow.
+          </p>
+          <p>
+            Through this project, we aim to create functionality for a realistic
+            representation of heated objects with diverse metal material
+            properties. By doing so, we will demonstrate the different ways
+            light emission can be simulated when considering the energy
+            absorbance and reflectance properties of different materials.
+          </p>
+          <p>
+            Using guidance from a few papers we are reading on, we plan to work
+            through this problem by considering blackbody radiation models based
+            on Kirchkoff's law.
+          </p>
+          <hr />
+          <h2>Goals and Deliverables</h2>
+          <p>
+            Through our analysis, we hope to gain understanding of how heat
+            emittance varies between different materials and temperatures.
+          </p>
+          <h3>Quality and Performance</h3>
+          <p>
+            To measure the quality of our system, we will compare our renders to
+            photographs of actually heated objects of different materials. To
+            measure the performance of our system, we will compare the time it
+            takes for a glowing object to light a scene against the time it
+            takes for a typical light source to light a scene.
+          </p>
+          <h3>Plan to Deliver</h3>
+          <p>
+            We plan to deliver several images comparing the heated glows of at
+            least three different metal materials. This can be done by
+            considering the different energy absorbance/reflectance values of
+            various materials that contribute to the resulting heat
+            representation. We also plan on simulating the gradient glow of an
+            object with non-uniform heat distribution (parts of the object are
+            hotter or cooler than other parts). This can be done by
+            interpolating glow gain values over a heat map.
+          </p>
+          <h3>Hope to Deliver</h3>
+          <p>
+            If we have extra time, we would like to consider how we might turn
+            this into a plugin for a current existing 3D modeling or rendering
+            software, such as Autodesk Maya.
+          </p>
+          <p>
+            Additionally, we hope to provide animated simulations of
+            time-varying heat maps as the heat and corresponding glow of an
+            object changes over time.
+          </p>
+          <h3>Interactivity</h3>
+          <p>
+            Our goal is for the program to take JSON files defining material
+            attributes, PNG files acting as UV heat texture maps, and COLLADA
+            (.dae) files defining 3D objects, and output a rendered PNG image.
+          </p>
+          <hr />
+          <h2>Schedule</h2>
+          <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+              <td>Date</td>
+              <td>Tasks</td>
+            </thead>
+            <tr>
+              <td>4/11</td>
+              <td>
+                Frameworks, shader files, and object models set up. Finalize
+                technical descriptions of the components of the paper(s) we
+                intend to replicate and expand upon.
+              </td>
+            </tr>
+            <tr>
+              <td>4/15</td>
+              <td>
+                Create glow functionality based on material properties and
+                temperature. Implement toggling of shader components: diffuse
+                emission, reflectance, and absorption according to Kirchoff's
+                Law.
+              </td>
+            </tr>
+            <tr>
+              <td>4/22</td>
+              <td>
+                Implement temperature textures, possibly time-varying
+                (animated). Complete the file input interface.
+              </td>
+            </tr>
+            <tr>
+              <td>4/28</td>
+              <td>
+                Status report webpage, slides, and video. Renderings
+                demonstrating our work.
+              </td>
+            </tr>
+            <tr>
+              <td>5/6</td>
+              <td>
+                Presentation slides. Structure and basic content of the final
+                webpage. All coding finalized.
+              </td>
+            </tr>
+            <tr>
+              <td>5/12</td>
+              <td>Finalized video and webpage.</td>
+            </tr>
+          </table>
+
+          <hr />
+          <h2>Resources</h2>
+          <ul>
+            <li>Our own computers</li>
+            <li>Hive machines</li>
+            <li>Project 3 codebase and renderer</li>
+            <li>
+              <a
+                href="https://cgg.mff.cuni.cz/~wilkie/Website/Home_files/egsr_2011_glow.pdf"
+                >A Physically Plausible Model for Light Emission from Glowing
+                Solid Objects</a
+              >
+            </li>
+            <li>
+              <a
+                href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.94.4133&rep=rep1&type=pdf"
+                >Visual Simulation of Heat Shimmering and Mirage</a
+              >
+            </li>
+            <li>
+              Autodesk Maya and/or Blender for creation of example COLLADA files
+            </li>
+          </ul>
+        </div>
+        <div id="dt2">
+          <button onclick="topFunction()" id="scrollTop" title="Go to top">
+            Top
+          </button>
+
+          <ul class="breadcrumb">
+            <li><a href="#dbe">Diffuse Blackbody Emission</a></li>
+            <li><a href="#r">Reflectance</a></li>
+            <li><a href="#tr">Test Renders</a></li>
+            <li><a href="#ft">Fresnel Terms</a></li>
+            <li><a href="#p">Process</a></li>
+            <li><a href="#r2">Reflection</a></li>
+            <li><a href="#ns">Next Steps</a></li>
+          </ul>
+
+          <hr id="dbe" />
+          <h3>Diffuse Blackbody Emission</h3>
+          <p>
+            We start by implementing the glow of perfectly diffuse emissive
+            objects for some input temperature. In this case, our object is an
+            ideal blackbody that absorbs and re-emits all energy falling upon
+            it. We find the spectral radiance of our blackbody through Planck's
+            law of black-body radiation.
+          </p>
+          <img style="width: 30%;" src="images/plancksEq.svg" />
+          <p>
+            Using this equation, we calculate a distribution of 81 discrete
+            wavelengths ranging from 380 - 780 nm, roughly the human visual
+            spectrum. Then, in order to compute a final color compatible with
+            the computer display, we first convert the high dimensional spectrum
+            to the three dimensional CIE 1931 XYZ color space, then apply a
+            transformation matrix and gamma function to convert to sRGB.
+          </p>
+
+          <hr id="r" />
+          <h3>Reflectance</h3>
+          <p>
+            In order to realistically render gradual changes in glow color as
+            temperature varies, we combine our estimate of blackbody radiation
+            with the microfacet-model reflectance of the metal. The final
+            sampled color is a combination of reflected and emitted light,
+            weighted by the absorbance factor of the material (1 - reflectance).
+            Kirchoff's Law of Thermal Radiation ensures that the energy of the
+            system is conserved, resulting in more realistic renders.
+          </p>
+          <h5 style="width: 70%; margin: auto;">
+            Kirchoff's Law:
+            <i
+              >At thermal equilibrium, the emissivity and the absorptivity of a
+              surface at a given temperature and wavelength are equal</i
+            >
+          </h5>
+
+          <hr id="tr" />
+          <h3>Test Renders</h3>
+          <p>
+            We used reflectance data from
+            <a
+              href="https://refractiveindex.info/?shelf=main&book=Au&page=Johnson"
+              >this website</a
+            >
+            to estimate an average reflectance factor for each material (3D
+            Shelf, 614 nm, 0° incidence). Our renders demonstrate
+            temperature-responsive glow, direct illumination only (for now).
+          </p>
+          <p>
+            Our input temperature varies along the Kelvin temperature scale:
+          </p>
+          <img style="width: 80%;" src="images/color_scale_02.png" />
+          <br /><br />
+          Gold dragon, reflectance factor = 0.9
+          <div class="row">
+            <div class="column">
+              <img src="images/dragon_10000K.png" />
+              <figcaption>10000K</figcaption>
+            </div>
+            <div class="column">
+              <img src="images/dragon_7000K.png" />
+              <figcaption>7000K</figcaption>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <img src="images/dragon_5000K.png" />
+              <figcaption>5000K</figcaption>
+            </div>
+            <div class="column">
+              <img src="images/dragon_3000K.png" />
+              <figcaption>3000K</figcaption>
+            </div>
+            <div class="column">
+              <img src="images/dragon_2000K.png" />
+              <figcaption>2000K</figcaption>
+            </div>
+          </div>
+          <br /><br />
+          Lead bunny, reflectance factor = 0.6
+          <div class="row">
+            <div class="column">
+              <img src="images/bunny_10000K.png" />
+              <figcaption>10000K</figcaption>
+            </div>
+            <div class="column">
+              <img src="images/bunny_7000K.png" />
+              <figcaption>7000K</figcaption>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="column">
+              <img src="images/bunny_5000K.png" />
+              <figcaption>5000K</figcaption>
+            </div>
+            <div class="column">
+              <img src="images/bunny_3000K.png" />
+              <figcaption>3000K</figcaption>
+            </div>
+            <div class="column">
+              <img src="images/bunny_2000K.png" />
+              <figcaption>2000K</figcaption>
+            </div>
+          </div>
+
+          <hr id="ft" />
+          <h3>Fresnel Terms</h3>
+          <p>
+            As we plan to take into consideration the effect of polarized light,
+            we've split up the Fresnel reflectance coefficient calculations into
+            s polarization and p polarization.
+          </p>
+          <div class="row" style="justify-content: space-around;">
+            <img src="images/rpEq.png" /> <img src="images/rsEq.png" />
+          </div>
+
+          <hr id="p" />
+          <h3>Process</h3>
+          <p>
+            So far we've modified the aforementioned quantities in a new BSDF
+            class, called GlowingBSDF. We've also modified the estimation of
+            global illumination by replacing the zero-bounce-radiance with the
+            blackbody radiation weighted by the absorbance -- this allows us to
+            simulate the glowing of the material.
+          </p>
+
+          <hr id="r2" />
+          <h3>Reflection</h3>
+          <p>
+            We're slightly behind the progress goals set in the proposal, but
+            we've already produced some nice renders with the features
+            implemented so far. We still have plenty of time to implement the
+            most important features that remain.
+          </p>
+
+          <hr id="ns" />
+          <h3>Next Steps</h3>
+          <p>
+            Right now, our renders only demonstrate the direct illumination of
+            the glow effect. We will work on tracing multi-bounce paths to
+            achieve global illumination. We also aim to render objects with
+            non-uniform heat distributions by interpolating glow gain values
+            over a heat map.
+          </p>
+        </div>
+        <div id="dt3">
+          <h2>Final Presentations</h2>
+          <div style="text-align: center;">
+            <video width="80%" controls>
+              <source src="cs184final.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <br /><br />
+          <iframe
+            src="https://docs.google.com/presentation/d/e/2PACX-1vSNxx2AJvJtC84QThw8ngbE7Ea72qMjeN_ppoKVNasszRIpKjWhni3BUMNmAlLwiU-N8ZznKIg7NVXC/embed?start=false&loop=true&delayms=3000"
+            frameborder="0"
+            width="960"
+            height="569"
+            allowfullscreen="true"
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+          ></iframe>
+          <br /><br />
+          <hr />
+          <h2>Milestone Presentations</h2>
+          <div style="text-align: center;">
+            <video width="80%" controls>
+              <source src="cs184midpoint.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <br /><br />
+          <iframe
+            src="https://docs.google.com/presentation/d/e/2PACX-1vQSmtT-FitS9jFJ5Pfs9Fnbt1jnp7FIJ0O4s2euif5KmC7Q_evX-ry6gL4dWNkdQgbbudK59-7WTgOe/embed?start=false&loop=true&delayms=5000"
+            frameborder="0"
+            width="960"
+            height="569"
+            allowfullscreen="true"
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+          ></iframe>
+        </div>
+        <div id="dt4">
+          <ul class="breadcrumb">
+            <li><a href="#a">Abstract</a></li>
+            <li><a href="#ta">Technical Approach</a></li>
+            <li><a href="#pe">Problems Encountered</a></li>
+            <li><a href="#res">Results</a></li>
+            <li><a href="#ref">References</a></li>
+            <li><a href="#c">Contributions</a></li>
+          </ul>
+          <hr id="a" />
+          <h2>Abstract</h2>
+          <h3>The Problem</h3>
+          <p>
+            From the experiences that we've had applying glow attributes to
+            models in 3D programs such as Autodesk Maya (used with Pixar
+            RenderMan), we've found that the results fail to take into
+            consideration material properties and variations in heat across a
+            surface. Thus, they cannot be used to accurately represent objects
+            that emit heat/energy and glow.
+          </p>
+          <img style="width: 70%;" src="images/maya.png" />
+          <br />
+          <figcaption align="middle">
+            Example of a perfectly diffuse mesh light produced in Autodesk Maya
+          </figcaption>
+          <h3>The Solution</h3>
+          <p>
+            For this project, we created functionality for a realistic
+            representation of heated objects with diverse metal material
+            properties. By doing so, we are able to demonstrate the different
+            ways light emission can be simulated when considering the energy
+            absorbance and reflectance properties of different materials. We
+            also modeled how heat and the resulting glow could vary over a
+            surface, by implementing volumetric temperature maps.
+          </p>
+          <img style="width: 70%;" src="images/noiseDragon_extra.png" />
+          <hr id="ta" />
+          <h2>Technical Approach</h2>
+          <p>
+            This project was built as an extension of the Project 3 Pathtracer
+            codebase.
+          </p>
+          <h3>Diffuse Blackbody Emission</h3>
+          <p>
+            We start by implementing the glow of perfectly diffuse emissive
+            objects for some input temperature. In this case, our object is an
+            ideal blackbody that absorbs and re-emits all energy falling upon
+            it. We compute the spectral radiance of our blackbody through
+            Planck's law of black-body radiation.
+          </p>
+          <img style="width: 30%;" src="images/plancksEq.svg" />
+          <p>
+            Using this equation, we calculate a distribution of 81 discrete
+            wavelengths ranging from 380 - 780 nm, roughly the human visual
+            spectrum.
+          </p>
+
+          <img style="width: 70%;" src="images/distribution.png" />
+          <h3>Reflectance</h3>
+          <p>
+            In order to control the glow attributes and inputs for different
+            meshes, we create a GlowingBSDF class that expands on the microfacet
+            model seen in Project 3. Here, we combine our estimate of blackbody
+            radiation with the reflectance input of the metal, allowing us to
+            realistically render changes in glow color as the temperature and
+            metal material of our objects vary. The final sampled color is a
+            combination of reflected and emitted light, weighted by the
+            absorbance factor of the material (1 - reflectance). Kirchoff's Law
+            of Thermal Radiation ensures that the energy of the system is
+            conserved, resulting in more realistic renders.
+          </p>
+          <h5 style="width: 70%; margin: auto;">
+            Kirchoff's Law:
+            <i
+              >At thermal equilibrium, the emissivity and the absorptivity of a
+              surface at a given temperature and wavelength are equal</i
+            >
+          </h5>
+          <h3>Color Reproduction</h3>
+          <p>
+            To compute a final color compatible with the computer display, we
+            first convert the high dimensional spectrum to the three dimensional
+            CIE 1931 XYZ color space, then apply a transformation matrix and
+            gamma function to convert to sRGB.
+          </p>
+          <h3>Polarization of Light</h3>
+          <p>
+            Experimenting with the polarization of light and how that might
+            enhance our glowing effect, we tested out both dielectric-dielectric
+            and dielectric-conductor Fresnel terms split between both s and p
+            polarization. In differentiating S (perpendicular) polarization and
+            P (parallel) polarization, the electric field is either
+            perpendicular or parallel to the plane of incidence -- the plane
+            that contains the incident and reflected wave vectors.
+          </p>
+          <img style="width: 70%;" src="images/polarization.png" />
+          <figcaption align="center">
+            <a
+              href="https://www.brown.edu/research/labs/mittleman/sites/brown.edu.research.labs.mittleman/files/uploads/lecture13_0.pdf"
+              >Fresnel's Equations on Reflection and Transmission</a
+            >
+          </figcaption>
+          <h3>Ray Tracing Glowing Objects</h3>
+          <p>
+            To achieve both direct and global illumination, we altered the
+            <i>get_emission</i> function of our GlowingBSDF class to return a
+            radiance Spectrum based on the direction of the incoming light ray
+            and the temperature at the point of ray intersection. This allows us
+            to simulate the glowing effect while visually preserving the
+            object’s dimensionality.
+          </p>
+          <h3>Volumetric Temperature Maps</h3>
+          <p>
+            Additionally, we modified our COLLADA parser, allowing it to read a
+            temperature distribution tag that could process either a constant
+            temperature, a linear gradient map, or a Perlin noise map. The code
+            used to compute the Perlin noise function itself was found
+            <a href="https://github.com/sol-prog/Perlin_Noise">here</a>, based
+            on the
+            <a href="https://mrl.nyu.edu/~perlin/paper445.pdf"
+              >original paper</a
+            >
+            by Ken Perlin.
+          </p>
+          <p>
+            For a constant temperature, we apply a uniform temperature
+            distribution throughout the entire mesh, based on a scalar
+            temperature input.
+          </p>
+          <p>
+            For our linear gradient map, we obtain smoothly varying temperature
+            values across the surface of our mesh through linear interpolation
+            of two start and end temperature inputs at corresponding 3D vector
+            positions.
+          </p>
+          <p>
+            For our Perlin noise map, we apply the Perlin noise function to
+            obtain a pseudo-random temperature distribution ranging between two
+            input temperatures. Another input controls the noise fineness -- how
+            quickly the temperatures fluxuate across 3D space.
+          </p>
+
+          <img style="width: 60%;" src="images/volume_distr.jpg" />
+
+          <h3>Spectrum Caching</h3>
+          <p>
+            In order to improve program efficiency, we implemented a dynamic
+            caching system that stored a map from integer-rounded temperatures
+            to RGB Spectrums, reducing the amount of computation needed for
+            repeated temperature samples.
+          </p>
+          <p>
+            No loss in image quality was detectible due to rounded temperature
+            samples, as the bucket size is very small in comparison to the wide
+            range of possible temperatures. Further research could determine the
+            effectiveness of larger and/or adaptive bucket sizes, as greater
+            temperature gaps are required to produce a visual difference in
+            emission as overall temperature increases.
+          </p>
+          <p>
+            Using our caching system, slight but consistent improvements in
+            render speed were observed with a variety of models, materials,
+            sampling rates, and temperature distributions.
+          </p>
+
+          <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+              <tr>
+                <th rowspan="2">Temperature distribution</th>
+                <th rowspan="2">Render run time...</th>
+                <th colspan="3">Sampling rate (samples/pixel)</th>
+              </tr>
+              <tr>
+                <th>1</th>
+                <th>8</th>
+                <th>64</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="3">Constant</td>
+                <td>w/o caching (s)</td>
+                <td>0.593</td>
+                <td>4.737</td>
+                <td>24.760</td>
+              </tr>
+              <tr>
+                <td>w/ caching (s)</td>
+                <td>0.558</td>
+                <td>4.091</td>
+                <td>23.249</td>
+              </tr>
+              <tr>
+                <td>Improvement</td>
+                <td>6%</td>
+                <td>14%</td>
+                <td>6%</td>
+              </tr>
+
+              <tr>
+                <td rowspan="3">Variable (noise)</td>
+                <td>w/o caching (s)</td>
+                <td>0.693</td>
+                <td>4.609</td>
+                <td>24.625</td>
+              </tr>
+              <tr>
+                <td>w/ caching (s)</td>
+                <td>0.534</td>
+                <td>4.243</td>
+                <td>23.307</td>
+              </tr>
+              <tr>
+                <td>Improvement</td>
+                <td>23%</td>
+                <td>8%</td>
+                <td>5%</td>
+              </tr>
+            </tbody>
+          </table>
+          <figcaption align="middle">
+            All tests performed on a gold CBDragon model with 80% reflectance
+            and alpha = 0.1. No external lighting, max bounces = 6, 480x360 px,
+            8 render threads. Each time measurement is the avg. of three trials.
+          </figcaption>
+
+          <hr id="pe" />
+          <h2>Problems Encountered</h2>
+          <h3>Out-of-gamut colors for low temperatures (&lt;2000K)</h3>
+          <p>
+            We were not initially able to reproduce the reddish emission color
+            of objects heated to temperatures less than about 2000K, instead
+            producing a range of strange pink hues. Converting from CIE XYZ to
+            sRGB, we found that the resulting Spectrum sometimes contained a red
+            value greater than 1, and a blue value less than 0. By clamping
+            these values to the range 0 through 1, as required by the Spectrum
+            class, this problem was fixed.
+          </p>
+
+          <img style="width: 60%;" src="images/bunnyLowTempError.png" />
+
+          <h3>Ray Tracer Modifications</h3>
+          <p>
+            Our first attempt at ray tracing glowing objects didn’t work without
+            external lighting, as the path tracer was importance sampling only
+            light objects for one-bounce illumination. Also, zero-bounce
+            illumination was only capable of returning a constant radiance from
+            a BSDF, with no dependence on ray direction or intersection
+            position. At this time, we only had access to Project 3-2 code, so
+            we couldn’t directly change these aspects of the path tracer code.
+          </p>
+          <p>
+            In our second attempt, we ported in Project 3-1 code and changed the
+            zero-bounce radiance code and our GlowingBSDF
+            <i>get_emission</i> function to return a direction and position
+            dependent emission. This blackbody emission was multiplied by an
+            average absorbance factor, as described in the paper. We also
+            altered our code to use cosine hemisphere sampling so the glowing
+            objects could produce global illumination.
+          </p>
+          <h3>Lessons Learned</h3>
+          <p>
+            Alongside overcoming the problems we encountered in the previous
+            section, we learned a lot about the physics behind glowing objects,
+            from blackbody radiation and Kirchoff’s Law to polarization.
+            Applying the concepts we learned in the color reproduction lectures
+            really helped us understand the computational representations of
+            color.
+          </p>
+          <p>
+            Going through the project, we also strengthened our understanding of
+            how the Project 3 Codebase worked, from following an XML file
+            through the Collada Parser, to ray-tracing and incorporating the
+            BSDF functions.
+          </p>
+          <p>
+            This process also familiarized us with working in a team across
+            Github and XCode -- from fixing small linker issues to modifying the
+            Cmake List and rebuilding when we create new files. It was
+            interesting to go through iterations on our project -- dropping by
+            office hours when we got really stuck and going back to edit the
+            code to work with advice we’d received.
+          </p>
+
+          <hr id="res" />
+          <h2>Results</h2>
+          <h3>Varying Temperatures</h3>
+          <div class="row">
+            <img style="width: 50%;" src="images/temp1.png" />
+            <img style="width: 50%;" src="images/temp2.png" />
+          </div>
+          <figcaption align="middle">
+            Emissive spheres at varying in temperature from 1000K to 20000K
+            (left to right)
+          </figcaption>
+          <h3>Polarization of Light</h3>
+          <div class="row">
+            <div class="column three">
+              <img src="images/image1.png" />
+              <figcaption>Averaged Fresnel term</figcaption>
+            </div>
+            <div class="column three">
+              <img src="images/image2.png" />
+              <figcaption>Fresnel with s polarization</figcaption>
+            </div>
+            <div class="column three">
+              <img src="images/image3.png" />
+              <figcaption>Fresnel with p polarization</figcaption>
+            </div>
+          </div>
+          <h3>Optical Material Properties</h3>
+          <p>
+            We used reflectance data from
+            <a
+              href="https://refractiveindex.info/?shelf=main&book=Au&page=Johnson"
+              >this website</a
+            >
+            to obtain the reflectance and Spectrum values of specific metal
+            materials in an attempt to produce realistic renders. From here, we
+            compared our renders to photographs of real heated metals.
+          </p>
+          <img src="images/iron.png" style="width: 100%;" />
+          <figcaption align="middle">
+            Heated iron stovetop compared to rendered heated bunny (1000K)
+          </figcaption>
+          <br />
+          <img src="images/nickel.png" style="width: 100%;" />
+          <figcaption align="middle">
+            Heated nickel ball compared to rendered heated bunny (1950K)
+          </figcaption>
+          <br />
+          <img src="images/gold.png" style="width: 100%;" />
+          <figcaption align="middle">
+            Heated gold coin compared to rendered heated bunny (1500K)
+          </figcaption>
+          <br />
+          <h3>Volumetric Temperature Maps</h3>
+          Linear gradient map
+          <div class="row">
+            <div class="column two">
+              <img src="images/gradientBunny.png" />
+              <figcaption>Temperature range: 800-3000K</figcaption>
+              <figcaption>Axis-aligned</figcaption>
+            </div>
+            <div class="column two">
+              <img src="images/gradientDragon.png" />
+              <figcaption>Temperature range: 1000-3000K</figcaption>
+              <figcaption>Not axis-aligned</figcaption>
+            </div>
+          </div>
+          Perlin Noise map
+          <div class="row">
+            <div class="column two">
+              <img src="images/noiseBunny.png" />
+              <figcaption>Temperature range: 1000-1500K</figcaption>
+              <figcaption>Noise fineness: 5</figcaption>
+            </div>
+            <div class="column two">
+              <img src="images/noiseDragon.png" />
+              <figcaption>Temperature range: 1000-3000K</figcaption>
+              <figcaption>Noise fineness: 20</figcaption>
+            </div>
+          </div>
+
+          <hr id="ref" />
+          <h2>References</h2>
+          <ul>
+            <li>
+              <a
+                href="https://cgg.mff.cuni.cz/~wilkie/Website/Home_files/egsr_2011_glow.pdf"
+                >A Physically Plausible Model for Light Emission from Glowing
+                Solid Objects (A. Wilkie and A. Weidlich)</a
+              >
+            </li>
+            <li>
+              <a href="https://mrl.nyu.edu/~perlin/paper445.pdf"
+                >Improving Noise (K. Perlin)</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://solarianprogrammer.com/2012/07/18/perlin-noise-cpp-11/"
+                >Perlin noise in C++11 (P. Silisteanu)</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.image-engineering.de/library/technotes/958-how-to-convert-between-srgb-and-ciexyz"
+                >How to convert between sRGB and CIEXYZ</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119021780.app9"
+                >CIE Colour Matching Functions</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://seblagarde.wordpress.com/2013/04/29/memo-on-fresnel-equations/"
+                >Fresnel equations</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://refractiveindex.info/?shelf=main&book=Au&page=Johnson"
+                >Refractive Index Database</a
+              >
+            </li>
+          </ul>
+          <hr id="c" />
+          <h2>Contributions</h2>
+          <h3>Ethan Buttimer</h3>
+          <ul>
+            <li>Set up GlowingBSDF class and added support to parser</li>
+            <li>
+              Created SpectralDistribution class and implemented color
+              conversion from spectral distribution to CIE XYZ and sRGB Spectrum
+            </li>
+            <li>
+              Created the volumetric temperature distribution framework and
+              added support in parser for three types of distributions
+            </li>
+            <li>
+              Integrated Perlin Noise into the renderer through the temperature
+              sampling function of the NoiseTempMap class
+            </li>
+            <li>Implemented and tested Spectrum cache</li>
+          </ul>
+          <h3>Jen Hoang</h3>
+          <ul>
+            <li>
+              Implemented Planck's equation for computation of the spectral
+              distribution for blackbody diffuse objects
+            </li>
+            <li>
+              Computed interpolating temperature values in 3D space for linear
+              gradient distribution
+            </li>
+            <li>
+              Made XML file modifications for material data and linear gradient
+              renders
+            </li>
+            <li>Designed and made webpage</li>
+          </ul>
+          <h3>Susan Lin</h3>
+          <ul>
+            <li>
+              Worked on GlowingBSDF functions, especially with the Fresnel term
+              in relation to polarization
+            </li>
+            <li>
+              Modified XML files for material data and varying temperature
+              renders
+            </li>
+            <li>Compiled, recorded, and edited videos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/tabToggle.js"></script>
+    <script src="../js/scrollToTop.js"></script>
+  </body>
+</html>
