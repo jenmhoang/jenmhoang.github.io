@@ -1,9 +1,14 @@
 @import "modalStyles.css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "DM Sans";
   font-size: 14px;
   margin: 0;
+  background-color: #f5f6fc;
 }
 
 img {
@@ -73,15 +78,15 @@ ul {
 .container {
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 /* Division Header */
 .divHeading {
-  height: 100px;
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100px;
 }
 
 #subtitle {
@@ -93,16 +98,16 @@ ul {
 /* Pagination Tabs */
 #pagination {
   display: flex;
-  flex-direction: row;
+  position: sticky;
+  top: 0;
 }
 
 .tab {
   color: #93bbeb;
   background-color: white;
-  height: 35px;
   width: 100%;
-  line-height: 35px;
   text-align: center;
+  padding: 10px 0;
 }
 
 .tab:hover {
@@ -118,10 +123,6 @@ ul {
 
 /* Tab Information */
 #tabs {
-  scroll-behavior: smooth;
-  background-color: #f5f6fc;
-  overflow-y: scroll;
-  height: calc(100% - 105px);
   padding: 10px 30px;
 }
 
@@ -185,7 +186,7 @@ ul.breadcrumb li a:hover {
 
 #scrollTop {
   display: none;
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 30px;
   z-index: 99;

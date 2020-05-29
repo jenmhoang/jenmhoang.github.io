@@ -7,12 +7,14 @@
       href="https://fonts.googleapis.com/css?family=DM Sans"
       rel="stylesheet"
     />
+    <meta name="viewport" content="width=device-width" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
-    <!-- <button onclick="topFunction()" id="scrollTop" title="Go to top">
+    <button onclick="topFunction()" id="scrollTop" title="Go to top">
       &#8593;
-    </button> -->
+    </button>
+
     <div class="container">
       <div class="divHeading">
         <h1>
@@ -22,13 +24,13 @@
       </div>
       <div id="pagination">
         <div class="tab active" id="t1">
-          <div style="margin: auto;">Overview</div>
+          <div>Overview</div>
         </div>
         <div class="tab" id="t2">
-          <div style="margin: auto;">Technical Approach</div>
+          <div>Technical Approach</div>
         </div>
         <div class="tab" id="t3">
-          <div style="margin: auto;">Results</div>
+          <div>Results</div>
         </div>
       </div>
 
@@ -36,7 +38,7 @@
         <div id="dt1">
           <hr style="margin-top: 0;" />
           <h2>Material-Based Glow Simulation of Heated Metal Objects</h2>
-          <hr />
+          <hr style="margin-top: 0;" />
           Duration: 2 weeks <br />
           Team: 3 Developers (Jen Hoang, Ethan Buttimer, Susan Lin)
           <h3>The Problem</h3>
@@ -73,10 +75,6 @@
           </p>
         </div>
         <div id="dt2">
-          <script src="../js/scrollToTop.js"></script>
-          <button onclick="topFunction()" id="scrollTop" title="Go to top">
-            &#8593;
-          </button>
           <ul class="breadcrumb">
             <li><a href="#dbe">Diffuse Blackbody Emission</a></li>
             <li><a href="#r">Reflectance</a></li>
@@ -429,6 +427,5 @@
 
     <script src="../js/tabToggle.js"></script>
     <script src="../js/scrollToTop.js"></script>
-    <!-- <script src="../js/smoothScroll.js"></script> -->
   </body>
 </html>

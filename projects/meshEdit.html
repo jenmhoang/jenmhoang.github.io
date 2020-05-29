@@ -10,6 +10,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
+    <button onclick="topFunction()" id="scrollTop" title="Go to top">
+      &#8593;
+    </button>
     <div class="container">
       <div class="divHeading">
         <h1>Mesh Edit</h1>
@@ -17,16 +20,16 @@
       </div>
       <div id="pagination">
         <div class="tab active" id="t1">
-          <div style="margin: auto;">Overview</div>
+          <div>Overview</div>
         </div>
         <div class="tab" id="t2">
-          <div style="margin: auto;">Bezier Curves and Surfaces</div>
+          <div>Bezier Curves and Surfaces</div>
         </div>
         <div class="tab" id="t3">
-          <div style="margin: auto;">Vertex Normals</div>
+          <div>Vertex Normals</div>
         </div>
         <div class="tab" id="t4">
-          <div style="margin: auto;">Remeshing Operations</div>
+          <div>Remeshing Operations</div>
         </div>
       </div>
 
@@ -34,7 +37,7 @@
         <div id="dt1">
           <hr style="margin-top: 0;" />
           <h2>Geometric Modeling</h2>
-          <hr />
+          <hr style="margin-top: 0;" />
           <p>
             In this project, I explored geometric modeling. First, I built
             Bezier curves using the de Casteljau algorithm, before extending the
@@ -304,5 +307,6 @@
     </div>
     <script src="../js/tabToggle.js"></script>
     <script src="../js/imgModal.js"></script>
+    <script src="../js/scrollToTop.js"></script>
   </body>
 </html>

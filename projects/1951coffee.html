@@ -10,6 +10,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
+    <button onclick="topFunction()" id="scrollTop" title="Go to top">
+      &#8593;
+    </button>
     <div class="container">
       <div class="divHeading">
         <h1>1951 Coffee Company</h1>
@@ -17,13 +20,13 @@
       </div>
       <div id="pagination">
         <div class="tab active" id="t1">
-          <div style="margin: auto;">Project Details</div>
+          <div>Project Details</div>
         </div>
         <div class="tab" id="t2">
-          <div style="margin: auto;">The Problem</div>
+          <div>The Problem</div>
         </div>
         <div class="tab" id="t3">
-          <div style="margin: auto;">Our Solution</div>
+          <div>Our Solution</div>
         </div>
       </div>
 
@@ -38,7 +41,7 @@
             A mobile application built for efficient <br />communication and
             resource provision.
           </h2>
-          <hr />
+          <hr style="margin-top: 0;" />
           <p>Duration: 6 months</p>
           <h3>The Client</h3>
           <div class="row">
@@ -189,5 +192,6 @@
     <script src="../js/tabToggle.js"></script>
     <script src="../js/imgModal.js"></script>
     <script src="../js/horizAnim.js"></script>
+    <script src="../js/scrollToTop.js"></script>
   </body>
 </html>
