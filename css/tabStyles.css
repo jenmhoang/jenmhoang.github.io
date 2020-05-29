@@ -205,3 +205,10 @@ ul.breadcrumb li a:hover {
   opacity: 1;
   transition: 0.5s;
 }
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -5px;
+  visibility: hidden;
+}
