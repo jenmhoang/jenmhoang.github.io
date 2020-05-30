@@ -67,16 +67,11 @@ td {
   display: flex;
   justify-content: center;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../assets/1951/1951cupLogo.jpg");
   z-index: 2;
-}
-
-#mainPic {
-  position: absolute;
-}
-
-#underPic {
-  z-index: -1;
-  position: absolute;
+  transition: background-image 0.3s;
 }
 
 /* INFORMATION DIVISIONS (SECTION 3) */
