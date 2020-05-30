@@ -9,6 +9,7 @@ body {
   font-size: 14px;
   margin: 0;
   background-color: #f5f6fc;
+  text-size-adjust: 100%;
 }
 
 img {
