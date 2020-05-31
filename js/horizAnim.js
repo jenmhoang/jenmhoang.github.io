@@ -18,7 +18,7 @@ function open(tag) {
   $(".projNav").fadeOut();
   $(".info").css("right", "0");
   $(".info").fadeIn(2000);
-  $(".header").fadeOut();
+  $("#header").fadeOut();
   $(".close").fadeIn(2000);
   $(".close").css("display", "flex");
 }
@@ -28,7 +28,7 @@ function close() {
   $(".pic").animate({ right: "0" }, { duration: 500, queue: false });
 
   $(".projNav").fadeIn({ duration: 500, queue: false });
-  $(".header").fadeIn({ duration: 500, queue: false });
+  $("#header").fadeIn({ duration: 500, queue: false });
   $(".info").hide(0);
 
   $(".close").hide();
