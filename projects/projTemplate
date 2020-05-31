@@ -14,9 +14,9 @@
     <div class="container">
       <div class="divHeading">
         <h1>
-          Pathtracer
+          PROJECTTITLE
         </h1>
-        <div id="subtitle">C++</div>
+        <div id="subtitle">LANGUAGE</div>
       </div>
       <div id="pagination">
         <div class="tab active" id="t1">
