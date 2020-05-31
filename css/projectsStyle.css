@@ -69,7 +69,7 @@ td {
   overflow: hidden;
   background-size: cover;
   background-position: center;
-  background-image: url("../assets/1951/1951cupLogo.jpg");
+  background-image: url("../assets/1951/cover.png");
   z-index: 2;
   transition: background-image 0.3s;
 }
