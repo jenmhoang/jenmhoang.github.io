@@ -10,9 +10,9 @@ for (var i = 0; i < tabs.length; i++) {
 
 function openTab(section) {
   $(section).fadeIn();
-  if (document.body.scrollTop > 100) {
+  if (document.documentElement.scrollTop > 100) {
     $("html").css("scroll-behavior", "auto");
-    document.body.scrollTop = 100;
+    document.documentElement.scrollTop = 100;
     $("html").css("scroll-behavior", "smooth");
   }
 }

@@ -6,7 +6,10 @@ window.onscroll = function () {
 function scrollFunction() {
   var pct = $(document.body).height() / screen.availHeight;
   if (pct > 1.8) {
-    if (document.body.scrollTop > 300) {
+    if (
+      document.body.scrollTop > 300 ||
+      document.documentElement.scrollTop > 300
+    ) {
       mybutton.style.display = "block";
     } else {
       mybutton.style.display = "none";
