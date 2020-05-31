@@ -1,35 +1,29 @@
 @import "base.css";
-/* .header {
-  background-color: rgba(255, 255, 255, 0.6);
-} */
 
 /* SECTION 1: HOME */
 
 #home,
 #about {
-  height: 100%;
+  height: 100vh;
   position: relative;
 }
 
-.sec1 {
-  width: 100%;
-  top: 0;
-  bottom: 50px;
+#vid_container {
   position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 video {
   margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 /* SECTION 2: SCROLL ARROW */
 
-.sec2 {
+.scroll {
   width: 100%;
   height: 50px;
   text-align: center;
@@ -37,13 +31,13 @@ video {
   position: absolute;
 }
 
-.sec2 img {
+.scroll img {
   opacity: 40%;
   display: inline-block;
   height: 50px;
 }
 
-.sec2 img:hover {
+.scroll img:hover {
   opacity: 100%;
   transition: 2s;
   transform: scale(1.15);
@@ -51,62 +45,35 @@ video {
 
 /* SECTION 3: ABOUT */
 
-.sec3 {
-  width: 100%;
-  top: 50px;
+#content {
+  padding: 0 100px;
+  position: absolute;
+  top: 60px;
   bottom: 50px;
-  position: absolute;
-  margin: auto;
-}
-
-#aboutDiv {
   display: flex;
-  flex-direction: row;
-  width: 80%;
-  height: 60%;
-  overflow: visible;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: left;
-}
-
-#aboutPic {
-  width: 40%;
-  position: relative;
-}
-
-#me {
-  max-width: 80%;
-  border-radius: 50%;
-  height: auto;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-#aboutText {
-  width: 70%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+#pic {
+  width: 30%;
+}
+
+#pic img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+#text {
+  width: 70%;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
 #typeHeading {
   width: 100%;
-  height: auto;
-  position: relative;
-  /* color: 	#7ba6d8; */
   color: #e46787;
-  /* color: #3d0f1c; */
 }
 
 #typing,
@@ -119,4 +86,33 @@ video {
 #ttm2 {
   font-size: 30px;
   letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 900px) {
+  #content {
+    flex-direction: column;
+    padding: 60px 30px 0;
+    top: auto;
+    bottom: auto;
+    position: relative;
+  }
+
+  #pic {
+    width: 80%;
+    padding-bottom: 20px;
+  }
+
+  #text {
+    width: auto;
+    padding: 0px;
+  }
+
+  #about .scroll {
+    position: relative;
+  }
+
+  #ttm,
+  #ttm2 {
+    display: none;
+  }
 }

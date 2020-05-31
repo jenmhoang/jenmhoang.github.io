@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  padding: 0;
-  width: 100%;
+  position: relative;
+  height: 100vh;
   font-family: "DM Sans";
   font-size: 14px;
 }
@@ -15,7 +15,6 @@ img {
 iframe {
   height: 100%;
   width: 100%;
-  /* padding-top: 50px; */
   border: 0;
 }
 
@@ -25,74 +24,82 @@ a {
   font-weight: bold;
 }
 
-a:hover {
+p a:hover {
   text-decoration: underline;
   transition: 0.3s;
 }
 
 /* HEADER */
 
-/* .row {
-  position: fixed;
-  height: 50px;
-  width: 100%;
-  z-index: 10;
-  padding: 20px 0;
-} */
-
-.header {
+#header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   position: fixed;
   z-index: 10;
-  padding: 20px;
   left: 0;
   right: 0;
 }
 
-.homeLogo img {
-  position: relative;
-  height: 40px;
-  width: auto;
-  filter: brightness(0%);
-  padding-right: 10px;
+#menu {
+  display: flex;
+  align-items: center;
 }
 
-.homeLogo img:hover {
+#menu img {
+  position: relative;
+  height: 40px;
+  padding: 10px;
+  width: auto;
+  filter: brightness(0%);
+}
+
+#menu img:hover {
   filter: brightness(80%);
   transition: 0.3s;
 }
 
-.header-items {
+#menu-items {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: relative;
-  height: 100%;
-  text-align: center;
-}
-.header-items p {
-  padding: 0 15px;
 }
 
-.header-items img {
+#menu-items p {
+  padding-left: 30px;
+  color: black;
+}
+
+#menu-items p:hover {
+  color: #e46787;
+  transition: 0.3s;
+}
+
+#contact {
+  display: flex;
+  padding: 20px 20px 0 0;
+}
+
+#contact img {
   height: 30px;
   padding-left: 10px;
   position: relative;
   filter: brightness(0%);
 }
 
-.header-items img:hover {
+#contact img:hover {
   filter: brightness(80%);
   transition: 0.3s;
 }
 
-#header-text {
-  color: black;
-}
-
-#header-text:hover {
-  color: #e46787;
-  transition: 0.3s;
+@media only screen and (max-width: 900px) {
+  #header {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding-right: 10px;
+  }
+  #contact {
+    display: none;
+  }
+  #menu {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
