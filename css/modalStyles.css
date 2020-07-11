@@ -28,8 +28,8 @@
 
 .modal {
   display: none;
-  position: absolute;
-  z-index: 2;
+  position: fixed;
+  z-index: 3;
   left: 0;
   top: 0;
   width: 100%;
@@ -38,7 +38,7 @@
 }
 
 .modal-content {
-  position: absolute;
+  position: fixed;
   object-fit: contain;
   left: 0;
   right: 0;
