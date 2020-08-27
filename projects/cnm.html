@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Jen Hoang</title>
+  <link rel="stylesheet" type="text/css" href="../css/tabStyles.css" />
+  <link href="https://fonts.googleapis.com/css?family=DM Sans" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="divHeading">
+      <h1>Jen Hoang</h1>
+      <div id="subtitle">3D Animation and Graphics Portfolio<br>Click <a href="../projects.html">here</a> for more
+        graphics and software-related projects</div>
+    </div>
+    <div id="pagination">
+      <div class="tab active" id="t1">
+        <div>Shorts</div>
+      </div>
+      <div class="tab" id="t2">
+        <div>Pre-Production</div>
+      </div>
+      <div class="tab" id="t3">
+        <div>Shading/Texturing</div>
+      </div>
+      <div class="tab" id="t4">
+        <div>Compositing</div>
+      </div>
+    </div>
+
+    <div id="myModal" class="modal">
+      <img class="modal-content" id="img01" />
+    </div>
+
+    <div id="tabs">
+      <div id="dt1">
+        <div class="column" style="width:100%; justify-content: center; align-items:center">
+          <iframe width="713" height="401" src="https://www.youtube.com/embed/ytyj6UlJxTY" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="713" height="401" src="https://www.youtube.com/embed/P-08ALTwSWI" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="713" height="401" src="https://www.youtube.com/embed/53y0mAYk2-4" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div id="dt2" style="margin:auto; left:0; right:0;">
+        <div class="row" style="width: 60%; padding-left: 20%; overflow: hidden; align-items: flex-end;">
+          <img class="mImages cnm" src="../assets/cnm/prepro_characterDesign.png">
+          <img class="mImages cnm" style="margin:0" src="../assets/cnm/prepro_envDesign.png">
+        </div>
+        <p style="display: flex; justify-content: center;">Character and environment design for Love Language</p>
+        <br>
+        <img class="mImages cnm" src="../assets/cnm/prepro_loveLanguagePanels.png">
+        <p style="display: flex; justify-content: center;">Excerpt from Love Language storyboard panels</p>
+        <br>
+        <img class="mImages cnm" src="../assets/cnm/prepro_storyboardPanel.png">
+        <p style="display: flex; justify-content: center;">Excerpt from Magic storyboard panels</p>
+        <br>
+        <div class="row" style="width: 60%; padding-left: 20%; overflow: hidden; align-items: flex-end;">
+          <img class="mImages cnm" src="../assets/cnm/prepro_poweredUpMC.jpg">
+          <img class="mImages cnm" style="margin:0" src="../assets/cnm/prepro_poweredUpMC2.jpg">
+        </div>
+        <p style="display: flex; justify-content: center;">Character design for Powered Up</p>
+      </div>
+      <div id="dt3">
+        <img class="mImages cnm" src="../assets/cnm/shading_loveLanguageMay.png">
+        <br>
+        <img class="mImages cnm" src="../assets/cnm/shading_poweredUpMC.png">
+        <br>
+        <img class="mImages cnm" src="../assets/cnm/shading_truthBombFigurine.png">
+        <br>
+        <img class="mImages cnm" src="../assets/cnm/shading_golum.png">
+        <br>
+        <hr>
+        <div style="padding-left:25%; padding-right:25%">
+          <video width="100%" playsinline autoplay muted loop controls>
+            <source src="../assets/cnm/shading_transferFunction.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <p style="display: flex; justify-content: center;"> Transfer Function written in C++ and OpenGL that dynamically
+          creates a custom shader to be bound to the 3d
+          data</p>
+      </div>
+      <div id="dt4">
+
+        <div class="column" style="width:100%; align-items:center">
+          <video width="50%" playsinline controls>
+            <source src="../assets/cnm/compositing_ll.mp4" type="video/mp4" />
+          </video>
+          <p style="display: flex; justify-content: center;">Also shown: lighting and camera animation contributions</p>
+          <br>
+          <video width="50%" playsinline controls>
+            <source src="../assets/cnm/compositing_pu1.mp4" type="video/mp4" />
+          </video>
+          <br>
+          <video width="50%" playsinline controls>
+            <source src="../assets/cnm/compositing_pu2.mp4" type="video/mp4" />
+          </video>
+          <br>
+          <video width="50%" playsinline controls>
+            <source src="../assets/cnm/compositing_pu3.mp4" type="video/mp4" />
+          </video>
+          <br>
+          <video width="50%" playsinline controls>
+            <source src="../assets/cnm/compositing_tb.mp4" type="video/mp4" />
+          </video>
+          <p style="display: flex; justify-content: center;">Also shown: lighting and camera animation contributions</p>
+          <br>
+          <video width="50%" playsinline controls>
+            <source src="../assets/cnm/compositing_tb2.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/tabToggle.js"></script>
+  <script src="../js/imgModal.js"></script>
+  <script src="../js/horizAnim.js"></script>
+  <script src="../js/scrollToTop.js"></script>
+</body>
+
+</html>

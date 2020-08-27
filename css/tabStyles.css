@@ -17,6 +17,10 @@ img {
   margin: auto;
 }
 
+.cnm {
+  width: 40%;
+}
+
 figcaption {
   margin-top: 0.5em;
 }
