@@ -2,7 +2,7 @@ body {
   margin: 0;
   position: relative;
   height: 100vh;
-  font-family: "DM Sans";
+  font-family: 'DM Sans', sans-serif;
   font-size: 14px;
 }
 

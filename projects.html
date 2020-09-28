@@ -1,94 +1,84 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Jen Hoang</title>
-    <link rel="stylesheet" type="text/css" href="css/projectsStyle.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=DM Sans"
-      rel="stylesheet"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  </head>
-  <body>
-    <div id="header">
-      <div id="menu">
-        <a href="index.html#home">
-          <img src="assets/index/jhLogo.png" />
+
+<head>
+  <title>Jen Hoang</title>
+  <link rel="stylesheet" type="text/css" href="css/projectsStyle.css" />
+  <link href="https://fonts.googleapis.com/css?family=DM Sans" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="header">
+    <div id="menu">
+      <a href="index.html#home">
+        <img src="assets/index/jhLogo.png" />
+      </a>
+      <div id="menu-items">
+        <a href="index.html#about">
+          <p>About</p>
         </a>
-        <div id="menu-items">
-          <a href="index.html#about"><p>About</p></a>
-          <a href="projects.html"><p>Projects</p></a>
-          <a href="art.html"><p>Art</p></a>
-        </div>
+        <a href="projects.html">
+          <p>Projects</p>
+        </a>
+        <a href="art.html">
+          <p>Art</p>
+        </a>
       </div>
     </div>
+  </div>
 
-    <div class="close">
-      <img src="assets/index/back_arrow.png" />
-      <p>Back to Projects</p>
+  <div class="close">
+    <img src="assets/index/back_arrow.png" />
+    <p>Back to Projects</p>
+  </div>
+
+  <div class="body">
+    <div class="projNav">
+      <img id="titleImg" src="assets/projects/projects.jpg" />
+      <table class="buttons">
+        <tr>
+          <td>
+            <div class="button" src="projects/1951coffee.html" href="assets/1951/cover.png">
+              1951 Coffee
+            </div>
+          </td>
+          <td>
+            <div class="button" src="projects/rasterizer.html" href="assets/rasterizer/cover.png">
+              Rasterizer
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="button" src="projects/meshEdit.html" href="assets/meshedit/cover.png">
+              Mesh Edit
+            </div>
+          </td>
+          <td>
+            <div class="button" src="projects/heat.html" href="assets/heat/cover.png">
+              Emissive Heat
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
 
-    <div class="body">
-      <div class="projNav">
-        <img id="titleImg" src="assets/projects/projects.jpg" />
-        <table class="buttons">
-          <tr>
-            <td>
-              <div
-                class="button"
-                src="projects/1951coffee.html"
-                href="assets/1951/cover.png"
-              >
-                1951 Coffee
-              </div>
-            </td>
-            <td>
-              <div
-                class="button"
-                src="projects/rasterizer.html"
-                href="assets/rasterizer/cover.png"
-              >
-                Rasterizer
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div
-                class="button"
-                src="projects/meshEdit.html"
-                href="assets/meshedit/cover.png"
-              >
-                Mesh Edit
-              </div>
-            </td>
-            <td>
-              <div
-                class="button"
-                src="projects/heat.html"
-                href="assets/heat/cover.png"
-              >
-                Emissive Heat
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
+    <div class="pic"></div>
 
-      <div class="pic"></div>
-
-      <div class="info">
-        <iframe id="frame" src=""></iframe>
-      </div>
+    <div class="info">
+      <iframe id="frame" src=""></iframe>
     </div>
+  </div>
 
-    <div id="preload">
-      <img src="assets/1951/cover.png" />
-      <img src="assets/rasterizer/cover.png" />
-      <img src="assets/meshedit/cover.png" />
-      <img src="assets/heat/cover.png" />
-    </div>
+  <div id="preload">
+    <img src="assets/1951/cover.png" />
+    <img src="assets/rasterizer/cover.png" />
+    <img src="assets/meshedit/cover.png" />
+    <img src="assets/heat/cover.png" />
+  </div>
 
-    <script src="js/horizAnim.js"></script>
-  </body>
+  <script src="js/horizAnim.js"></script>
+</body>
+
 </html>

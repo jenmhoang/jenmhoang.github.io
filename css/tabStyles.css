@@ -11,6 +11,10 @@ body {
   background-color: #f5f6fc;
 }
 
+b {
+  font-weight: 500;
+}
+
 img {
   display: block;
   width: 200px;
