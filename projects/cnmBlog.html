@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Jen Hoang</title>
+    <link rel="stylesheet" type="text/css" href="../css/cnmBlog.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM Sans"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
 
-<head>
-  <title>Jen Hoang</title>
-  <link rel="stylesheet" type="text/css" href="../css/cnmBlog.css" />
-  <link href="https://fonts.googleapis.com/css?family=DM Sans" rel="stylesheet" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</head>
-
-<body>
-  <div class="container">
-    <div class="divHeading">
-      <h1>Jen Hoang</h1>
-      <div id="subtitle">CNM Blog</div>
-    </div>
-    <!-- <div id="pagination">
+  <body>
+    <div class="container">
+      <div class="divHeading">
+        <h1>Jen Hoang</h1>
+        <div id="subtitle">CNM Blog</div>
+      </div>
+      <!-- <div id="pagination">
       <div class="tab active" id="t1">
         <div>Pre-Production</div>
       </div>
@@ -29,65 +31,113 @@
       </div>
     </div> -->
 
-    <div id="myModal" class="modal">
-      <img class="modal-content" id="img01" />
-    </div>
+      <div id="myModal" class="modal">
+        <img class="modal-content" id="img01" />
+      </div>
 
-    <div id="tabs" style="width:80%; margin:auto">
-      <div id="dt1">
-        <ul class="breadcrumb">
-          <li><a href="#10.2">10.2</a></li>
-          <li><a href="#10.4">10.4</a></li>
-          <li><a href="#10.9">10.9</a></li>
-          <li><a href="#10.16">10.16</a></li>
-        </ul>
-        <hr id="10.16" />
-        <h3>October 16</h3>
+      <div id="tabs" style="width: 80%; margin: auto">
+        <div id="dt1">
+          <ul class="breadcrumb">
+            <li><a href="#10.2">10.2</a></li>
+            <li><a href="#10.4">10.4</a></li>
+            <li><a href="#10.9">10.9</a></li>
+            <li><a href="#10.16">10.16</a></li>
+          </ul>
+          <hr id="10.23" />
+          <h3>October 23</h3>
 
-        <p>This week, I met up with some other teammates to collaborate on the animatic and talk through our current
-          storyboards. We made sketches and comments on a jamboard to make a concrete animatic plan before splitting up
-          storyboard tasks. I drew a sequence of storyboards that depicted the interaction between the man and the
-          mirage.</p>
-        <img src="../assets/cnmBlog/10.13_jamboard.png">
-        <img src="../assets/cnmBlog/10.16_storyboard.png">
+          <p>
+            
+            This week, I transitioned from animatic work (sketched some boards
+            that never main it into the end product) to simulation research and
+            testing.</p>
+            <img style="width: 50%" src="../assets/cnmBlog/10.23_storyboard.png" /><p>
+          First, I researched different methods of simulating
+            dust/sand/disintegration together with Ethan and compiled some
+            resources onto the
+            <a
+              href="https://docs.google.com/presentation/d/1oJ6JAyn6HtdwPF-PasPb5KClpRUkmlc0A8_vVT0NEvQ/edit#slide=id.g9d33cf32f8_0_1"
+              >simulation slidedeck</a
+            >. Then, I tried a couple of them out to test out dust effects using
+            Maya fluids. I started the early stages of a disintegration test,
+            where I animated transparency maps across an object to test how we
+            can control where the mesh would disappear. The next stages would be
+            to translate the shape of the object into particles (probably will
+            test with nParticles) and have those particles move in line with the
+            transparency map. I also compiled a style moodboard to figure out
+            what kind of disintegration effect we wanted to pursue and discussed
+            our different options with the rest of the team.
+          </p>
+          
+          <div class="row">
+          <img style="width: 33%" src="../assets/cnmBlog/10.17_dustTest.gif" />
+          <img style="width: 33%" src="../assets/cnmBlog/10.17_dustTest2.gif" />
+          <img style="width: 33%" src="../assets/cnmBlog/10.23_disintegrateTest.gif" />
+          </div>
+          <br>
+          <img style="width: 60%"src="../assets/cnmBlog/10.23_moodboard.png" />
 
-        <hr id="10.9" />
-        <h3>October 9</h3>
+          <hr id="10.16" />
+          <h3>October 16</h3>
 
-        <p>With the rest of the team, we talked about how we could modify the animatic to evoke the emotions that the
-          story intends. In order to do this, we drafted updated storyboards that provided more POV shots and
-          highlighted emotions on the main character's face. This week, I drew a sequence of boards that showed the main
-          character reaching towards the mirage's hand before passing through it (from a POV angle). Additionally, I
-          colored in one of the expression sheet sketches to map out the coloring / facial featuers of the main
-          character.</p>
-        <img src="../assets/cnmBlog/10.7_characterColored.png">
-        <img src="../assets/cnmBlog/10.9_storyboard.png">
+          <p>
+            This week, I met up with some other teammates to collaborate on the
+            animatic and talk through our current storyboards. We made sketches
+            and comments on a jamboard to make a concrete animatic plan before
+            splitting up storyboard tasks. I drew a sequence of storyboards that
+            depicted the interaction between the man and the mirage.
+          </p>
+          <img src="../assets/cnmBlog/10.13_jamboard.png" />
+          <img src="../assets/cnmBlog/10.16_storyboard.png" />
 
-        <hr id="10.4" />
-        <h3>October 4</h3>
+          <hr id="10.9" />
+          <h3>October 9</h3>
 
-        <p>I continued working on character design with the rest of the team, primarily considering the costuming, body
-          type, and ethnic influences for the two characters. Then, once we pinned down our visual pursuits, I iterated
-          on the character expression sheets that I made last time. For this sheet, I included various expressions of
-          sadness at varying levels of intensity and nuance.</p>
-        <img src="../assets/cnmBlog/10.4_characterSheets.png">
+          <p>
+            With the rest of the team, we talked about how we could modify the
+            animatic to evoke the emotions that the story intends. In order to
+            do this, we drafted updated storyboards that provided more POV shots
+            and highlighted emotions on the main character's face. This week, I
+            drew a sequence of boards that showed the main character reaching
+            towards the mirage's hand before passing through it (from a POV
+            angle). Additionally, I colored in one of the expression sheet
+            sketches to map out the coloring / facial featuers of the main
+            character.
+          </p>
+          <img src="../assets/cnmBlog/10.7_characterColored.png" />
+          <img src="../assets/cnmBlog/10.9_storyboard.png" />
 
-        <hr id="10.2" />
-        <h3>October 2</h3>
+          <hr id="10.4" />
+          <h3>October 4</h3>
 
-        <p>This week, I worked on the character design, and discussed some of the key features of the protagonist with
-          the team. We also talked about the symbolism/intended feelings that the designs are meant to invoke. I then
-          drew the character expression sheets for the main character.</p>
-        <img src="../assets/cnmBlog/10.2_characterSheets.png">
+          <p>
+            I continued working on character design with the rest of the team,
+            primarily considering the costuming, body type, and ethnic
+            influences for the two characters. Then, once we pinned down our
+            visual pursuits, I iterated on the character expression sheets that
+            I made last time. For this sheet, I included various expressions of
+            sadness at varying levels of intensity and nuance.
+          </p>
+          <img src="../assets/cnmBlog/10.4_characterSheets.png" />
 
+          <hr id="10.2" />
+          <h3>October 2</h3>
+
+          <p>
+            This week, I worked on the character design, and discussed some of
+            the key features of the protagonist with the team. We also talked
+            about the symbolism/intended feelings that the designs are meant to
+            invoke. I then drew the character expression sheets for the main
+            character.
+          </p>
+          <img src="../assets/cnmBlog/10.2_characterSheets.png" />
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="../js/tabToggle.js"></script>
-  <script src="../js/imgModal.js"></script>
-  <script src="../js/horizAnim.js"></script>
-  <script src="../js/scrollToTop.js"></script>
-</body>
-
+    <script src="../js/tabToggle.js"></script>
+    <script src="../js/imgModal.js"></script>
+    <script src="../js/horizAnim.js"></script>
+    <script src="../js/scrollToTop.js"></script>
+  </body>
 </html>
